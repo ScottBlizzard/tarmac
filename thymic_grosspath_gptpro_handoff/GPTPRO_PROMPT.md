@@ -1,64 +1,67 @@
 # Prompt for GPTPro
 
-你是一个顶级医学 AI / 计算病理 / 机器学习研究负责人。请完整阅读我给你的这个 GitHub 仓库中的交接包：
+You are a top-tier research lead in medical AI, computational pathology, and machine learning. Please thoroughly inspect the GitHub handoff package:
 
 `thymic_grosspath_gptpro_handoff/`
 
-你的任务不是保守总结，而是从非常开放的角度重新思考：如何提升胸腺大体图像低危/高危二分类基础模型的跨域泛化能力。
+Your task is not to produce a conservative summary. Your task is to rethink, from a broad and exploratory perspective, how to improve the cross-domain generalization of the base model for low-risk vs high-risk thymic gross pathology image classification.
 
-## 项目背景
+Please answer in English.
 
-这是一个胸腺大体病理图像 AI 项目。核心临床任务是 Task7：
+## Project Background
 
-- 低危：A / AB / B1
-- 高危：B2 / B3 / 胸腺癌
+This is a thymic gross pathology image AI project. The clinically central task is Task7:
 
-当前项目已经做了很多工作：SuRImage/CNN baseline、DINOv2/DINOv3 frozen features、MLP/logreg probes、cut-only、whole/crop、多图策略、视图分治、课程学习、经验标签、第三批适配、严格外部测试、risk-controlled selective workflow、v195/v195+ 拒识/复核工作流等。
+- Low risk: A / AB / B1
+- High risk: B2 / B3 / thymic carcinoma
 
-现在我希望你暂时不要把主线继续局限在“提高自动放行比例”或“调拒识规则”上。那些 workflow 可以作为后续安全层，但现在真正的主线是：
+The project has already attempted many directions: SuRImage/CNN baselines, DINOv2/DINOv3 frozen features, logistic/MLP probes, cut-only models, whole/crop variants, multi-image policies, view-aware routing, curriculum learning, expert-derived auxiliary labels, third-batch adaptation, strict external testing, risk-controlled selective workflows, and v195/v195+ rejection/review workflows.
 
-**基础强制分类模型本身必须更强，尤其是严格外部和新外部数据上的泛化能力必须提升。**
+For this round, please do **not** keep the main focus on increasing automatic release ratio or tuning rejection rules. Those workflows may still be useful as a downstream safety layer, but the current scientific bottleneck is:
 
-## 当前数据边界
+**The full-coverage base forced-classification model must become stronger, especially on strict external and new external domains.**
 
-请按以下数据边界理解，不要混用：
+## Dataset Boundary
+
+Please keep the following dataset roles separate:
 
 1. `old_data`
-   - 285 例/图
-   - 低危 144，高危 141
-   - 内部开发/OOF 主体
+   - 285 cases/images
+   - Low risk 144, high risk 141
+   - Main internal development / OOF cohort
 
 2. `third_batch`
-   - 306 例/图
-   - 低危 224，高危 82
-   - 同体系新增数据，已经参与观察、适配、策略选择
-   - 不能再称为 strict external
+   - 306 cases/images
+   - Low risk 224, high risk 82
+   - Same-system new data
+   - Already used for observation, adaptation, and strategy selection
+   - It must not be treated as strict external validation anymore
 
 3. `strict_external`
-   - 108 例/图
-   - 低危 61，高危 47
-   - 冻结外部压力测试
-   - 原则上不能用于训练、调参、模型选择
+   - 108 cases/images
+   - Low risk 61, high risk 47
+   - Frozen external stress test
+   - Should not be used for training, hyperparameter tuning, or model selection
 
 4. `new_external_160`
-   - 原始上传 166 文件
-   - case-level 去重后 162 例
-   - 低危 77，高危 85
-   - A 22, AB 29, B1 26, B2 28, B3 29, TC 28
-   - 已完成处理/QC，但还没有正式跑模型推理
+   - 166 raw uploaded files
+   - 162 deduplicated case-level samples
+   - Low risk 77, high risk 85
+   - Class counts: A 22, AB 29, B1 26, B2 28, B3 29, TC 28
+   - Processing/QC has been completed, but formal model inference has not yet been run at packaging time
 
-## 已知核心指标
+## Known Metric Situation
 
-请从交接包中核对细节。先给你一个定位：
+Please verify details from the handoff package. As orientation:
 
-- 旧数据上最强域内模型/流程可以到约 92.3% Acc/BAcc。
-- 第三批经过适配后整体约 83.0% Acc，BAcc 约 76.8%，但高危召回仍弱。
-- 严格外部强制分类约 64.8% Acc，BAcc 约 62.8%，高危召回约 46.8%。
-- v195/v195+ 工作流能通过自动放行/复核控制错误，但这不是 full-coverage base classifier 的胜利。
+- The strongest internal-domain model/workflow reaches about 92.3% Acc/BAcc on old data.
+- After adaptation, third-batch performance is about 83.0% Acc and about 76.8% BAcc, but high-risk recall remains weak.
+- Strict external full-coverage forced classification is about 64.8% Acc, about 62.8% BAcc, with high-risk recall around 46.8%.
+- v195/v195+ workflows can control automatic errors through release/review/rejection, but that is not equivalent to a strong full-coverage base classifier.
 
-## 你要优先阅读的文件
+## Files to Read First
 
-请先读：
+Please start with:
 
 1. `README.md`
 2. `01_local_reports_md_csv/项目阶段性工作详报.md`
@@ -73,81 +76,88 @@
 11. `04_server_snapshot/findings.md`
 12. `04_server_snapshot/experiments/risk_control_rejection_20260621/reports/`
 13. `04_server_snapshot/experiments/risk_control_rejection_20260621/v195_plus_sidecar/`
-14. `04_server_snapshot/outputs/batch1_batch2_task567_20260514/task7_adaptation_runs/` 中的 summary/metrics 表
+14. Summary/metrics files under `04_server_snapshot/outputs/batch1_batch2_task567_20260514/task7_adaptation_runs/`
 
-然后再按需看：
+Then inspect as needed:
 
 - `02_local_scripts_py/`
 - `04_server_snapshot/scripts/`
 - `03_local_result_summaries_flat/`
 
-## 请特别注意已经尝试过的方向
+## Previously Attempted Directions
 
-下面这些不是禁止你再想，而是请你不要低水平重复。你可以提出更高级版本，但要说明为什么不是旧实验的简单复刻。
+The following directions have already been tried and were mostly unstable or insufficient for external generalization. You are allowed to propose advanced versions of them, but please explicitly explain why your proposal is not merely a low-level repeat of previous failed experiments.
 
-已经试过且多数不稳定/未解决外部泛化的方向包括：
+Previously attempted directions include:
 
 - SuRImage / SE-ResNeXt / CNN / CAM crop
-- WHO 六分类先做再合并二分类
-- DINOv2 frozen feature + logreg/MLP
-- DINOv2/DINOv3 微调，包括 last-block、head-only、full fine-tune、QKVB、TTA
-- cut-only、whole-only、whole+crop、full-to-cut refine
-- view-aware routing、cut/outer/mixed specialist
-- PLIP、BiomedCLIP、ConvNeXt、Swin、EfficientNet、EVA02、SigLIP、ViTamin、AIMv2 等横向替换或融合
-- 弱经验标签、大规模 hard 样本加权、核心 hard 直接加入训练
-- stacking、guard、domain-internal reliability selector
-- selective release / rejection / auto-review workflow
+- WHO six-class classification followed by binary merging
+- DINOv2 frozen features with logistic regression / MLP probes
+- DINOv2/DINOv3 fine-tuning variants, including last-block, head-only, full fine-tune, QKVB, and TTA
+- Cut-only, whole-only, whole+crop, and full-to-cut refinement
+- View-aware routing and cut/outer/mixed specialists
+- PLIP, BiomedCLIP, ConvNeXt, Swin, EfficientNet, EVA02, SigLIP, ViTamin, AIMv2, and related backbone swaps or fusions
+- Weak expert labels, large-scale hard-sample weighting, and directly adding core-hard samples back into training
+- Stacking, guard models, and domain-internal reliability selectors
+- Selective release / rejection / auto-review workflows
 
-## 我希望你做的事
+## What I Want You To Do
 
-请用中文输出一个研究负责人级别的方案，不要只做摘要。请完成以下内容：
+Please produce a research-lead-level analysis and plan. Do not stop at high-level suggestions. Complete the following:
 
-1. 先复盘项目真实问题
-   - 用你自己的话判断：现在到底是数据问题、模型能力问题、域偏移问题、标注边界问题、输入视角问题，还是多因素叠加？
-   - 哪些历史结论你同意，哪些你认为可能误判？
+1. Diagnose the real bottleneck
+   - In your own judgment, is the current limitation mainly data, model capacity, domain shift, label boundary ambiguity, input-view heterogeneity, or a combination?
+   - Which historical conclusions do you agree with?
+   - Which historical conclusions might be misleading or prematurely accepted?
 
-2. 重新打开思维空间
-   - 不要过早收窄到 DINO + probe。
-   - 允许大胆发散，包括但不限于：更强视觉基础模型、病理/医学 foundation model、SAM/MedSAM/YOLO/DETR/grounding 模型辅助 ROI、multi-instance learning、多图病例建模、自监督/对比学习、无监督域适应、test-time adaptation、source-free adaptation、domain adversarial、style randomization、颜色/背景/尺度增强、合成数据、扩散模型增强、主动学习、医生弱监督、概念瓶颈、多任务学习、ordinal/clinical-risk loss、B2/B3/TC 专门建模、open-set/OOD 分解、外部域模拟等。
+2. Reopen the method space
+   - Do not prematurely narrow to DINO + probe.
+   - Think broadly, including but not limited to: stronger vision foundation models, pathology/medical foundation models, SAM/MedSAM/YOLO/DETR/grounding-assisted ROI extraction, multi-instance learning, multi-image case modeling, self-supervised or contrastive learning, unsupervised domain adaptation, source-free adaptation, test-time adaptation, domain-adversarial learning, style randomization, color/background/scale augmentation, synthetic data, diffusion-based augmentation, active learning, physician weak supervision, concept bottlenecks, multitask learning, ordinal/clinical-risk losses, B2/B3/TC-specialized modeling, open-set/OOD decomposition, and external-domain simulation.
 
-3. 给出一份大范围实验矩阵
-   - 至少 20 个候选方向。
-   - 每个方向写：核心想法、为什么可能解决外部泛化、与历史尝试的区别、所需数据/代码、预期风险、成功标准。
+3. Build a broad experiment matrix
+   - Propose at least 20 candidate directions.
+   - For each direction, include:
+     - Core idea
+     - Why it may help external generalization
+     - How it differs from previous attempts
+     - Required data/code
+     - Main risks
+     - Success criteria
 
-4. 给出优先级排序
-   - 从 20+ 个方向中选出最值得先跑的 8-12 个。
-   - 不要只按“最稳”排序，也要考虑可能带来突破的高风险方向。
+4. Prioritize experiments
+   - From the 20+ directions, select the 8-12 most worth running first.
+   - Do not rank only by safety. Also consider high-risk/high-upside directions that may produce a breakthrough.
 
-5. 设计严格评估协议
-   - 必须区分 old_data、third_batch、strict_external、new_external_160。
-   - strict_external 和 new_external_160 不得用于训练/调参/模型选择。
-   - 必须报告 Acc、BAcc、AUC、高危召回、低危特异度、FN、FP。
-   - 任何 workflow/rejection 结果必须和 full-coverage forced classification 分开报告。
-   - 给出如何避免 patient leakage、multi-image leakage、threshold leakage。
+5. Design a strict evaluation protocol
+   - Keep `old_data`, `third_batch`, `strict_external`, and `new_external_160` separate.
+   - `strict_external` and `new_external_160` must not be used for training, tuning, or model selection.
+   - Report Acc, BAcc, AUC, high-risk recall, low-risk specificity, FN, and FP.
+   - Any workflow/rejection result must be reported separately from full-coverage forced classification.
+   - Explain how to avoid patient leakage, multi-image leakage, threshold leakage, and external-label leakage.
 
-6. 给出可执行计划
-   - 第一周跑什么，第二周跑什么，第三周跑什么。
-   - 需要改哪些脚本或新增哪些脚本。
-   - 该从哪些现有文件/结果表开始复用。
-   - 哪些旧实验可以直接作为 baseline，不需要重跑。
+6. Create an executable plan
+   - What should be run in week 1, week 2, and week 3?
+   - Which scripts should be modified or newly created?
+   - Which existing files/result tables should be reused first?
+   - Which old experiments can be treated as baselines without rerunning?
 
-7. 给出论文策略
-   - 如果基础模型外部泛化能提升到可接受水平，医工交叉论文主线怎么写？
-   - 如果仍然提升有限，如何把它写成“外部泛化挑战 + 风险控制 + 数据治理”的扎实论文？
-   - 哪些结果绝对不能夸大？
+7. Give manuscript strategy
+   - If base external generalization improves to an acceptable level, how should the medical-engineering manuscript be framed?
+   - If improvement remains limited, how can this still be written as a rigorous paper about external generalization challenge, risk control, and data governance?
+   - Which claims must absolutely not be overstated?
 
-## 输出格式
+## Output Structure
 
-请按以下结构输出：
+Please structure your answer exactly as follows:
 
-1. `项目真实瓶颈判断`
-2. `历史实验复盘与可能误判点`
-3. `广义方法空间：20+ 候选实验`
-4. `优先级最高的 8-12 个实验`
-5. `严格评估协议`
-6. `三周执行计划`
-7. `论文主线建议`
-8. `最需要医生/同伴补充的信息`
+1. `Real Bottleneck Diagnosis`
+2. `Historical Experiment Review and Potentially Misleading Conclusions`
+3. `Broad Method Space: 20+ Candidate Experiments`
+4. `Highest-Priority 8-12 Experiments`
+5. `Strict Evaluation Protocol`
+6. `Three-Week Execution Plan`
+7. `Manuscript Strategy`
+8. `Most Needed Inputs From Physicians / Collaborators`
 
-请尽量具体，不要停留在“可以试试某模型”。如果建议换模型基底，请说清楚候选模型家族、输入策略、训练方式、融合方式、评价方式、和为什么它不是已失败 backbone sweep 的重复。
+Please be specific. Do not just say "try model X." If you recommend changing the model backbone or foundation model, specify the candidate model family, input strategy, training strategy, fusion strategy, evaluation strategy, and why it is not simply a repeat of an already failed backbone sweep.
 
