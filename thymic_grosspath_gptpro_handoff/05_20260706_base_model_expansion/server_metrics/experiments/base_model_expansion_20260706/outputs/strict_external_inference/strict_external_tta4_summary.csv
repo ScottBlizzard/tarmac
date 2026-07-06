@@ -1,0 +1,4 @@
+﻿model_tag,n,accuracy,balanced_accuracy,auc,f1,high_recall,low_specificity,tn,fp,fn,tp,source_predictions
+105_qkvb_tta4,108,0.5740740740740741,0.603418207185211,0.6445762120683641,0.6290322580645161,0.8297872340425532,0.3770491803278688,23,38,8,39,experiments/base_model_expansion_20260706/outputs/strict_external_inference/105_qkvb_tta4/external_tta_predictions.csv
+149_qkvb_stylelight_tta4,108,0.5555555555555556,0.5845831880013952,0.639344262295082,0.6129032258064516,0.8085106382978723,0.36065573770491804,22,39,9,38,experiments/base_model_expansion_20260706/outputs/strict_external_inference/149_qkvb_stylelight_tta4/external_tta_predictions.csv
+126_qkvb_headonly_tta4,108,0.5462962962962963,0.5763864666899198,0.6515521450994071,0.608,0.8085106382978723,0.3442622950819672,21,40,9,38,experiments/base_model_expansion_20260706/outputs/strict_external_inference/126_qkvb_headonly_tta4/external_tta_predictions.csv

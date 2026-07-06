@@ -1,0 +1,19 @@
+{
+  "pred_csv": "experiments/base_model_expansion_20260706/outputs/extra_candidate_external_sweep/123_qkvb_nocw__new_external_160/external_tta_predictions.csv",
+  "n": 162,
+  "overall": {
+    "group": "overall",
+    "n": 162,
+    "auc": 0.7289533995416348,
+    "accuracy": 0.6728395061728395,
+    "balanced_accuracy": 0.6741787624140565,
+    "sensitivity": 0.6470588235294118,
+    "specificity": 0.7012987012987013,
+    "precision": 0.7051282051282052,
+    "f1": 0.6748466257668712,
+    "tn": 54,
+    "fp": 23,
+    "fn": 30,
+    "tp": 55
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "pred_csv": "experiments/base_model_expansion_20260706/outputs/extra_candidate_external_sweep/201_subtypeaux_lowrisk__new_external_160/external_tta_predictions.csv",
+  "n": 162,
+  "overall": {
+    "group": "overall",
+    "n": 162,
+    "auc": 0.7239113827349122,
+    "accuracy": 0.6790123456790124,
+    "balanced_accuracy": 0.678838808250573,
+    "sensitivity": 0.6823529411764706,
+    "specificity": 0.6753246753246753,
+    "precision": 0.6987951807228916,
+    "f1": 0.6904761904761905,
+    "tn": 52,
+    "fp": 25,
+    "fn": 27,
+    "tp": 58
+  }
+}

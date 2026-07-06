@@ -17,10 +17,21 @@ This package excludes raw medical images, image review folders, large ZIP packag
 | `03_local_result_summaries/` | Local result summaries copied with original partial structure | Some deep paths were truncated by Windows path limits; use the flat folder too. |
 | `03_local_result_summaries_flat/` | Flattened local summary/result/metrics files | Safer complete local result-summary copy. |
 | `04_server_snapshot/` | Server-side text/code snapshot from `/workspace/thymic_project` | Includes latest reports, scripts, v195+ sidecar, configs, and summary metrics. |
+| `05_20260706_base_model_expansion/` | Newest base-model expansion evidence and scripts | Read this first for four-domain audit, new external inference, strict/new qkvb sweeps, completed subtype-aux ablation, and queued follow-ups. |
 | `GPTPRO_PROMPT.md` | Ready-to-copy prompt for GPTPro | Start here if only one file can be read first. |
 | `MANIFEST.csv` | File manifest generated after packaging | Use to search filenames quickly. |
 
 ## Suggested Reading Order
+
+Start with the 2026-07-06 update:
+
+1. `GPTPRO_PROMPT.md`
+2. `05_20260706_base_model_expansion/README_20260706_BASE_MODEL_EXPANSION.md`
+3. `05_20260706_base_model_expansion/reports/Task7_Base_Model_Expansion_Ledger_20260706.md`
+4. `05_20260706_base_model_expansion/reports/AI Pathology Model Improvement.md`
+5. `05_20260706_base_model_expansion/server_metrics/experiments/base_model_expansion_20260706/outputs/`
+
+Then use the older package history as background.
 
 1. `GPTPRO_PROMPT.md`
 2. `01_local_reports_md_csv/项目阶段性工作详报.md`
@@ -58,7 +69,7 @@ Additional newer external set:
 - Case-level deduplicated: 162 cases
 - Low 77, high 85
 - Class counts: A 22, AB 29, B1 26, B2 28, B3 29, TC 28
-- Processing/QC finished; model inference was not yet run at packaging time.
+- Processing/QC finished; qkvb-family model inference has now been run in the 2026-07-06 update.
 
 ## Key Baseline Situation
 
@@ -75,4 +86,3 @@ Representative selective workflow status:
 ## What GPTPro Should Optimize For
 
 The user explicitly wants broad, outward-looking method ideation and concrete experiments. Do not prematurely narrow to existing DINO/probe/risk-control variants. Treat previous failures as useful negative evidence, then propose genuinely new base-model generalization directions.
-

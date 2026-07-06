@@ -1,0 +1,42 @@
+{
+  "n_cases": 861,
+  "n_image_rows": 878,
+  "missing_images": 0,
+  "multi_image_cases": 17,
+  "domains": {
+    "new_external_160": {
+      "cases": 162,
+      "image_rows": 162,
+      "multi_image_cases": 0,
+      "max_bag_n_images": 1,
+      "low": 77,
+      "high": 85
+    },
+    "old_data": {
+      "cases": 285,
+      "image_rows": 302,
+      "multi_image_cases": 17,
+      "max_bag_n_images": 2,
+      "low": 144,
+      "high": 141
+    },
+    "strict_external": {
+      "cases": 108,
+      "image_rows": 108,
+      "multi_image_cases": 0,
+      "max_bag_n_images": 1,
+      "low": 61,
+      "high": 47
+    },
+    "third_batch": {
+      "cases": 306,
+      "image_rows": 306,
+      "multi_image_cases": 0,
+      "max_bag_n_images": 1,
+      "low": 224,
+      "high": 82
+    }
+  },
+  "duplicate_sha1_rows": null,
+  "hash_files": false
+}

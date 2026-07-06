@@ -6,6 +6,17 @@ Repository: https://github.com/ScottBlizzard/tarmac
 
 `thymic_grosspath_gptpro_handoff/`
 
+Important 2026-07-06 update:
+
+- Read `05_20260706_base_model_expansion/README_20260706_BASE_MODEL_EXPANSION.md` before the older files.
+- New external inference has now been run. `new_external_160` is no longer only QC-completed; qkvb TTA/fusion results are available under `05_20260706_base_model_expansion/server_metrics/`.
+- Strict external qkvb-family models now show a dominant low-risk false-positive pattern, especially B1/AB/A false-high cases.
+- A new qkvb subtype-auxiliary experiment has completed internal OOF training: `scripts/run_task7_dinov3_multitask_subtype_aux_20260706.py`, with a binary Task7 head plus six-class subtype auxiliary head and low-risk/B1 loss weighting. Its OOF result is not a base-model improvement: Acc 0.7005, BAcc 0.6791, AUC 0.7654, high-risk recall 0.5919, low-risk specificity 0.7663. Its strict_external TTA4 result is also not a breakthrough: Acc 0.5741, BAcc 0.5937, AUC 0.6442, high-risk recall 0.7447, low-risk specificity 0.4426. Its new_external_160 TTA4 result is Acc 0.6790, BAcc 0.6788, AUC 0.7239, high-risk recall 0.6824, low-risk specificity 0.6753.
+- A follow-up queue script has been prepared: `scripts/run_next_subtype_aux_ablation_queue_20260706.sh`. It tests cleaner subtype-aux variants without heavy low-risk sample weighting.
+- A domain-consistency script has also been prepared: `scripts/run_task7_dinov3_domain_consistency_20260706.py`, queued by `scripts/run_domain_consistency_after_subtype_queue_20260706.sh`. It tests two-view style/domain consistency rather than another plain CE backbone swap.
+- The extra candidate external sweep is complete. Its strict best is `123_qkvb_nocw` with BAcc 0.6182, high-risk recall 0.7447, low-risk specificity 0.4918, which still does not materially beat the prior strict best 154 qkvb full very-low-lr BAcc 0.6198. Its new_external_160 best is `168_qkvb_seed20260525` with BAcc 0.6841, still below the existing fixed qkvb fusion BAcc 0.6947.
+- Continue to treat rejection/review workflows as downstream safety wrappers, not as the main optimization target.
+
 Your task is not to produce a conservative summary. Your task is to rethink, from a broad and exploratory perspective, how to improve the cross-domain generalization of the base model for low-risk vs high-risk thymic gross pathology image classification.
 
 Please answer in English.
@@ -46,11 +57,10 @@ Please keep the following dataset roles separate:
    - Should not be used for training, hyperparameter tuning, or model selection
 
 4. `new_external_160`
-   - 166 raw uploaded files
    - 162 deduplicated case-level samples
    - Low risk 77, high risk 85
    - Class counts: A 22, AB 29, B1 26, B2 28, B3 29, TC 28
-   - Processing/QC has been completed, but formal model inference has not yet been run at packaging time
+   - Processing/QC has been completed and formal qkvb-family inference has now been run
 
 ## Known Metric Situation
 
@@ -59,12 +69,19 @@ Please verify details from the handoff package. As orientation:
 - The strongest internal-domain model/workflow reaches about 92.3% Acc/BAcc on old data.
 - After adaptation, third-batch performance is about 83.0% Acc and about 76.8% BAcc, but high-risk recall remains weak.
 - Strict external full-coverage forced classification is about 64.8% Acc, about 62.8% BAcc, with high-risk recall around 46.8%.
+- New external qkvb TTA/fusion now reaches roughly BAcc 0.69 at full coverage, but this is still not enough for a strong medical-engineering claim.
+- Complete qkvb/WPC/domain-robust/ConvNeXt external sweeps do not solve strict external generalization; the best strict external candidates remain around BAcc 0.62.
 - v195/v195+ workflows can control automatic errors through release/review/rejection, but that is not equivalent to a strong full-coverage base classifier.
 
 ## Files to Read First
 
 Please start with:
 
+0. `05_20260706_base_model_expansion/README_20260706_BASE_MODEL_EXPANSION.md`
+0. `05_20260706_base_model_expansion/reports/Task7_Base_Model_Expansion_Ledger_20260706.md`
+0. `05_20260706_base_model_expansion/reports/AI Pathology Model Improvement.md`
+0. `05_20260706_base_model_expansion/server_metrics/experiments/base_model_expansion_20260706/outputs/`
+0. `05_20260706_base_model_expansion/scripts/run_task7_dinov3_multitask_subtype_aux_20260706.py`
 1. `README.md`
 2. `01_local_reports_md_csv/项目阶段性工作详报.md`
 3. `01_local_reports_md_csv/Task7项目完成度评估.md`
