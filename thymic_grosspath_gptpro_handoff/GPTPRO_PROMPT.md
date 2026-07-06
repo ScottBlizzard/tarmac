@@ -2,6 +2,8 @@
 
 You are a top-tier research lead in medical AI, computational pathology, and machine learning. Please thoroughly inspect the GitHub handoff package:
 
+Repository: https://github.com/ScottBlizzard/tarmac
+
 `thymic_grosspath_gptpro_handoff/`
 
 Your task is not to produce a conservative summary. Your task is to rethink, from a broad and exploratory perspective, how to improve the cross-domain generalization of the base model for low-risk vs high-risk thymic gross pathology image classification.
@@ -160,4 +162,3 @@ Please structure your answer exactly as follows:
 8. `Most Needed Inputs From Physicians / Collaborators`
 
 Please be specific. Do not just say "try model X." If you recommend changing the model backbone or foundation model, specify the candidate model family, input strategy, training strategy, fusion strategy, evaluation strategy, and why it is not simply a repeat of an already failed backbone sweep.
-
