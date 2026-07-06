@@ -1,0 +1,6 @@
+﻿feature_set,feature_set_n_numeric,feature_set_n_categorical,dev_pred_high_n,dev_false_positive_target_n,external_pred_high_n,external_false_positive_target_n,dev_auc,external_auc
+model_prob_only,28,0,242,55,49,17,0.8029168692270298,0.38786764705882354
+model_prob_plus_view,28,0,242,55,49,17,0.8029168692270298,0.38786764705882354
+model_prob_image,33,0,242,55,49,17,0.785804569761789,0.7095588235294117
+deployable_no_gross,36,0,242,55,49,17,0.786096256684492,0.7095588235294117
+all_with_gross_concepts,45,0,242,55,49,17,0.7709285367039378,0.7095588235294117

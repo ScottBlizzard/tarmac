@@ -1,0 +1,3 @@
+﻿audit_domain,n_folds,total_cases,released_n_sum,released_error_n_sum,released_error_n_max,released_high_risk_fn_n_sum,released_high_risk_fn_n_max,auto_error_n_sum,auto_high_risk_fn_n_sum,review_or_reject_rate_mean,balanced_accuracy_min
+old_data,5,285,9,0,0,0,0,0,0,0.23157894736842105,1.0
+third_batch,5,306,15,0,0,0,0,1,1,0.3463775780010577,0.96875

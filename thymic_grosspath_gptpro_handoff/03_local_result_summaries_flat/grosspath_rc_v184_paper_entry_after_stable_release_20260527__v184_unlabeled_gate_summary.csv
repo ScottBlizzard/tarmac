@@ -1,0 +1,2 @@
+﻿evidence,clean_current_split_n,total_gate_variants,false_internal_trigger_n,missed_strict_external_n,interpretation
+unlabeled severe-shift gate stability,7,9,1,1,"Most gate variants trigger strict external without false internal trigger; keep as deployment risk audit, not as treatment-level proof."

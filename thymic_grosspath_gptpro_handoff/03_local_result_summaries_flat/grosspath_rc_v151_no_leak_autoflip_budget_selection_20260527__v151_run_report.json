@@ -1,0 +1,4 @@
+{
+  "selection_rule": "Select the largest auto-flip budget whose old and third batch net_errors_reduced are both nonnegative and BAcc does not drop. Strict external is only checked after selection.",
+  "interpretation": "If this selects 0, the current auto-corrector is not lockable without a severe-shift validation batch."
+}

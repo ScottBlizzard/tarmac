@@ -1,0 +1,9 @@
+{
+  "v195_all_domain_bacc": 0.9981481481481482,
+  "v195_all_domain_review_rate": 0.3605150214592275,
+  "v195_action_error_n": 0,
+  "v196_all_domain_bacc": 0.993965293965294,
+  "v196_all_domain_review_rate": 0.3061516452074392,
+  "v196_action_error_n": 3,
+  "bad_greedy_fold_count": 2
+}

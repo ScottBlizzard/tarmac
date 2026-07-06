@@ -1,0 +1,6 @@
+{
+  "best_v153_rule": "robust_prob|single:v144_concept_directional|all_preds|t=0.977091",
+  "best_v154_rule": "prob_mean_core|quality_ge_0p10_internal|single:v144_concept_directional|all_preds|t=0.844945",
+  "best_concept_v154_rule": "prob_mean_core|quality_ge_0p10_internal|single:v144_concept_directional|all_preds|t=0.844945",
+  "main_boundary": "auto-correction remains candidate; pseudo-severe selection is promising but not final locked policy."
+}

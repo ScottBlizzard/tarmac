@@ -1,0 +1,6 @@
+﻿n,acc,bacc,sensitivity_high,specificity_low,tn,fp,fn,tp,subset
+105,0.638095238095238,0.621973587674248,0.46808510638297873,0.7758620689655172,45,13,25,22,strict_all
+72,0.6805555555555556,0.6595238095238095,0.5333333333333333,0.7857142857142857,33,9,14,16,readable_auto
+49,1.0,1.0,1.0,1.0,33,0,0,16,readable_auto_correct
+14,0.0,0.0,0.0,,0,0,14,0,readable_auto_FN_high_to_low
+9,0.0,0.0,,0.0,0,9,0,0,readable_auto_FP_low_to_high

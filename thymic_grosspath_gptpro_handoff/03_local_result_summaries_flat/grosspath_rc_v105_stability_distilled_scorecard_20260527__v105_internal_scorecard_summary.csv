@@ -1,0 +1,10 @@
+﻿setting,scorecard,description,scope,extra_review_n,extra_captured_error_n,extra_clean_review_n,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+internal_oof,v105_majority_unified025_core045,selected_unified_prob >= 0.25 and prob_mean_core <= 0.45,all,31,6,25,591,0.7783417935702199,4,1,3,0.9955156950672646,0.9918478260869565,0.9936817605771106
+internal_oof,v105_majority_unified025_core045,selected_unified_prob >= 0.25 and prob_mean_core <= 0.45,old_data,2,0,2,285,0.7333333333333333,1,0,1,1.0,0.9930555555555556,0.9965277777777778
+internal_oof,v105_majority_unified025_core045,selected_unified_prob >= 0.25 and prob_mean_core <= 0.45,third_batch,29,6,23,306,0.8202614379084967,3,1,2,0.9878048780487805,0.9910714285714286,0.9894381533101045
+internal_oof,v105_strict_unified030_core035,selected_unified_prob >= 0.30 and prob_mean_core <= 0.35,all,22,5,17,591,0.7631133671742809,5,2,3,0.9910313901345291,0.9918478260869565,0.9914396081107428
+internal_oof,v105_strict_unified030_core035,selected_unified_prob >= 0.30 and prob_mean_core <= 0.35,old_data,1,0,1,285,0.7298245614035088,1,0,1,1.0,0.9930555555555556,0.9965277777777778
+internal_oof,v105_strict_unified030_core035,selected_unified_prob >= 0.30 and prob_mean_core <= 0.35,third_batch,21,5,16,306,0.7941176470588235,4,2,2,0.975609756097561,0.9910714285714286,0.9833405923344948
+internal_oof,v105_dual_unified025_dino025_core045,selected_unified_prob >= 0.25 and selected_dinov3_prob >= 0.25 and prob_mean_core <= 0.45,all,17,5,12,591,0.754653130287648,5,2,3,0.9910313901345291,0.9918478260869565,0.9914396081107428
+internal_oof,v105_dual_unified025_dino025_core045,selected_unified_prob >= 0.25 and selected_dinov3_prob >= 0.25 and prob_mean_core <= 0.45,old_data,1,0,1,285,0.7298245614035088,1,0,1,1.0,0.9930555555555556,0.9965277777777778
+internal_oof,v105_dual_unified025_dino025_core045,selected_unified_prob >= 0.25 and selected_dinov3_prob >= 0.25 and prob_mean_core <= 0.45,third_batch,16,5,11,306,0.7777777777777778,4,2,2,0.975609756097561,0.9910714285714286,0.9833405923344948

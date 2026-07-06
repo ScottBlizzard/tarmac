@@ -1,0 +1,3 @@
+﻿selector,heldout_cases,heldout_captured_n,mean_full_extra_review_n,mean_full_clean_review_n,mean_full_control_rate,min_full_bacc,max_full_fp,max_full_fn,heldout_capture_rate
+min_review,3,2,7.0,4.333333333333333,79.83%,99.70%,1,1,66.67%
+capped_stable_envelope,3,3,12.333333333333334,9.333333333333334,80.59%,99.81%,0,1,100.00%

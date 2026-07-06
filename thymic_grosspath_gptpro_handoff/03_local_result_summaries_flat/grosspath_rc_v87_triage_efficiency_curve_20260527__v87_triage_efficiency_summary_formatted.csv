@@ -1,0 +1,16 @@
+﻿domain,policy_label,control_rate,auto_subset_accuracy,auto_subset_balanced_accuracy,final_balanced_accuracy,remaining_error_n,remaining_fn_n,remaining_fp_n,error_capture_rate,review_yield,controls_per_captured_error
+Old data,Pure auto,0.00%,88.42%,88.46%,88.46%,33,11,22,0.00%,,
+Old data,v50,72.63%,98.72%,96.67%,99.65%,1,0,1,96.97%,15.46%,6.47
+Old data,v75,74.74%,98.61%,95.45%,99.65%,1,0,1,96.97%,15.02%,6.66
+Old data,v79-light,77.19%,98.46%,95.45%,99.65%,1,0,1,96.97%,14.55%,6.88
+Old data,v79-strict,82.11%,100.00%,100.00%,100.00%,0,0,0,100.00%,14.10%,7.09
+Third batch,Pure auto,0.00%,81.05%,77.39%,77.39%,58,25,33,0.00%,,
+Third batch,v50,72.55%,89.29%,80.04%,95.29%,9,7,2,84.48%,22.07%,4.53
+Third batch,v75,76.80%,90.14%,83.44%,96.50%,7,5,2,87.93%,21.70%,4.61
+Third batch,v79-light,79.41%,92.06%,77.27%,96.95%,5,5,0,91.38%,21.81%,4.58
+Third batch,v79-strict,81.37%,91.23%,50.00%,96.95%,5,5,0,91.38%,21.29%,4.70
+Strict external,Pure auto,0.00%,70.37%,70.11%,70.11%,32,15,17,0.00%,,
+Strict external,v50,73.15%,89.66%,89.52%,97.30%,3,1,2,90.62%,36.71%,2.72
+Strict external,v75,79.63%,90.91%,91.67%,98.36%,2,0,2,93.75%,34.88%,2.87
+Strict external,v79-light,82.41%,94.74%,95.45%,99.18%,1,0,1,96.88%,34.83%,2.87
+Strict external,v79-strict,87.04%,100.00%,100.00%,100.00%,0,0,0,100.00%,34.04%,2.94

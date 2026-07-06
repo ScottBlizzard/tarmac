@@ -1,0 +1,13 @@
+{
+  "clean_gate_variants": 7,
+  "gate_variants": 9,
+  "fixed_v182_bacc": 0.9981481481481482,
+  "fixed_v182_review_rate": 0.5608011444921316,
+  "adaptive_bacc": 0.9981481481481482,
+  "adaptive_review_rate": 0.5894134477825465,
+  "fixed_v118_bacc": 0.9981481481481482,
+  "fixed_v118_review_rate": 0.7997138769670958,
+  "strict_external_adaptive_bacc": 1.0,
+  "strict_external_adaptive_review_rate": 0.8703703703703703,
+  "strict_external_fixed_v182_review_rate": 0.6851851851851852
+}

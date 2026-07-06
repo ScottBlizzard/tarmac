@@ -1,0 +1,12 @@
+{
+  "strategy_count": 5,
+  "recommended_strategy": "pooled_old_third_zero_error_v161",
+  "recommended_review_rate": 0.575107296137339,
+  "recommended_bacc": 0.9981481481481482,
+  "recommended_fn": 1,
+  "recommended_fp": 0,
+  "old_only_third_release_errors": 5,
+  "pooled_v161_review_rate": 0.575107296137339,
+  "intersection_review_rate": 0.5937052932761088,
+  "balanced_review_rate": 0.575107296137339
+}

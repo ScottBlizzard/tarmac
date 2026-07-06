@@ -1,0 +1,9 @@
+﻿workflow,rule_label,n,control_rate,auto_n,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy,fold,signal,threshold,extra_review_n,extra_captured_error_n
+Batch-adaptive main,base,108,82.41%,19,1,0,1,100.00%,98.36%,99.18%,,,,,
+v102 approx fold-selected sentinel,mm_prob_p75>=0.400,108,87.96%,13,1,0,1,100.00%,98.36%,99.18%,1.0,mm_prob_p75,0.400,6.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,85.19%,16,1,0,1,100.00%,98.36%,99.18%,2.0,selected_unified_prob,0.250,3.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,85.19%,16,1,0,1,100.00%,98.36%,99.18%,3.0,selected_unified_prob,0.250,3.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,85.19%,16,1,0,1,100.00%,98.36%,99.18%,4.0,selected_unified_prob,0.250,3.0,0.0
+v102 approx fold-selected sentinel,selected_dinov3_prob>=0.250,108,89.81%,11,1,0,1,100.00%,98.36%,99.18%,5.0,selected_dinov3_prob,0.250,8.0,0.0
+v102 approx sentinel union,v102 approx sentinel union,108,89.81%,11,1,0,1,100.00%,98.36%,99.18%,,,,8.0,0.0
+v102 approx sentinel vote>=2,v102 approx sentinel vote>=2,108,87.96%,13,1,0,1,100.00%,98.36%,99.18%,,,,6.0,0.0

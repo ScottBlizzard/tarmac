@@ -1,0 +1,13 @@
+﻿policy,domain,auto_error_n,auto_high_risk_fn_n,release_from_review_error_n,new_error_vs_v195_n
+v185,old_data,0,0,0,0
+v185,strict_external,0,0,0,0
+v185,third_batch,1,1,0,0
+v195,old_data,0,0,0,0
+v195,strict_external,0,0,0,0
+v195,third_batch,1,1,0,0
+phase1,old_data,0,0,0,0
+phase1,strict_external,0,0,0,0
+phase1,third_batch,1,1,0,0
+phase2,old_data,0,0,0,0
+phase2,strict_external,0,0,0,0
+phase2,third_batch,1,1,0,0

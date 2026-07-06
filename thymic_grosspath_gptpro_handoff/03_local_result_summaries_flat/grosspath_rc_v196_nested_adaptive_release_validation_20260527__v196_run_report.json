@@ -1,0 +1,15 @@
+{
+  "selection_rule": "For each held-out internal fold, choose a zero-action-error rule on the remaining old+third folds, maximizing auto actions; strict external uses a rule chosen on all internal folds.",
+  "all_domain_bacc": 0.993965293965294,
+  "all_domain_remaining_review_rate": 0.3061516452074392,
+  "all_domain_action_error_n": 3,
+  "all_domain_auto_action_n": 198,
+  "all_domain_correction_attempt_n": 0,
+  "internal_bacc": 0.9927983037629167,
+  "internal_remaining_review_rate": 0.2673434856175973,
+  "internal_action_error_n": 3,
+  "strict_external_bacc": 1.0,
+  "strict_external_remaining_review_rate": 0.5185185185185185,
+  "strict_external_action_error_n": 0,
+  "selected_external_candidate_id": "v161_final_review_or_reject||tabular_logreg_c1||agreement_release_only||0.985"
+}

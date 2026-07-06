@@ -1,0 +1,2 @@
+﻿scope,case_only_released_n,deployable_released_n,frozen_only_released_n,frozen_only_released_error_n,frozen_only_released_high_risk_fn_n,deployable_reason
+strict_external,8,0,8,0,0,severe_unknown_shift_fallback_to_v195

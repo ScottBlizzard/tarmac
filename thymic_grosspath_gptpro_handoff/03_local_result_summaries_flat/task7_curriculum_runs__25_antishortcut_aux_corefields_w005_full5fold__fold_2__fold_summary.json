@@ -1,0 +1,103 @@
+{
+  "final_stage": "stage3_all",
+  "best_val_primary_metric": 0.9166666666666666,
+  "stage_summaries": {
+    "stage1_easy": {
+      "best_epoch": 1,
+      "best_val_primary_metric": 0.9444444444444444,
+      "best_val_metrics": {
+        "auc": 0.9845201238390093,
+        "accuracy": 0.9444444444444444,
+        "balanced_accuracy": 0.9442724458204335,
+        "sensitivity": 0.9411764705882353,
+        "specificity": 0.9473684210526315,
+        "precision": 0.9411764705882353,
+        "f1": 0.9411764705882353,
+        "tn": 18.0,
+        "fp": 1.0,
+        "fn": 1.0,
+        "tp": 16.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 6,
+        "manual_irregularity": 6,
+        "manual_confound_target": 6,
+        "manual_view_limit": 6
+      }
+    },
+    "stage2_easy_medium": {
+      "best_epoch": 4,
+      "best_val_primary_metric": 0.975,
+      "best_val_metrics": {
+        "auc": 0.9974424552429668,
+        "accuracy": 0.975,
+        "balanced_accuracy": 0.9782608695652174,
+        "sensitivity": 1.0,
+        "specificity": 0.9565217391304348,
+        "precision": 0.9444444444444444,
+        "f1": 0.9714285714285714,
+        "tn": 22.0,
+        "fp": 1.0,
+        "fn": 0.0,
+        "tp": 17.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 7,
+        "manual_irregularity": 7,
+        "manual_confound_target": 7,
+        "manual_view_limit": 7
+      }
+    },
+    "stage3_all": {
+      "best_epoch": 1,
+      "best_val_primary_metric": 0.9166666666666666,
+      "best_val_metrics": {
+        "auc": 0.9702797202797202,
+        "accuracy": 0.9166666666666666,
+        "balanced_accuracy": 0.9125874125874126,
+        "sensitivity": 0.8636363636363636,
+        "specificity": 0.9615384615384616,
+        "precision": 0.95,
+        "f1": 0.9047619047619048,
+        "tn": 25.0,
+        "fp": 1.0,
+        "fn": 3.0,
+        "tp": 19.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 13,
+        "manual_irregularity": 13,
+        "manual_confound_target": 13,
+        "manual_view_limit": 13
+      }
+    }
+  },
+  "val_case_mean": {
+    "auc": 0.8226600985221674,
+    "accuracy": 0.8070175438596491,
+    "balanced_accuracy": 0.8060344827586207,
+    "sensitivity": 0.75,
+    "specificity": 0.8620689655172413,
+    "precision": 0.84,
+    "f1": 0.7924528301886793,
+    "tn": 25,
+    "fp": 4,
+    "fn": 7,
+    "tp": 21
+  },
+  "test_case_mean": {
+    "auc": 0.7931034482758621,
+    "accuracy": 0.7368421052631579,
+    "balanced_accuracy": 0.7352216748768473,
+    "sensitivity": 0.6428571428571429,
+    "specificity": 0.8275862068965517,
+    "precision": 0.782608695652174,
+    "f1": 0.7058823529411765,
+    "tn": 24,
+    "fp": 5,
+    "fn": 10,
+    "tp": 18
+  },
+  "aux_loss_weight": 0.05,
+  "best_c": NaN
+}

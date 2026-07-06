@@ -1,0 +1,12 @@
+{
+  "all_domain_v185_auto_n": 287,
+  "all_domain_v195_auto_n": 447,
+  "all_domain_v185_review_rate": 0.5894134477825465,
+  "all_domain_v195_review_rate": 0.3605150214592275,
+  "all_domain_v185_wilson95_high": 0.0194693509357862,
+  "all_domain_v195_wilson95_high": 0.012561772851409966,
+  "strict_external_v185_auto_n": 14,
+  "strict_external_v195_auto_n": 52,
+  "strict_external_v185_wilson95_high": 0.2153108027376358,
+  "strict_external_v195_wilson95_high": 0.06879223612386234
+}

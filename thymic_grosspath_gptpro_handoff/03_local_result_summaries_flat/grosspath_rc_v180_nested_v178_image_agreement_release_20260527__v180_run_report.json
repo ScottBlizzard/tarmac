@@ -1,0 +1,15 @@
+{
+  "fold_count": 5,
+  "nested_internal_additional_release_n": 65,
+  "nested_internal_additional_error_n": 3,
+  "external_consensus_additional_release_n": 0,
+  "external_consensus_additional_error_n": 0,
+  "v161_all_domain_review_rate": 0.575107296137339,
+  "v180_all_domain_review_rate": 0.4821173104434907,
+  "v180_all_domain_bacc": 0.993965293965294,
+  "v180_all_domain_released_errors": 3,
+  "v180_internal_review_rate": 0.4450084602368866,
+  "v180_internal_released_errors": 3,
+  "v180_fn": 2,
+  "v180_fp": 2
+}

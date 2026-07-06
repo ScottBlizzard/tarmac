@@ -1,0 +1,6 @@
+﻿workflow,scope,crop_min,core_max,extra_crop_review_n,extra_crop_captured_error_n,extra_crop_clean_review_n,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+v111_v112_plus_v113_crop_rescue,all_domains,0.250,0.430,7,1,6,699,80.83%,0,0,0,100.00%,100.00%,100.00%
+v111_v112_plus_v113_crop_rescue,internal_all,0.250,0.430,7,1,6,591,79.70%,0,0,0,100.00%,100.00%,100.00%
+v111_v112_plus_v113_crop_rescue,old_data,0.250,0.430,0,0,0,285,75.79%,0,0,0,100.00%,100.00%,100.00%
+v111_v112_plus_v113_crop_rescue,third_batch,0.250,0.430,7,1,6,306,83.33%,0,0,0,100.00%,100.00%,100.00%
+v111_v112_plus_v113_crop_rescue,strict_external,0.250,0.430,0,0,0,108,87.04%,0,0,0,100.00%,100.00%,100.00%

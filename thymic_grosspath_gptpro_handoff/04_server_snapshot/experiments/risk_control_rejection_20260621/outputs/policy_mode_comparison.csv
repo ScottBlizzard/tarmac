@@ -1,0 +1,13 @@
+﻿mode,scope,n,auto_decision_n,review_or_reject_n,auto_error_n,auto_high_risk_fn_n,released_n,released_error_n,released_high_risk_fn_n,delta_auto_n_vs_baseline,delta_review_n_vs_baseline,delta_auto_error_n_vs_baseline,delta_high_risk_fn_n_vs_baseline
+baseline,all_domains,699,447,252,1,1,0,0,0,0,0,0,0
+case_only_exploratory,all_domains,699,484,215,1,1,37,0,0,37,-37,0,0
+shift_aware_deployable,all_domains,699,476,223,1,1,29,0,0,29,-29,0,0
+baseline,old_data,285,210,75,0,0,0,0,0,0,0,0,0
+case_only_exploratory,old_data,285,221,64,0,0,11,0,0,11,-11,0,0
+shift_aware_deployable,old_data,285,221,64,0,0,11,0,0,11,-11,0,0
+baseline,strict_external,108,52,56,0,0,0,0,0,0,0,0,0
+case_only_exploratory,strict_external,108,60,48,0,0,8,0,0,8,-8,0,0
+shift_aware_deployable,strict_external,108,52,56,0,0,0,0,0,0,0,0,0
+baseline,third_batch,306,185,121,1,1,0,0,0,0,0,0,0
+case_only_exploratory,third_batch,306,203,103,1,1,18,0,0,18,-18,0,0
+shift_aware_deployable,third_batch,306,203,103,1,1,18,0,0,18,-18,0,0

@@ -1,0 +1,72 @@
+{
+  "main_model": "base162",
+  "stack_meta": {
+    "stack_plain": {
+      "threshold": 0.45499999999999996,
+      "dev_threshold_metrics": {
+        "acc": 0.8747884940778342,
+        "bacc": 0.8632347923571846,
+        "f1": 0.8310502283105022
+      }
+    },
+    "stack_balanced": {
+      "threshold": 0.5750000000000001,
+      "dev_threshold_metrics": {
+        "acc": 0.8747884940778342,
+        "bacc": 0.8632347923571846,
+        "f1": 0.8310502283105022
+      }
+    },
+    "base162": {
+      "threshold": 0.595,
+      "dev_threshold_metrics": {
+        "acc": 0.8747884940778342,
+        "bacc": 0.8632347923571846,
+        "f1": 0.8310502283105022
+      }
+    },
+    "mean_core": {
+      "threshold": 0.5794889880559241,
+      "dev_threshold_metrics": {
+        "acc": 0.8087986463620981,
+        "bacc": 0.7855088711249756,
+        "f1": 0.7315914489311164
+      }
+    }
+  },
+  "guard_meta": {
+    "feature_cols": [
+      "prob162_blend",
+      "prob103_vitl",
+      "prob107_qkvb",
+      "prob_mean_core",
+      "margin162",
+      "margin_mean_core",
+      "core_prob_std",
+      "core_prob_range",
+      "core_agree_count",
+      "core_agree_all",
+      "abs_162_103",
+      "abs_162_107",
+      "abs_103_107",
+      "pred_for_prob162_blend",
+      "pred_for_prob103_vitl",
+      "pred_for_prob107_qkvb",
+      "main_prob",
+      "main_pred",
+      "main_margin"
+    ],
+    "guard_plain": {
+      "dev_auc_correct": 0.6367295728997857
+    },
+    "guard_balanced": {
+      "dev_auc_correct": 0.646662136023838
+    }
+  },
+  "outputs": {
+    "forced_metrics": "D:\\影响分析\\outputs\\grosspath_rc_v1_20260526\\v1_forced_model_metrics.csv",
+    "thresholds": "D:\\影响分析\\outputs\\grosspath_rc_v1_20260526\\v1_guard_thresholds_from_dev.csv",
+    "dev_policy": "D:\\影响分析\\outputs\\grosspath_rc_v1_20260526\\v1_workflow_policy_metrics_dev.csv",
+    "external_policy": "D:\\影响分析\\outputs\\grosspath_rc_v1_20260526\\v1_workflow_policy_metrics_external.csv"
+  }
+}

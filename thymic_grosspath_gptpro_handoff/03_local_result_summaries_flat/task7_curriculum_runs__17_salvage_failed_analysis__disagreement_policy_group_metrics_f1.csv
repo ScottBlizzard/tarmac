@@ -1,0 +1,5 @@
+objective,group,n,correct,accuracy
+f1,easy,151,146,0.9668874172185431
+f1,hard_core,65,18,0.27692307692307694
+f1,hard_salvage_teacher,34,20,0.5882352941176471
+f1,medium,35,29,0.8285714285714286

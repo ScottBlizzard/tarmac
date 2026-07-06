@@ -1,0 +1,37 @@
+{
+  "internal_n": 591,
+  "strict_external_n": 105,
+  "concepts": [
+    "boundary_clear",
+    "boundary_unclear",
+    "capsule_any",
+    "capsule_complete",
+    "capsule_absent",
+    "invasion",
+    "lung_attached",
+    "pericardium_attached",
+    "hemorrhage",
+    "necrosis",
+    "cystic_change",
+    "nodular_lobulated",
+    "texture_tough",
+    "gray_white",
+    "gray_yellow",
+    "sex_male"
+  ],
+  "base_candidates": [
+    "robust_prob",
+    "prob_mean_core"
+  ],
+  "note": "Concepts are predicted from image features inside each outer fold, not read from doctor text at test time.",
+  "v143_output_reference": "D:\\影响分析\\outputs\\grosspath_rc_v143_image_feature_error_router_20260527",
+  "budgets": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6
+  ]
+}

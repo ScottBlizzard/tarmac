@@ -1,0 +1,46 @@
+{
+  "fold_id": 4,
+  "best_epoch": 1,
+  "selection_metric": "auc",
+  "best_val_selection_metric": 0.6388888888888888,
+  "best_val_primary_metric": 0.6388888888888888,
+  "val_case_mean": {
+    "auc": 0.6388888888888888,
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "precision": 0.0,
+    "f1": 0.0,
+    "tn": 12,
+    "fp": 0,
+    "fn": 12,
+    "tp": 0
+  },
+  "test_case_mean": {
+    "auc": 0.5069444444444444,
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "precision": 0.0,
+    "f1": 0.0,
+    "tn": 12,
+    "fp": 0,
+    "fn": 12,
+    "tp": 0
+  },
+  "test_image": {
+    "auc": 0.4821428571428572,
+    "accuracy": 0.46153846153846156,
+    "balanced_accuracy": 0.5,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "precision": 0.0,
+    "f1": 0.0,
+    "tn": 12,
+    "fp": 0,
+    "fn": 14,
+    "tp": 0
+  }
+}

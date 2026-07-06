@@ -1,0 +1,19 @@
+{
+  "model_count": 3,
+  "baseline_auto_error_n": 1,
+  "best_workflow": "v191_tab_hgb_l2",
+  "best_auto_error_n": 1,
+  "best_additional_review_n": 0,
+  "best_rescued_fn_n": 0,
+  "best_review_rate": 0.5894134477825465,
+  "case_2516531_reviewed_by_models": {
+    "tab_dino_logreg_c03": false,
+    "tab_dino_extra_d3": false,
+    "tab_hgb_l2": false
+  },
+  "case_2516531_risks": {
+    "tab_dino_logreg_c03": 0.22984193456147387,
+    "tab_dino_extra_d3": 0.24721719057668948,
+    "tab_hgb_l2": 0.003060688207737547
+  }
+}

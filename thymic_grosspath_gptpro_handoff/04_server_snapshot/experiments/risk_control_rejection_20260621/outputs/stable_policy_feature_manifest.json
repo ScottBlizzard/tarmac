@@ -1,0 +1,41 @@
+{
+  "feature_version": "risk_control_v1",
+  "rows": 699,
+  "required_policy_columns": [
+    "policy_feature_version",
+    "domain",
+    "case_id",
+    "original_case_id",
+    "task_l6_label",
+    "label_idx",
+    "final_pred",
+    "prob_mean_core",
+    "fold_id",
+    "v195_review_or_reject",
+    "v195_auto_decision",
+    "hard_shift_gate",
+    "model_disagreement_rate",
+    "dino_fn_risk_max",
+    "dino_fn_risk_missing"
+  ],
+  "optional_columns_present": [
+    "base_uncertainty",
+    "base_entropy",
+    "safe_distance_case_score",
+    "safe_distance_full_score",
+    "router_risk_mean",
+    "router_risk_max",
+    "batch_shift_index",
+    "domain_auc_cv",
+    "mean_outside_ref_05_95_rate",
+    "quality_proxy_mean"
+  ],
+  "dino_columns_present": [
+    "dino_fn_risk_tab_dino_extra_d3",
+    "dino_fn_risk_tab_dino_logreg_c03",
+    "dino_fn_risk_tab_hgb_l2",
+    "dino_fn_risk_mean",
+    "dino_fn_risk_max",
+    "dino_fn_risk_missing"
+  ]
+}

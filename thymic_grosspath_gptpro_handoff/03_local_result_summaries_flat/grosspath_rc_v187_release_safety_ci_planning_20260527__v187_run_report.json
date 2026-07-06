@@ -1,0 +1,10 @@
+{
+  "adaptive_all_auto_n": 287,
+  "adaptive_all_auto_errors": 1,
+  "adaptive_all_wilson95_upper": 0.019469350935786275,
+  "adaptive_strict_external_auto_n": 14,
+  "adaptive_strict_external_wilson95_upper": 0.2153108027376358,
+  "fixed_v182_all_auto_n": 307,
+  "fixed_v182_all_wilson95_upper": 0.018217175608125004,
+  "n_zero_errors_for_upper_05": 73
+}

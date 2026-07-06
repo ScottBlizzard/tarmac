@@ -1,0 +1,45 @@
+{
+  "protocol": {
+    "selection_uses_holdout": false,
+    "selection_data": "old OOF + third adapt72 only",
+    "holdout_data": "third adapt72 holdout 234 cases",
+    "method": "whole+crop adapt head repairs FP; crop-only frozen head rescues FN"
+  },
+  "old_base": {
+    "accuracy": 0.9263157894736842,
+    "balanced_accuracy": 0.9262706855791962,
+    "f1": 0.9252669039145908,
+    "tn": 134,
+    "fp": 10,
+    "fn": 11,
+    "tp": 130,
+    "auc": 0.9456264775413712
+  },
+  "adapt_base": {
+    "accuracy": 0.6111111111111112,
+    "balanced_accuracy": 0.6298701298701299,
+    "f1": 0.631578947368421,
+    "tn": 20,
+    "fp": 8,
+    "fn": 20,
+    "tp": 24,
+    "auc": 0.6006493506493507
+  },
+  "holdout_base": {
+    "accuracy": 0.7435897435897436,
+    "balanced_accuracy": 0.7090494092373791,
+    "f1": 0.45454545454545453,
+    "tn": 149,
+    "fp": 47,
+    "fn": 13,
+    "tp": 25,
+    "auc": 0.7360365198711063
+  },
+  "selected_by_old_plus_adapt": null,
+  "best_holdout_reference_under_old_guard92": null,
+  "best_holdout_tp_preserved_reference_under_old_guard92": null,
+  "n_policies": 2016,
+  "n_guard92": 0,
+  "n_safe_adapt": 0,
+  "output_dir": "D:\\影响分析\\outputs\\batch1_batch2_task567_20260514\\task7_adaptation_runs\\27_no64_adapt_hl_crop_lh_overlay_20260522"
+}

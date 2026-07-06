@@ -1,0 +1,10 @@
+﻿variant,model,task_l6_label,n,accuracy,tn,fp,fn,tp
+coral_wpc,rf_d5,A,8,0.625,5,3,0,0
+coral_wpc,rf_d5,AB,39,0.5384615384615384,21,18,0,0
+coral_wpc,rf_d5,B1,11,0.7272727272727273,8,3,0,0
+coral_wpc,rf_d5,B1_B2_mixed,1,1.0,0,0,0,1
+coral_wpc,rf_d5,B2,28,0.39285714285714285,0,0,17,11
+coral_wpc,rf_d5,B2_B3_mixed,3,0.6666666666666666,0,0,1,2
+coral_wpc,rf_d5,B3,10,0.9,0,0,1,9
+coral_wpc,rf_d5,MNT_assumed_low,3,0.6666666666666666,2,1,0,0
+coral_wpc,rf_d5,TC,5,0.4,0,0,3,2

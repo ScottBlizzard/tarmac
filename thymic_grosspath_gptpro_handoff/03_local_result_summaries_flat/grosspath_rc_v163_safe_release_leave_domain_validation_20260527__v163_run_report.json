@@ -1,0 +1,11 @@
+{
+  "split_count": 3,
+  "total_test_release_n": 269,
+  "total_test_released_error_n": 5,
+  "cross_internal_release_n": 191,
+  "cross_internal_released_error_n": 5,
+  "old_third_selected_all_domain_review_rate": 0.575107296137339,
+  "old_third_selected_all_domain_bacc": 0.9981481481481482,
+  "old_third_selected_fn": 1,
+  "old_third_selected_fp": 0
+}

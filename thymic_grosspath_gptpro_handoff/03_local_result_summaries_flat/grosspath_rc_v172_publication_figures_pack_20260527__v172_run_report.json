@@ -1,0 +1,14 @@
+{
+  "matplotlib_available": true,
+  "figure_count": 6,
+  "table_count": 5,
+  "figure_files": [
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig1_pipeline.png",
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig1_pipeline.pdf",
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig2_safety_efficiency_frontier.png",
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig2_safety_efficiency_frontier.pdf",
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig3_safe_release_ablation.png",
+    "D:\\影响分析\\outputs\\grosspath_rc_v172_publication_figures_pack_20260527\\figures\\v172_fig3_safe_release_ablation.pdf"
+  ],
+  "import_error": null
+}

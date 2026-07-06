@@ -1,0 +1,11 @@
+﻿dino_tiebreak_policy,secondary_col,secondary_ascending,released_n_sum,released_error_n_sum,released_high_risk_fn_n_sum,review_or_reject_n_sum,auto_error_n_sum,auto_high_risk_fn_n_sum
+dino_fn_risk_max_asc,dino_fn_risk_max,True,29,0,0,167,1,1
+dino_fn_risk_mean_asc,dino_fn_risk_mean,True,29,0,0,167,1,1
+dino_fn_risk_tab_dino_extra_d3_asc,dino_fn_risk_tab_dino_extra_d3,True,29,0,0,167,1,1
+dino_fn_risk_tab_dino_logreg_c03_asc,dino_fn_risk_tab_dino_logreg_c03,True,29,0,0,167,1,1
+dino_fn_risk_tab_hgb_l2_asc,dino_fn_risk_tab_hgb_l2,True,29,1,1,167,2,2
+dino_fn_risk_tab_hgb_l2_desc,dino_fn_risk_tab_hgb_l2,False,29,1,1,167,2,2
+dino_fn_risk_max_desc,dino_fn_risk_max,False,29,2,2,167,3,3
+dino_fn_risk_mean_desc,dino_fn_risk_mean,False,29,2,2,167,3,3
+dino_fn_risk_tab_dino_extra_d3_desc,dino_fn_risk_tab_dino_extra_d3,False,29,2,2,167,3,3
+dino_fn_risk_tab_dino_logreg_c03_desc,dino_fn_risk_tab_dino_logreg_c03,False,29,2,2,167,3,3

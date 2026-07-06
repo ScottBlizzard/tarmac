@@ -1,0 +1,54 @@
+{
+  "top": {
+    "w_logreg": 0.0,
+    "w_orig": 1.0,
+    "objective": "bacc",
+    "threshold": 0.48999999999999994,
+    "adapt_acc": 0.6111111111111112,
+    "adapt_bacc": 0.6298701298701299,
+    "adapt_f1": 0.631578947368421,
+    "adapt_auc": 0.6006493506493507,
+    "adapt_tn": 20,
+    "adapt_fp": 8,
+    "adapt_fn": 20,
+    "adapt_tp": 24,
+    "adapt_sens": 0.5454545454545454,
+    "adapt_spec": 0.7142857142857143,
+    "holdout_acc": 0.7435897435897436,
+    "holdout_bacc": 0.7090494092373791,
+    "holdout_f1": 0.45454545454545453,
+    "holdout_auc": 0.7360365198711063,
+    "holdout_tn": 149,
+    "holdout_fp": 47,
+    "holdout_fn": 13,
+    "holdout_tp": 25,
+    "holdout_sens": 0.6578947368421053,
+    "holdout_spec": 0.7602040816326531
+  },
+  "subtype": [
+    {
+      "task_l6_label": "AB",
+      "n": 188,
+      "correct": 144,
+      "accuracy": 0.7659574468085106
+    },
+    {
+      "task_l6_label": "B1",
+      "n": 8,
+      "correct": 5,
+      "accuracy": 0.625
+    },
+    {
+      "task_l6_label": "B2",
+      "n": 7,
+      "correct": 4,
+      "accuracy": 0.5714285714285714
+    },
+    {
+      "task_l6_label": "TC",
+      "n": 31,
+      "correct": 21,
+      "accuracy": 0.6774193548387096
+    }
+  ]
+}

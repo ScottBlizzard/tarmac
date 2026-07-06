@@ -1,0 +1,23 @@
+{
+  "group": "overall",
+  "n": 285,
+  "n_low": 144,
+  "n_high": 141,
+  "auc": 0.8151103230890465,
+  "accuracy": 0.7614035087719299,
+  "balanced_accuracy": 0.7613770685579195,
+  "f1": 0.7588652482269503,
+  "sensitivity": 0.7588652482269503,
+  "specificity": 0.7638888888888888,
+  "tn": 110,
+  "fp": 34,
+  "fn": 34,
+  "tp": 107,
+  "objective": "noncore_acc",
+  "run_a": "/workspace/thymic_project/outputs/batch1_batch2_task567_20260514/task7_curriculum_runs/09_case_mlp_schemeB_m060_salvagehard_full5fold",
+  "run_b": "/workspace/thymic_project/outputs/batch1_batch2_task567_20260514/task7_curriculum_runs/34_antishortcut_balcore_stage3_w002_mw05_full5fold",
+  "run_a_name": "stage3_salvage_hard",
+  "run_b_name": "balcore_antishortcut",
+  "alpha_step": 0.005,
+  "threshold_step": 0.005
+}

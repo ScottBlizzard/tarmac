@@ -1,0 +1,9 @@
+{
+  "main_candidate_review_rate": 0.575107296137339,
+  "main_candidate_bacc": 0.9981481481481482,
+  "main_candidate_fn": 1,
+  "main_candidate_fp": 0,
+  "nested_released_error_n": 2,
+  "old_only_released_error_n": 5,
+  "evidence_grade": "current-data high-safety candidate"
+}

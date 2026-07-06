@@ -1,0 +1,11 @@
+{
+  "final_table_rows": 25,
+  "claim_count": 8,
+  "residual_case_id": "2516531",
+  "v190_auto_error_n": 1,
+  "v190_rescued_fn_n": 0,
+  "v191_auto_error_n": 1,
+  "v191_rescued_fn_n": 0,
+  "adaptive_bacc": 0.9981481481481482,
+  "adaptive_review_rate": 0.5894134477825465
+}

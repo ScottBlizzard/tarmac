@@ -1,0 +1,6 @@
+{
+  "internal_policy": "dev_stable_router_all_domains",
+  "internal_review_budget": 0.3,
+  "severe_policy": "shift_aware_concept_directional_candidate",
+  "boundary": "This is an exploratory severe-shift hybrid curve. Auto-correct/review budgets are scanned on the labeled strict external set and must not be treated as a locked no-leak policy."
+}

@@ -1,0 +1,5 @@
+﻿claim,evidence,status,writing_boundary
+The framework is more than a single classifier.,"It contains primary classifier, direction-aware router, concept-distilled correction, unlabeled shift gate, and rejection layer.",supported as framework design,Must still quantify each module separately and avoid implying every module is fully locked.
+Concept information is useful.,"v141 direct fusion is nearly negative, v142/v144/v154-v156 show concept value appears in routing/correction rather than direct classification.",supported with nuance,"Write as structured intermediate supervision / risk signal, not as simple multimodal fusion."
+Automatic correction can improve severe external shift.,v156 gated severe-shift Delta BAcc +23.88 pp.,candidate,Cannot be claimed as deployable without severe-shift gate validation and prospective external validation.
+Unconditional auto-correction is unsafe.,v156 no-gate all-domain Delta BAcc -3.72 pp.,supported,This is a strength of the risk-control framing: it explains why naive post-processing is rejected.

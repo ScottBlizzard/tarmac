@@ -1,0 +1,9 @@
+{
+  "gate_variant_count": 9,
+  "clean_current_split_count": 7,
+  "false_internal_trigger_count": 1,
+  "missed_strict_external_count": 1,
+  "combined_any_v77_style_delta_bacc": 0.03372456964006254,
+  "oversensitive_shift_index_delta_bacc": -0.004538341158059511,
+  "too_strict_shift_index_delta_bacc": 0.0
+}

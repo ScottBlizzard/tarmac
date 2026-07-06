@@ -1,0 +1,12 @@
+{
+  "base_models": [
+    "robust_prob",
+    "prob_mean_core"
+  ],
+  "signals": [
+    "low_conf",
+    "v143_pca_directional",
+    "v144_concept_directional"
+  ],
+  "selection": "Fusion weights selected only by internal OOF system BAcc at 30% review budget; strict external is reported once."
+}

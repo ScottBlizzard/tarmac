@@ -1,0 +1,37 @@
+{
+  "best_c": NaN,
+  "best_epoch": 6,
+  "best_val_primary_metric": 0.6736111111111112,
+  "val_case_mean": {
+    "auc": 0.6736111111111112,
+    "accuracy": 0.625,
+    "balanced_accuracy": 0.625,
+    "sensitivity": 0.75,
+    "specificity": 0.5,
+    "precision": 0.6,
+    "f1": 0.6666666666666666,
+    "tn": 6,
+    "fp": 6,
+    "fn": 3,
+    "tp": 9
+  },
+  "test_case_mean": {
+    "auc": 0.7638888888888888,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6666666666666667,
+    "sensitivity": 0.5833333333333334,
+    "specificity": 0.75,
+    "precision": 0.7,
+    "f1": 0.6363636363636364,
+    "tn": 9,
+    "fp": 3,
+    "fn": 5,
+    "tp": 7
+  },
+  "aux_train_coverage": {
+    "boundary_axis": 29,
+    "lowrisk": 29,
+    "bgroup": 29,
+    "tc": 29
+  }
+}

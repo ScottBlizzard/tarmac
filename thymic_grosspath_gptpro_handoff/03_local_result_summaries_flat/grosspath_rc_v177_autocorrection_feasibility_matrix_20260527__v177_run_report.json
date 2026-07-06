@@ -1,0 +1,15 @@
+{
+  "row_count": 6,
+  "strong_supported_modules": [
+    "v118 high-safety scorecard",
+    "v161 safe-release"
+  ],
+  "candidate_modules": [
+    "v173 image-only review corrector",
+    "v174 agreement release"
+  ],
+  "unsupported_modules": [
+    "v174 disagreement flip",
+    "v175 error-enriched flip-risk"
+  ]
+}

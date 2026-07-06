@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "sidecar_only": true,
+  "original_project_code_modified": false,
+  "manifest": "experiments/risk_control_rejection_20260621/configs/v195_plus_candidate_manifest.json",
+  "candidate_key": "phase2_min10_both_domain_union",
+  "candidate_n": 7,
+  "source_files": {
+    "base_cases": "outputs/grosspath_rc_v185_unlabeled_shift_adaptive_policy_20260527/v185_unlabeled_shift_adaptive_cases.csv",
+    "corrector_outputs": "outputs/grosspath_rc_v173_image_only_review_corrector_20260527/v173_corrector_case_outputs.csv"
+  },
+  "runtime_columns": [
+    "domain",
+    "case_id",
+    "original_case_id",
+    "final_pred",
+    "prob_mean_core",
+    "v185_auto_decision",
+    "v185_review_or_reject",
+    "v195_release_from_review",
+    "v195_auto_decision",
+    "v195_review_or_reject",
+    "v195_plus_release_from_review",
+    "v195_plus_new_release_vs_v195",
+    "v195_plus_auto_decision",
+    "v195_plus_review_or_reject",
+    "v195_plus_release_reason",
+    "v195_plus_releasing_candidate_n",
+    "v195_plus_releasing_candidate_ids",
+    "v195_plus_policy_id"
+  ],
+  "audit_only_columns": [
+    "task_l6_label",
+    "label_idx",
+    "v195_auto_error",
+    "v195_auto_high_risk_fn",
+    "v195_plus_auto_error",
+    "v195_plus_auto_high_risk_fn",
+    "v195_plus_new_release_error",
+    "v195_plus_new_release_high_risk_fn"
+  ],
+  "summary": [
+    {
+      "policy": "v195",
+      "domain": "old_data",
+      "n": 285,
+      "auto_n": 210,
+      "review_n": 75,
+      "release_from_review_n": 79,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    {
+      "policy": "v195",
+      "domain": "third_batch",
+      "n": 306,
+      "auto_n": 185,
+      "review_n": 121,
+      "release_from_review_n": 43,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    },
+    {
+      "policy": "v195",
+      "domain": "strict_external",
+      "n": 108,
+      "auto_n": 52,
+      "review_n": 56,
+      "release_from_review_n": 38,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    {
+      "policy": "v195",
+      "domain": "all",
+      "n": 699,
+      "auto_n": 447,
+      "review_n": 252,
+      "release_from_review_n": 160,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    },
+    {
+      "policy": "v195_plus",
+      "domain": "old_data",
+      "n": 285,
+      "auto_n": 235,
+      "review_n": 50,
+      "release_from_review_n": 104,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    {
+      "policy": "v195_plus",
+      "domain": "third_batch",
+      "n": 306,
+      "auto_n": 233,
+      "review_n": 73,
+      "release_from_review_n": 91,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    },
+    {
+      "policy": "v195_plus",
+      "domain": "strict_external",
+      "n": 108,
+      "auto_n": 57,
+      "review_n": 51,
+      "release_from_review_n": 43,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    {
+      "policy": "v195_plus",
+      "domain": "all",
+      "n": 699,
+      "auto_n": 525,
+      "review_n": 174,
+      "release_from_review_n": 238,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    }
+  ],
+  "strict_external_expected": {
+    "v195_auto_n": 52,
+    "v195_plus_auto_n": 57,
+    "v195_plus_auto_error_n": 0
+  },
+  "runtime_decisions": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_runtime_decisions.csv",
+  "audit_decisions": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_audit_decisions.csv",
+  "summary_csv": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_summary.csv",
+  "report_json": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_sidecar_report.json",
+  "runtime_rows": 699,
+  "audit_rows": 699
+}

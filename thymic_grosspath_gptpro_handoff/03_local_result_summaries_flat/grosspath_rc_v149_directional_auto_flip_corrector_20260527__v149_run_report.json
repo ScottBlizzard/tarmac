@@ -1,0 +1,9 @@
+{
+  "interpretation": "The high-risk routed subset is automatically flipped instead of reviewed. This tests whether the router has enough precision to serve as an automatic corrector.",
+  "focus_policies": [
+    "baseline_low_conf_dev_selected",
+    "dev_stable_router_all_domains",
+    "shift_aware_image_directional_candidate",
+    "shift_aware_concept_directional_candidate"
+  ]
+}

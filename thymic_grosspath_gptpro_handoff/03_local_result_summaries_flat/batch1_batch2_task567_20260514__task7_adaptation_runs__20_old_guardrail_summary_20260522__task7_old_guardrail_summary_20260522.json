@@ -1,0 +1,98 @@
+{
+  "old_guardrail_policy": {
+    "primary_guardrail": "旧数据 No.64 image-only hardcore reviewer nested route OOF accuracy >= 0.90",
+    "soft_guardrail": "若为了第三批泛化短期探索，可临时看 >=0.88，但不能作为最终替代模型。",
+    "selection_rule": "任何第三批适配模型必须同时报告旧数据 OOF 和第三批外部/CV；旧数据不过线时只能作为实验分支，不能替换主流程。"
+  },
+  "rows": [
+    {
+      "experiment": "old_internal_no64_reference",
+      "model_policy": "No.64 image-only hardcore reviewer nested route",
+      "old_accuracy": 0.9263157894736842,
+      "old_balanced_accuracy": 0.9262706855791962,
+      "third_accuracy": null,
+      "third_balanced_accuracy": null,
+      "old_guardrail_0p90_pass": true,
+      "old_guardrail_0p88_pass": true,
+      "notes": "旧数据内部 OOF 最高参照线；后续第三批适配不能牺牲这条线。"
+    },
+    {
+      "experiment": "third_external_old_only_wpc64_retrain",
+      "model_policy": "old-only frozen whole+crop 64-style retraining",
+      "old_accuracy": 0.7543859649122807,
+      "old_balanced_accuracy": 0.7546542553191489,
+      "third_accuracy": 0.7124183006535948,
+      "third_balanced_accuracy": 0.6760126306620209,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "这是无第三批训练的外部测试基线，但不是原 No.64 完整流程。"
+    },
+    {
+      "experiment": "profile_scan_selected_by_training_oof",
+      "model_policy": "adapt96_high_focus / logreg_0.0003 / repeat 2 / balanced_accuracy",
+      "old_accuracy": 0.7228070175438597,
+      "old_balanced_accuracy": 0.7225916075650118,
+      "third_accuracy": 0.638095238095238,
+      "third_balanced_accuracy": 0.6505376344086021,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "第三批划分扫描结果；holdout-best 只能作为参考，不能当最终模型选择依据。"
+    },
+    {
+      "experiment": "profile_scan_best_holdout_accuracy_reference",
+      "model_policy": "adapt180_mixed / extratrees_3 / repeat 1 / accuracy",
+      "old_accuracy": 0.631578947368421,
+      "old_balanced_accuracy": 0.6292109929078014,
+      "third_accuracy": 0.9047619047619048,
+      "third_balanced_accuracy": 0.8014150943396227,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "第三批划分扫描结果；holdout-best 只能作为参考，不能当最终模型选择依据。"
+    },
+    {
+      "experiment": "profile_scan_best_holdout_bacc_reference",
+      "model_policy": "adapt180_mixed / logreg_0.0003 / repeat 4 / accuracy",
+      "old_accuracy": 0.6666666666666666,
+      "old_balanced_accuracy": 0.6657062647754137,
+      "third_accuracy": 0.8888888888888888,
+      "third_balanced_accuracy": 0.8933962264150943,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "第三批划分扫描结果；holdout-best 只能作为参考，不能当最终模型选择依据。"
+    },
+    {
+      "experiment": "adapt180_repeated_holdout_mean",
+      "model_policy": "adapt180 logreg C=0.0003 repeat4, 10 deterministic splits mean",
+      "old_accuracy": 0.6645614035087719,
+      "old_balanced_accuracy": null,
+      "third_accuracy": 0.8246031746031746,
+      "third_balanced_accuracy": 0.7314622641509434,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "多次划分平均结果，比单次 0.90 更可信；旧数据 OOF 仍明显低于 No.64。"
+    },
+    {
+      "experiment": "adapt180_repeated_case_majority",
+      "model_policy": "adapt180 repeated holdout per-case majority vote",
+      "old_accuracy": null,
+      "old_balanced_accuracy": null,
+      "third_accuracy": 0.7933333333333333,
+      "third_balanced_accuracy": 0.7206918641896221,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "300 个第三批病例中反复作为 holdout 后聚合；没有旧数据指标，不可替代旧模型。"
+    },
+    {
+      "experiment": "third_outer_cv_with_old_best_acc",
+      "model_policy": "logreg_0.001 repeat 2 / accuracy",
+      "old_accuracy": null,
+      "old_balanced_accuracy": null,
+      "third_accuracy": 0.8006535947712419,
+      "third_balanced_accuracy": 0.6860300522648084,
+      "old_guardrail_0p90_pass": false,
+      "old_guardrail_0p88_pass": false,
+      "notes": "第三批 5 折外层 CV；旧数据始终参与训练，但这个表本身不证明旧数据不掉。"
+    }
+  ],
+  "output_csv": "D:\\影响分析\\outputs\\batch1_batch2_task567_20260514\\task7_adaptation_runs\\20_old_guardrail_summary_20260522\\task7_old_guardrail_comparison_20260522.csv"
+}

@@ -1,0 +1,6 @@
+{
+  "boundary": "Fast directional router. No subtype/task-label one-hot. Rules selected on old+third only; strict external excludes MNT_assumed_low.",
+  "n_internal": 591,
+  "n_external_strict": 105,
+  "kept_rule_pairs": 401
+}

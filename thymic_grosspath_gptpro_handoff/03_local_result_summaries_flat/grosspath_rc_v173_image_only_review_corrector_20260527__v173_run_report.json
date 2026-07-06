@@ -1,0 +1,33 @@
+{
+  "n_cases": 699,
+  "n_internal": 591,
+  "n_strict_external": 108,
+  "model_count": 6,
+  "feature_dim_dino": 4619,
+  "feature_dim_tabular": 18,
+  "selected_operating_points": 12,
+  "best_all_domain": {
+    "review_policy": "v161_final_review_or_reject",
+    "model": "tabular_logreg_c1",
+    "feature_set": "tabular",
+    "confidence_threshold": 0.95,
+    "scope": "all_domains",
+    "n": 699,
+    "original_review_rate": 0.575107296137339,
+    "auto_correct_n": 288,
+    "auto_correct_rate": 0.41201716738197425,
+    "remaining_review_n": 114,
+    "remaining_review_rate": 0.1630901287553648,
+    "auto_correct_error_n": 2,
+    "auto_correct_error_rate_among_corrected": 0.006944444444444444,
+    "rescued_n": 0,
+    "hurt_n": 0,
+    "accuracy": 0.9957081545064378,
+    "balanced_accuracy": 0.9958171458171459,
+    "f1": 0.9944547134935305,
+    "auc": 0.9913062246395579,
+    "fn": 1,
+    "fp": 2,
+    "selected_threshold_by_internal_oof": 0.95
+  }
+}

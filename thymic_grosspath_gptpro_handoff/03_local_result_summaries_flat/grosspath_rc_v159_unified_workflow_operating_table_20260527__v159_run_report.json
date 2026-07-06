@@ -1,0 +1,11 @@
+{
+  "rows": 24,
+  "focus_rows": 12,
+  "scorecard_all_domain_bacc": 0.9981481481481482,
+  "scorecard_all_domain_auto_pass_rate": 0.20028612303290416,
+  "strict_external_image_router_delta_vs_lowconf": 0.0249449743213499,
+  "autocorrect_all_domain_bacc": 0.7832550860719875,
+  "autocorrect_all_domain_auto_correct_rate": 0.05028735632183908,
+  "clean_gate_variant_count": 7,
+  "gate_variant_count": 9
+}

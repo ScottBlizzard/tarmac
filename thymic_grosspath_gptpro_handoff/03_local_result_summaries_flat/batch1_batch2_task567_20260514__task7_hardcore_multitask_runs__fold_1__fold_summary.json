@@ -1,0 +1,53 @@
+{
+  "fold_id": 1,
+  "best_epoch": 2,
+  "selection_metric": "balanced_accuracy",
+  "best_val_balanced_accuracy_task7": 0.6650246305418719,
+  "val_task7_case_metrics_mean": {
+    "auc": 0.7253694581280788,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6650246305418719,
+    "sensitivity": 0.5714285714285714,
+    "specificity": 0.7586206896551724,
+    "precision": 0.6956521739130435,
+    "f1": 0.6274509803921569,
+    "tn": 22,
+    "fp": 7,
+    "fn": 12,
+    "tp": 16
+  },
+  "test_task7_case_metrics_mean": {
+    "auc": 0.6785714285714285,
+    "accuracy": 0.5789473684210527,
+    "balanced_accuracy": 0.5800492610837439,
+    "sensitivity": 0.5172413793103449,
+    "specificity": 0.6428571428571429,
+    "precision": 0.6,
+    "f1": 0.5555555555555556,
+    "tn": 18,
+    "fp": 10,
+    "fn": 14,
+    "tp": 15
+  },
+  "val_task6_case_metrics_mean": {
+    "accuracy": 0.45614035087719296,
+    "balanced_accuracy": 0.4276094276094276,
+    "macro_precision": 0.374780701754386,
+    "macro_recall": 0.4276094276094276,
+    "macro_f1": 0.38558543694659847,
+    "macro_auc": 0.7844047058142802
+  },
+  "test_task6_case_metrics_mean": {
+    "accuracy": 0.3684210526315789,
+    "balanced_accuracy": 0.36574074074074076,
+    "macro_precision": 0.42142857142857143,
+    "macro_recall": 0.36574074074074076,
+    "macro_f1": 0.3498947080344539,
+    "macro_auc": 0.7368173001151724
+  },
+  "aggregate_methods": [
+    "mean",
+    "max_prob",
+    "majority_vote"
+  ]
+}

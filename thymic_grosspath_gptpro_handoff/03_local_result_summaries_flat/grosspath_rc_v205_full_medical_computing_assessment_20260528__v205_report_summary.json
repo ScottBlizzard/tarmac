@@ -1,0 +1,13 @@
+{
+  "clean_n": 697,
+  "clean_bacc": 0.9981343283582088,
+  "clean_review_or_reject_rate": 0.3601147776183644,
+  "clean_auto_error_n": 1,
+  "strict_external_n": 108,
+  "strict_external_bacc": 1.0,
+  "strict_external_review_or_reject_rate": 0.5185185185185185,
+  "v195_auto_decision_n_all": 447,
+  "v195_auto_error_wilson95_high_all": 0.0125617728514099,
+  "v201_rescued_n_all": 2,
+  "v201_hurt_n_all": 0
+}

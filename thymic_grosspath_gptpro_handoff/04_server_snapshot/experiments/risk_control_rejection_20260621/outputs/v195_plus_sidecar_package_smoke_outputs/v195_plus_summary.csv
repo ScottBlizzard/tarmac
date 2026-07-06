@@ -1,0 +1,9 @@
+﻿policy,domain,n,auto_n,review_n,release_from_review_n,auto_error_n,auto_high_risk_fn_n
+v195,old_data,285,210,75,79,0,0
+v195,third_batch,306,185,121,43,1,1
+v195,strict_external,108,52,56,38,0,0
+v195,all,699,447,252,160,1,1
+v195_plus,old_data,285,235,50,104,0,0
+v195_plus,third_batch,306,233,73,91,1,1
+v195_plus,strict_external,108,57,51,43,0,0
+v195_plus,all,699,525,174,238,1,1

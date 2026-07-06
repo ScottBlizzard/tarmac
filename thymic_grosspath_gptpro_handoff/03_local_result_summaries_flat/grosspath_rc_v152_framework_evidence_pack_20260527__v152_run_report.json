@@ -1,0 +1,14 @@
+{
+  "outputs": [
+    "v152_main_framework_results.csv",
+    "v152_module_evidence_table.csv",
+    "v152_claim_evidence_map.csv",
+    "v152_next_experiment_gaps.csv",
+    "v152_framework_evidence_pack.md",
+    "v152_framework_evidence_pack.pdf",
+    "figures/v152_framework_pipeline.png",
+    "figures/v152_external_evidence_bar.png"
+  ],
+  "matplotlib_available": true,
+  "main_boundary": "domain-aware selective review is lockable; auto-correction is candidate/upper bound until severe-shift validation exists."
+}

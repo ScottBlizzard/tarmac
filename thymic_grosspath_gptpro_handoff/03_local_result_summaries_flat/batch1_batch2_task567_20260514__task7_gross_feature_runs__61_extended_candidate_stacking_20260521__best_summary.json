@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.8350877192982457,
+  "balanced_accuracy": 0.8348108747044918,
+  "auc": 0.8115149724192277,
+  "f1": 0.8290909090909091,
+  "sensitivity": 0.8085106382978723,
+  "specificity": 0.8611111111111112,
+  "tn": 124,
+  "fp": 20,
+  "fn": 27,
+  "tp": 114,
+  "model": "logreg_c01",
+  "feature_set": "gross_corrected"
+}

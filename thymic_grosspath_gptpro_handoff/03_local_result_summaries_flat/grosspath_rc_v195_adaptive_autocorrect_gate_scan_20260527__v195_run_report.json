@@ -1,0 +1,17 @@
+{
+  "selection_kind": "lockable_zero_error_release",
+  "selected_candidate_id": "v161_final_review_or_reject||tabular_logreg_c1||agreement_release_only||0.985",
+  "selected_action_mode": "agreement_release_only",
+  "selected_threshold": 0.985,
+  "lockable_true_correction_count": 0,
+  "lockable_zero_error_action_count": 22,
+  "all_domain_bacc": 0.9981481481481482,
+  "all_domain_remaining_review_rate": 0.3605150214592275,
+  "all_domain_action_error_n": 0,
+  "all_domain_true_correction_n": 0,
+  "all_domain_rescued_n": 0,
+  "all_domain_hurt_n": 0,
+  "strict_external_bacc": 1.0,
+  "strict_external_remaining_review_rate": 0.5185185185185185,
+  "strict_external_action_error_n": 0
+}

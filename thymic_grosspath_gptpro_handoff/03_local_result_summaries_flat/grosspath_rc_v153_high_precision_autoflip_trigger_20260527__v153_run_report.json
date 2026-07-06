@@ -1,0 +1,5 @@
+{
+  "rule_count": 959,
+  "passed_internal_no_harm_count": 8,
+  "selection": "Rules are allowed only if old and third batch have nonnegative net error reduction and nondecreasing BAcc. Strict external is reported after filtering."
+}

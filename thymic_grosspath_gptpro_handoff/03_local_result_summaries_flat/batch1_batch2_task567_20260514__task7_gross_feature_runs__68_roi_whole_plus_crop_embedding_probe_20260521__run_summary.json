@@ -1,0 +1,7 @@
+{
+  "n_cases": 285,
+  "hard_core": 65,
+  "upper_errors": 66,
+  "upper_fn": 32,
+  "best_selective_score": "ensemble_prob_range"
+}

@@ -1,0 +1,6 @@
+﻿policy,residual_error_n,residual_by_l6,residual_by_quality
+P2_pure_auto,32,AB:12; B2:12; A:3; B1:2; B2_B3_mixed:2; TC:1,borderline:18; pass:14
+v54_low_control_highsens,5,AB:3; B1:1; B2:1,borderline:5
+v50_sens98_spec90,3,AB:1; B1:1; B2:1,borderline:3
+v52_quality_le82,1,AB:1,borderline:1
+v52_quality_le88,0,,

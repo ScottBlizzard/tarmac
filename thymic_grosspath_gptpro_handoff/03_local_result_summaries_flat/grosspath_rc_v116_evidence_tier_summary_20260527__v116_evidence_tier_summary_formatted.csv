@@ -1,0 +1,34 @@
+﻿workflow_label,evidence_tier,scope,control_rate,balanced_accuracy,remaining_error_n,fn,fp,source_file
+v91 main locked,locked primary,all_domains,74.11%,98.24%,11,7,4,v91_integrated_summary.csv
+v91 main locked,locked primary,old_data,72.63%,99.65%,1,0,1,v91_integrated_summary.csv
+v91 main locked,locked primary,third_batch,72.55%,95.29%,9,7,2,v91_integrated_summary.csv
+v91 main locked,locked primary,strict_external,82.41%,99.18%,1,0,1,v91_integrated_summary.csv
+v79 strict fixed,locked high-review reference,all_domains,82.55%,99.07%,5,5,0,v91_integrated_summary.csv
+v79 strict fixed,locked high-review reference,old_data,82.11%,100.00%,0,0,0,v91_integrated_summary.csv
+v79 strict fixed,locked high-review reference,third_batch,81.37%,96.95%,5,5,0,v91_integrated_summary.csv
+v79 strict fixed,locked high-review reference,strict_external,87.04%,100.00%,0,0,0,v91_integrated_summary.csv
+v111 branch high-safety,post-v109 candidate,all_domains,78.83%,99.47%,4,1,3,v111_branch_specific_summary.csv
+v111 branch high-safety,post-v109 candidate,internal_all,77.33%,99.37%,4,1,3,v111_branch_specific_summary.csv
+v111 branch high-safety,post-v109 candidate,old_data,74.04%,99.65%,1,0,1,v111_branch_specific_summary.csv
+v111 branch high-safety,post-v109 candidate,third_batch,80.39%,98.94%,3,1,2,v111_branch_specific_summary.csv
+v111 branch high-safety,post-v109 candidate,strict_external,87.04%,100.00%,0,0,0,v111_branch_specific_summary.csv
+v112 post-hoc symmetric guard,post-hoc internal candidate,all_domains,79.83%,99.81%,1,1,0,v112_lowrisk_guard_summary.csv
+v112 post-hoc symmetric guard,post-hoc internal candidate,internal_all,78.51%,99.78%,1,1,0,v112_lowrisk_guard_summary.csv
+v112 post-hoc symmetric guard,post-hoc internal candidate,old_data,75.79%,100.00%,0,0,0,v112_lowrisk_guard_summary.csv
+v112 post-hoc symmetric guard,post-hoc internal candidate,third_batch,81.05%,99.39%,1,1,0,v112_lowrisk_guard_summary.csv
+v112 post-hoc symmetric guard,post-hoc internal candidate,strict_external,87.04%,100.00%,0,0,0,v112_lowrisk_guard_summary.csv
+v113 post-hoc upper bound,post-hoc upper bound,all_domains,80.83%,100.00%,0,0,0,v113_triple_guard_summary.csv
+v113 post-hoc upper bound,post-hoc upper bound,internal_all,79.70%,100.00%,0,0,0,v113_triple_guard_summary.csv
+v113 post-hoc upper bound,post-hoc upper bound,old_data,75.79%,100.00%,0,0,0,v113_triple_guard_summary.csv
+v113 post-hoc upper bound,post-hoc upper bound,third_batch,83.33%,100.00%,0,0,0,v113_triple_guard_summary.csv
+v113 post-hoc upper bound,post-hoc upper bound,strict_external,87.04%,100.00%,0,0,0,v113_triple_guard_summary.csv
+v114 nested narrow guard,fold-wise validation,all_domains,80.11%,99.58%,3,1,2,v114_nested_directional_guard_summary.csv
+v114 nested narrow guard,fold-wise validation,internal_all,78.85%,99.50%,3,1,2,v114_nested_directional_guard_summary.csv
+v114 nested narrow guard,fold-wise validation,old_data,74.74%,99.65%,1,0,1,v114_nested_directional_guard_summary.csv
+v114 nested narrow guard,fold-wise validation,third_batch,82.68%,99.17%,2,1,1,v114_nested_directional_guard_summary.csv
+v114 nested narrow guard,fold-wise validation,strict_external,87.04%,100.00%,0,0,0,v114_nested_directional_guard_summary.csv
+v115 nested stable candidate,fold-wise validation,all_domains,80.26%,99.81%,1,1,0,v115_nested_stable_envelope_summary.csv
+v115 nested stable candidate,fold-wise validation,internal_all,79.02%,99.78%,1,1,0,v115_nested_stable_envelope_summary.csv
+v115 nested stable candidate,fold-wise validation,old_data,76.49%,100.00%,0,0,0,v115_nested_stable_envelope_summary.csv
+v115 nested stable candidate,fold-wise validation,third_batch,81.37%,99.39%,1,1,0,v115_nested_stable_envelope_summary.csv
+v115 nested stable candidate,fold-wise validation,strict_external,87.04%,100.00%,0,0,0,v115_nested_stable_envelope_summary.csv

@@ -1,0 +1,114 @@
+{
+  "policy_id": "v195_model_disagreement_domain_quota_015",
+  "base_policy": "v195",
+  "mode_interpretation": {
+    "case_only_exploratory": "applies the case-level 15% release rule to every audited domain; strict_external result is frozen display only",
+    "shift_aware_deployable": "applies the release rule only when the batch hard_shift_gate is not severe_unknown_shift; severe unknown shift falls back to v195"
+  },
+  "release_target": "v195_review_or_reject_only",
+  "release_score": "model_disagreement_rate",
+  "release_fraction_of_v195_review": 0.15,
+  "quota_granularity": "domain_or_operational_batch",
+  "secondary_release_score": "dino_fn_risk_max",
+  "secondary_release_score_source": "experiments/risk_control_rejection_20260621/outputs/stable_policy_features.csv",
+  "policy_feature_version": "risk_control_v1",
+  "stable_feature_interface": "experiments/risk_control_rejection_20260621/outputs/stable_policy_features.csv",
+  "final_policy_runner": "experiments/risk_control_rejection_20260621/scripts/final_policy_runner.py",
+  "final_policy_consistency": {
+    "mismatch_rows": 0,
+    "compared_modes": [
+      "case_only_exploratory",
+      "shift_aware_deployable"
+    ]
+  },
+  "tie_handling": "sort by model_disagreement_rate ascending, then dino_fn_risk_max ascending, then case_id ascending for deterministic residual ties",
+  "forbidden_selection_inputs": [
+    "strict_external_labels",
+    "strict_external_errors",
+    "strict_external_coverage"
+  ],
+  "selection_basis": [
+    "old_data aggregate release audit",
+    "third_batch aggregate release audit",
+    "old_data fold stability",
+    "third_batch fold stability",
+    "negative audits for fixed thresholds and veto variants"
+  ],
+  "frozen_audit_scope": "strict_external",
+  "current_candidate_results": {
+    "old_data": {
+      "released_n": 11,
+      "released_error_n": 0,
+      "review_or_reject_n": 64,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    "third_batch": {
+      "released_n": 18,
+      "released_error_n": 0,
+      "review_or_reject_n": 103,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    },
+    "strict_external_frozen": {
+      "released_n": 8,
+      "released_error_n": 0,
+      "review_or_reject_n": 48,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    "all_domains_domain_applied": {
+      "released_n": 37,
+      "released_error_n": 0,
+      "review_or_reject_n": 215,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    }
+  },
+  "shift_aware_deployable_results": {
+    "old_data": {
+      "released_n": 11,
+      "released_error_n": 0,
+      "review_or_reject_n": 64,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0
+    },
+    "third_batch": {
+      "released_n": 18,
+      "released_error_n": 0,
+      "review_or_reject_n": 103,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    },
+    "strict_external_frozen": {
+      "released_n": 0,
+      "released_error_n": 0,
+      "review_or_reject_n": 56,
+      "auto_error_n": 0,
+      "auto_high_risk_fn_n": 0,
+      "reason": "strict_external hard_shift_gate is severe_unknown_shift"
+    },
+    "all_domains_domain_applied": {
+      "released_n": 29,
+      "released_error_n": 0,
+      "review_or_reject_n": 223,
+      "auto_error_n": 1,
+      "auto_high_risk_fn_n": 1
+    }
+  },
+  "known_limitations": [
+    "strict_external has only 60 candidate automatic decisions, so zero errors still gives Wilson95 upper about 6.02%",
+    "strict_external release benefit is concentrated in AB cases",
+    "loosening to 20% is unsafe in third_batch fold-level boundary audit",
+    "fixed global model_disagreement_rate thresholds are unsafe on third_batch",
+    "case_id is used only as the final deterministic residual tie-break, not as a risk signal",
+    "dino_fn_risk_max is now materialized in stable_policy_features.csv, but the upstream generator still derives it from the v191 experimental artifact",
+    "266/699 cases have missing dino_fn_risk_max, but no currently released case has missing dino_fn_risk_max"
+  ],
+  "next_audit_priorities": [
+    "manual review of candidate_casebook_cases.csv released and near_boundary_reviewed rows",
+    "prospective validation sample-size planning",
+    "lock operational batch definition before implementation in production code",
+    "promote dino_fn_risk_max from historical artifact to stable feature interface if this candidate is implemented"
+  ]
+}

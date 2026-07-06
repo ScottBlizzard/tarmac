@@ -1,0 +1,16 @@
+﻿workflow,scope,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+v118_global_two_signal,all_domains,699,79.97%,1,1,0,99.63%,100.00%,99.81%
+v118_global_two_signal,internal_all,591,78.68%,1,1,0,99.55%,100.00%,99.78%
+v118_global_two_signal,old_data,285,76.14%,0,0,0,100.00%,100.00%,100.00%
+v118_global_two_signal,third_batch,306,81.05%,1,1,0,98.78%,100.00%,99.39%
+v118_global_two_signal,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%
+posthoc_crop_rescue_upper_bound,all_domains,699,80.97%,0,0,0,100.00%,100.00%,100.00%
+posthoc_crop_rescue_upper_bound,internal_all,591,79.86%,0,0,0,100.00%,100.00%,100.00%
+posthoc_crop_rescue_upper_bound,old_data,285,76.14%,0,0,0,100.00%,100.00%,100.00%
+posthoc_crop_rescue_upper_bound,third_batch,306,83.33%,0,0,0,100.00%,100.00%,100.00%
+posthoc_crop_rescue_upper_bound,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%
+nested_crop_rescue_validation,all_domains,699,80.83%,1,1,0,99.63%,100.00%,99.81%
+nested_crop_rescue_validation,internal_all,591,79.70%,1,1,0,99.55%,100.00%,99.78%
+nested_crop_rescue_validation,old_data,285,76.14%,0,0,0,100.00%,100.00%,100.00%
+nested_crop_rescue_validation,third_batch,306,83.01%,1,1,0,98.78%,100.00%,99.39%
+nested_crop_rescue_validation,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%

@@ -1,0 +1,11 @@
+{
+  "target_budget": 0.3,
+  "baseline_policy": "baseline_low_conf_dev_selected",
+  "compared_policies": [
+    "dev_stable_router_all_domains",
+    "shift_aware_image_directional_candidate",
+    "shift_aware_concept_directional_candidate",
+    "shift_aware_rank_fusion_candidate"
+  ],
+  "main_readout": "paired system BAcc delta vs low-confidence baseline at matched per-domain review budget"
+}

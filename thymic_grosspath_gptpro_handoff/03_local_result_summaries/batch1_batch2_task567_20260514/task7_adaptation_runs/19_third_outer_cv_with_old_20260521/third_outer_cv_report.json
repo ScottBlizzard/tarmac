@@ -1,0 +1,112 @@
+{
+  "protocol": "5-fold outer CV on third batch; old data is always included in training; threshold chosen inside each fold from training OOF only.",
+  "third_n": 306,
+  "old_n": 285,
+  "summary": [
+    {
+      "kind": "logreg_0.001",
+      "repeat_adapt": 2,
+      "threshold_objective": "accuracy",
+      "third_oof_accuracy": 0.8006535947712419,
+      "third_oof_balanced_accuracy": 0.6860300522648084,
+      "third_oof_f1": 0.5413533834586466,
+      "third_oof_tn": 209,
+      "third_oof_fp": 15,
+      "third_oof_fn": 46,
+      "third_oof_tp": 36,
+      "third_oof_auc": 0.7909952090592335
+    },
+    {
+      "kind": "logreg_0.0003",
+      "repeat_adapt": 4,
+      "threshold_objective": "accuracy",
+      "third_oof_accuracy": 0.7973856209150327,
+      "third_oof_balanced_accuracy": 0.699259581881533,
+      "third_oof_f1": 0.5633802816901409,
+      "third_oof_tn": 204,
+      "third_oof_fp": 20,
+      "third_oof_fn": 42,
+      "third_oof_tp": 40,
+      "third_oof_auc": 0.8011759581881533
+    },
+    {
+      "kind": "extratrees_3",
+      "repeat_adapt": 1,
+      "threshold_objective": "accuracy",
+      "third_oof_accuracy": 0.7777777777777778,
+      "third_oof_balanced_accuracy": 0.647212543554007,
+      "third_oof_f1": 0.46875,
+      "third_oof_tn": 208,
+      "third_oof_fp": 16,
+      "third_oof_fn": 52,
+      "third_oof_tp": 30,
+      "third_oof_auc": 0.7441746515679443
+    },
+    {
+      "kind": "extratrees_5",
+      "repeat_adapt": 1,
+      "threshold_objective": "accuracy",
+      "third_oof_accuracy": 0.7679738562091504,
+      "third_oof_balanced_accuracy": 0.6443815331010453,
+      "third_oof_f1": 0.46616541353383456,
+      "third_oof_tn": 204,
+      "third_oof_fp": 20,
+      "third_oof_fn": 51,
+      "third_oof_tp": 31,
+      "third_oof_auc": 0.7477678571428571
+    },
+    {
+      "kind": "extratrees_5",
+      "repeat_adapt": 1,
+      "threshold_objective": "balanced_accuracy",
+      "third_oof_accuracy": 0.7189542483660131,
+      "third_oof_balanced_accuracy": 0.668880662020906,
+      "third_oof_f1": 0.5168539325842697,
+      "third_oof_tn": 174,
+      "third_oof_fp": 50,
+      "third_oof_fn": 36,
+      "third_oof_tp": 46,
+      "third_oof_auc": 0.7477678571428571
+    },
+    {
+      "kind": "logreg_0.001",
+      "repeat_adapt": 2,
+      "threshold_objective": "balanced_accuracy",
+      "third_oof_accuracy": 0.7156862745098039,
+      "third_oof_balanced_accuracy": 0.6859756097560976,
+      "third_oof_f1": 0.5396825396825397,
+      "third_oof_tn": 168,
+      "third_oof_fp": 56,
+      "third_oof_fn": 31,
+      "third_oof_tp": 51,
+      "third_oof_auc": 0.7909952090592335
+    },
+    {
+      "kind": "logreg_0.0003",
+      "repeat_adapt": 4,
+      "threshold_objective": "balanced_accuracy",
+      "third_oof_accuracy": 0.7026143790849673,
+      "third_oof_balanced_accuracy": 0.7118358013937283,
+      "third_oof_f1": 0.5687203791469194,
+      "third_oof_tn": 155,
+      "third_oof_fp": 69,
+      "third_oof_fn": 22,
+      "third_oof_tp": 60,
+      "third_oof_auc": 0.8011759581881533
+    },
+    {
+      "kind": "extratrees_3",
+      "repeat_adapt": 1,
+      "threshold_objective": "balanced_accuracy",
+      "third_oof_accuracy": 0.7026143790849673,
+      "third_oof_balanced_accuracy": 0.6461236933797909,
+      "third_oof_f1": 0.4858757062146893,
+      "third_oof_tn": 172,
+      "third_oof_fp": 52,
+      "third_oof_fn": 39,
+      "third_oof_tp": 43,
+      "third_oof_auc": 0.7441746515679443
+    }
+  ],
+  "output_dir": "D:\\影响分析\\outputs\\batch1_batch2_task567_20260514\\task7_adaptation_runs\\19_third_outer_cv_with_old_20260521"
+}

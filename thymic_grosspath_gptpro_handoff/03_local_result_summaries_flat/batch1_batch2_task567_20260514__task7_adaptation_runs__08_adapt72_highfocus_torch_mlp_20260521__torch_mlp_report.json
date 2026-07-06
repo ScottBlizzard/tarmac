@@ -1,0 +1,59 @@
+{
+  "top": {
+    "config_id": 1,
+    "threshold_objective": "balanced_accuracy",
+    "threshold": 0.6399999999999999,
+    "best_epoch": 2,
+    "repeat_adapt": 1,
+    "hidden": 128,
+    "dropout": 0.3,
+    "lr": 0.0008,
+    "wd": 0.0001,
+    "smooth": 0.02,
+    "epochs": 160,
+    "patience": 16,
+    "batch": 64,
+    "val_accuracy": 0.7692307692307693,
+    "val_balanced_accuracy": 0.7708728652751423,
+    "val_f1": 0.7692307692307693,
+    "val_auc": 0.7741935483870968,
+    "val_tn": 25,
+    "val_fp": 6,
+    "val_fn": 9,
+    "val_tp": 25,
+    "holdout_accuracy": 0.7948717948717948,
+    "holdout_balanced_accuracy": 0.6760204081632653,
+    "holdout_f1": 0.4418604651162791,
+    "holdout_auc": 0.7467776584317938,
+    "holdout_tn": 167,
+    "holdout_fp": 29,
+    "holdout_fn": 19,
+    "holdout_tp": 19
+  },
+  "subtype": [
+    {
+      "task_l6_label": "AB",
+      "n": 188,
+      "correct": 164,
+      "accuracy": 0.8723404255319149
+    },
+    {
+      "task_l6_label": "B1",
+      "n": 8,
+      "correct": 3,
+      "accuracy": 0.375
+    },
+    {
+      "task_l6_label": "B2",
+      "n": 7,
+      "correct": 3,
+      "accuracy": 0.42857142857142855
+    },
+    {
+      "task_l6_label": "TC",
+      "n": 31,
+      "correct": 16,
+      "accuracy": 0.5161290322580645
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "best_epoch": 7,
+  "best_val_primary_metric": 0.4781746031746031,
+  "val_case_mean": {
+    "accuracy": 0.4583333333333333,
+    "balanced_accuracy": 0.4583333333333333,
+    "macro_precision": 0.5305555555555556,
+    "macro_recall": 0.4583333333333333,
+    "macro_f1": 0.4781746031746031,
+    "macro_auc": 0.7937500000000001
+  },
+  "test_case_mean": {
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "macro_precision": 0.5138888888888888,
+    "macro_recall": 0.5,
+    "macro_f1": 0.486111111111111,
+    "macro_auc": 0.8145833333333333
+  },
+  "text_aux_meta": {
+    "coverage": 24,
+    "text_dim": 16,
+    "svd_dim": 16,
+    "vocab_size": 123
+  }
+}

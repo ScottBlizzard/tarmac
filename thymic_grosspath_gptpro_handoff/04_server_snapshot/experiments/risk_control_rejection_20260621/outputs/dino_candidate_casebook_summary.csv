@@ -1,0 +1,13 @@
+﻿casebook_group,domain,n,released_n,released_error_n,candidate_auto_error_n,candidate_high_risk_fn_n,mean_model_disagreement,mean_safe_distance_case
+near_boundary_reviewed,old_data,21,0,0,0,0,0.1071428571428571,0.6931468352831208
+near_boundary_reviewed,strict_external,15,0,0,0,0,0.0944444444444444,0.6962997355779129
+near_boundary_reviewed,third_batch,43,0,0,0,0,0.06976744186046509,0.7082780861683138
+not_v195_reviewed,old_data,210,0,0,0,0,0.4726190476190476,0.92861575397705
+not_v195_reviewed,strict_external,52,0,0,0,0,0.28846153846153844,0.8199768744681292
+not_v195_reviewed,third_batch,185,0,0,1,1,0.21936936936936938,0.8565858643480976
+other_reviewed,old_data,43,0,0,0,0,0.42441860465116277,0.6743306826111582
+other_reviewed,strict_external,33,0,0,0,0,0.4974747474747475,0.816959616937518
+other_reviewed,third_batch,60,0,0,0,0,0.41111111111111115,0.7148754725341107
+released,old_data,11,11,0,0,0,0.0,0.5989692895489127
+released,strict_external,8,8,0,0,0,0.0,0.6888381818242822
+released,third_batch,18,18,0,0,0,0.0,0.6970783264844918

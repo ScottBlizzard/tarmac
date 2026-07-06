@@ -1,0 +1,10 @@
+{
+  "pseudo_subsets": [
+    "old_quality_top20",
+    "quality_ge_0p10_internal",
+    "quality_top20_internal",
+    "third_quality_top20"
+  ],
+  "selection": "Rules are selected by positive net correction inside internal pseudo-severe quality subsets only; strict external is reported after selection.",
+  "selected_count": 8
+}

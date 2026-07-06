@@ -1,0 +1,2 @@
+accuracy,balanced_accuracy,auc,f1,sensitivity,specificity,tn,fp,fn,tp,base_accuracy,base_balanced_accuracy,rule,source_model_36,source_model_38,disagree_n,rescued,hurt
+0.8210526315789474,0.8207003546099291,0.8371256895193065,0.8131868131868132,0.7872340425531915,0.8541666666666666,123,21,30,111,0.7684210526315789,0.7684692671394799,"if model36 and model38 disagree, choose low-risk label",36_best_hgb_score_split_corrector_20260520,38_best_hgb_refine_score_split_corrector_20260520,13,22,7

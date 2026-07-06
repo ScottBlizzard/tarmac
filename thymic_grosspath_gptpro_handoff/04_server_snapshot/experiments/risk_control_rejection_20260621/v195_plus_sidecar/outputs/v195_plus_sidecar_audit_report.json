@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "check_n": 28,
+  "failed_n": 0,
+  "failed_checks": [],
+  "file_inventory": [
+    {
+      "path": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_runtime_decisions.csv",
+      "exists": true,
+      "size": 154126
+    },
+    {
+      "path": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_audit_decisions.csv",
+      "exists": true,
+      "size": 182979
+    },
+    {
+      "path": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_summary.csv",
+      "exists": true,
+      "size": 380
+    },
+    {
+      "path": "experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_sidecar_report.json",
+      "exists": true,
+      "size": 3760
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "file_exists::v195_plus_runtime_decisions.csv",
+      "passed": true,
+      "detail": "{'path': 'experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_runtime_decisions.csv', 'exists': True, 'size': 154126}"
+    },
+    {
+      "check_id": "file_exists::v195_plus_audit_decisions.csv",
+      "passed": true,
+      "detail": "{'path': 'experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_audit_decisions.csv', 'exists': True, 'size': 182979}"
+    },
+    {
+      "check_id": "file_exists::v195_plus_summary.csv",
+      "passed": true,
+      "detail": "{'path': 'experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_summary.csv', 'exists': True, 'size': 380}"
+    },
+    {
+      "check_id": "file_exists::v195_plus_sidecar_report.json",
+      "passed": true,
+      "detail": "{'path': 'experiments/risk_control_rejection_20260621/v195_plus_sidecar/outputs/v195_plus_sidecar_report.json', 'exists': True, 'size': 3760}"
+    },
+    {
+      "check_id": "manifest_exists",
+      "passed": true,
+      "detail": "experiments/risk_control_rejection_20260621/configs/v195_plus_candidate_manifest.json"
+    },
+    {
+      "check_id": "manifest_phase2_candidate_n_7",
+      "passed": true,
+      "detail": "candidate_n=7"
+    },
+    {
+      "check_id": "manifest_strict_external_not_selection",
+      "passed": true,
+      "detail": "False"
+    },
+    {
+      "check_id": "runtime_exact_column_contract",
+      "passed": true,
+      "detail": "['domain', 'case_id', 'original_case_id', 'final_pred', 'prob_mean_core', 'v185_auto_decision', 'v185_review_or_reject', 'v195_release_from_review', 'v195_auto_decision', 'v195_review_or_reject', 'v195_plus_release_from_review', 'v195_plus_new_release_vs_v195', 'v195_plus_auto_decision', 'v195_plus_review_or_reject', 'v195_plus_release_reason', 'v195_plus_releasing_candidate_n', 'v195_plus_releasing_candidate_ids', 'v195_plus_policy_id']"
+    },
+    {
+      "check_id": "runtime_no_audit_or_label_columns",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check_id": "runtime_row_count_699",
+      "passed": true,
+      "detail": "runtime_rows=699"
+    },
+    {
+      "check_id": "audit_row_count_699",
+      "passed": true,
+      "detail": "audit_rows=699"
+    },
+    {
+      "check_id": "audit_contains_audit_columns",
+      "passed": true,
+      "detail": "['task_l6_label', 'label_idx', 'v195_auto_error', 'v195_auto_high_risk_fn', 'v195_plus_auto_error', 'v195_plus_auto_high_risk_fn', 'v195_plus_new_release_error', 'v195_plus_new_release_high_risk_fn']"
+    },
+    {
+      "check_id": "runtime_case_id_unique",
+      "passed": true,
+      "detail": "case_id duplicates absent"
+    },
+    {
+      "check_id": "v195_strict_auto_n",
+      "passed": true,
+      "detail": "observed=52, expected=52"
+    },
+    {
+      "check_id": "v195_strict_review_n",
+      "passed": true,
+      "detail": "observed=56, expected=56"
+    },
+    {
+      "check_id": "v195_strict_auto_error_n",
+      "passed": true,
+      "detail": "observed=0, expected=0"
+    },
+    {
+      "check_id": "v195_strict_auto_high_risk_fn_n",
+      "passed": true,
+      "detail": "observed=0, expected=0"
+    },
+    {
+      "check_id": "v195_plus_strict_auto_n",
+      "passed": true,
+      "detail": "observed=57, expected=57"
+    },
+    {
+      "check_id": "v195_plus_strict_review_n",
+      "passed": true,
+      "detail": "observed=51, expected=51"
+    },
+    {
+      "check_id": "v195_plus_strict_auto_error_n",
+      "passed": true,
+      "detail": "observed=0, expected=0"
+    },
+    {
+      "check_id": "v195_plus_strict_auto_high_risk_fn_n",
+      "passed": true,
+      "detail": "observed=0, expected=0"
+    },
+    {
+      "check_id": "builder_reports_pass",
+      "passed": true,
+      "detail": "a=True, b=True"
+    },
+    {
+      "check_id": "builder_runtime_idempotent",
+      "passed": true,
+      "detail": "two in-memory builds match"
+    },
+    {
+      "check_id": "builder_audit_idempotent",
+      "passed": true,
+      "detail": "two in-memory builds match"
+    },
+    {
+      "check_id": "runtime_disk_matches_builder",
+      "passed": true,
+      "detail": "disk output matches builder"
+    },
+    {
+      "check_id": "audit_disk_matches_builder",
+      "passed": true,
+      "detail": "disk output matches builder"
+    },
+    {
+      "check_id": "summary_disk_matches_builder",
+      "passed": true,
+      "detail": "summary output matches builder"
+    },
+    {
+      "check_id": "sidecar_boundary_flags",
+      "passed": true,
+      "detail": "sidecar_only=True, original_project_code_modified=False"
+    }
+  ]
+}

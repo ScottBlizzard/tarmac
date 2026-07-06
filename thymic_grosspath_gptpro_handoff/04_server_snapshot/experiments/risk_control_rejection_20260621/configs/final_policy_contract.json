@@ -1,0 +1,98 @@
+{
+  "contract_id": "risk_control_rejection_v1_dino_tiebreak",
+  "feature_version": "risk_control_v1",
+  "base_policy": "v195",
+  "allowed_input_table": "experiments/risk_control_rejection_20260621/outputs/stable_policy_features.csv",
+  "runtime_required_columns": [
+    "policy_feature_version",
+    "domain",
+    "case_id",
+    "v195_review_or_reject",
+    "v195_auto_decision",
+    "hard_shift_gate",
+    "model_disagreement_rate",
+    "dino_fn_risk_max",
+    "dino_fn_risk_missing",
+    "final_pred",
+    "prob_mean_core"
+  ],
+  "audit_only_columns": [
+    "label_idx",
+    "task_l6_label",
+    "fold_id"
+  ],
+  "release_rule": {
+    "release_target": "v195_review_or_reject_only",
+    "release_fraction_within_operational_batch": 0.15,
+    "quota_granularity": "domain",
+    "primary_sort": {
+      "column": "model_disagreement_rate",
+      "ascending": true,
+      "missing_policy": "sort_last"
+    },
+    "secondary_sort": {
+      "column": "dino_fn_risk_max",
+      "ascending": true,
+      "missing_policy": "sort_last"
+    },
+    "residual_tie_break": {
+      "column": "case_id",
+      "ascending": true,
+      "purpose": "deterministic residual ordering only"
+    }
+  },
+  "modes": {
+    "case_only_exploratory": {
+      "enforce_severe_shift_fallback": false,
+      "strict_external_status": "frozen_display_only"
+    },
+    "shift_aware_deployable": {
+      "enforce_severe_shift_fallback": true,
+      "severe_shift_value": "severe_unknown_shift",
+      "fallback_policy": "v195_only"
+    }
+  },
+  "forbidden_inputs_for_selection_or_runtime": [
+    "strict_external labels",
+    "strict_external error indicators",
+    "manual post-hoc row order",
+    "version-specific action flags as risk features",
+    "task_l6_label as a release selector"
+  ],
+  "runtime_forbidden_selector_columns": [
+    "action_error",
+    "auto_correct_action",
+    "rescued_by_action",
+    "hurt_by_action",
+    "auto_error",
+    "auto_high_risk_fn",
+    "released_error",
+    "released_high_risk_fn"
+  ],
+  "current_verified_outputs": {
+    "case_only_exploratory": {
+      "strict_external": {
+        "auto_decision_n": 60,
+        "review_or_reject_n": 48,
+        "released_n": 8,
+        "released_error_n": 0,
+        "status": "frozen_display_only"
+      }
+    },
+    "shift_aware_deployable": {
+      "strict_external": {
+        "auto_decision_n": 52,
+        "review_or_reject_n": 56,
+        "released_n": 0,
+        "released_error_n": 0,
+        "status": "conservative_deployable_interpretation"
+      }
+    }
+  },
+  "known_limitations": [
+    "dino_fn_risk_max is materialized into the stable interface but still generated upstream from a historical v191 experimental artifact",
+    "266/699 cases have missing dino_fn_risk_max; current release set has 0 missing dino_fn_risk_max",
+    "strict_external has insufficient automatic sample size to pass the 3% Wilson upper-bound noninferiority flag",
+    "strict_external severe shift metrics are far outside the old/third internal envelope, so deployable mode does not lower strict_external review count"
+  ]
+}

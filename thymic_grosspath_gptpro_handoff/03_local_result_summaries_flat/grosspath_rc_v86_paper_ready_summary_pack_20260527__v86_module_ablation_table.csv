@@ -1,0 +1,13 @@
+﻿domain,module_label,delta_control_rate,delta_bacc,delta_sensitivity,delta_specificity,delta_fn,delta_fp,delta_remaining_error_n
+old_data,High-risk miss protection,+2.11 pp,+0.00 pp,+0.00 pp,+0.00 pp,0,0,0
+old_data,Light low-risk overcall guard,+2.46 pp,+0.00 pp,+0.00 pp,+0.00 pp,0,0,0
+old_data,Strict low-risk overcall guard,+4.91 pp,+0.35 pp,+0.00 pp,+0.69 pp,0,-1,-1
+old_data,Full fixed safety workflow,+9.47 pp,+0.35 pp,+0.00 pp,+0.69 pp,0,-1,-1
+third_batch,High-risk miss protection,+4.25 pp,+1.22 pp,+2.44 pp,+0.00 pp,-2,0,-2
+third_batch,Light low-risk overcall guard,+2.61 pp,+0.45 pp,+0.00 pp,+0.89 pp,0,-2,-2
+third_batch,Strict low-risk overcall guard,+1.96 pp,+0.00 pp,+0.00 pp,+0.00 pp,0,0,0
+third_batch,Full fixed safety workflow,+8.82 pp,+1.67 pp,+2.44 pp,+0.89 pp,-2,-2,-4
+strict_external,High-risk miss protection,+6.48 pp,+1.06 pp,+2.13 pp,+0.00 pp,-1,0,-1
+strict_external,Light low-risk overcall guard,+2.78 pp,+0.82 pp,+0.00 pp,+1.64 pp,0,-1,-1
+strict_external,Strict low-risk overcall guard,+4.63 pp,+0.82 pp,+0.00 pp,+1.64 pp,0,-1,-1
+strict_external,Full fixed safety workflow,+13.89 pp,+2.70 pp,+2.13 pp,+3.28 pp,-1,-2,-3

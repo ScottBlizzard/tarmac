@@ -1,0 +1,6 @@
+﻿original_case_id,doctor_note,standardized_reason,recommendation
+2404716,MEC,mucoepidermoid carcinoma / special histology outside primary thymoma-carcinoma risk cohort,exclude from primary clean cohort; keep in full-cohort sensitivity archive
+2307206,淋巴上皮癌,lymphoepithelial carcinoma / special carcinoma subtype,exclude from primary clean cohort; keep in full-cohort sensitivity archive
+2205101,淋巴上皮癌,lymphoepithelial carcinoma with possible mixed/complex clinical-pathology context,exclude from primary clean cohort; keep in full-cohort sensitivity archive
+2203278,微结节型TC,micronodular thymic carcinoma / rare special morphology,exclude from primary clean cohort; keep in full-cohort sensitivity archive
+2113767,肠型腺癌,intestinal-type adenocarcinoma / special histology outside primary cohort,exclude from primary clean cohort; keep in full-cohort sensitivity archive

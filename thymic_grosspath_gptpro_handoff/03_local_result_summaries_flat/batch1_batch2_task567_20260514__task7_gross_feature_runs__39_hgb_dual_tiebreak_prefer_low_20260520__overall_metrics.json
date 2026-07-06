@@ -1,0 +1,20 @@
+{
+  "accuracy": 0.8210526315789474,
+  "balanced_accuracy": 0.8207003546099291,
+  "auc": 0.8371256895193065,
+  "f1": 0.8131868131868132,
+  "sensitivity": 0.7872340425531915,
+  "specificity": 0.8541666666666666,
+  "tn": 123,
+  "fp": 21,
+  "fn": 30,
+  "tp": 111,
+  "base_accuracy": 0.7684210526315789,
+  "base_balanced_accuracy": 0.7684692671394799,
+  "rule": "if model36 and model38 disagree, choose low-risk label",
+  "source_model_36": "36_best_hgb_score_split_corrector_20260520",
+  "source_model_38": "38_best_hgb_refine_score_split_corrector_20260520",
+  "disagree_n": 13,
+  "rescued": 22,
+  "hurt": 7
+}

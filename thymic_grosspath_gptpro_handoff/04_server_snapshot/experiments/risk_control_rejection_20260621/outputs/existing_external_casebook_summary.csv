@@ -1,0 +1,7 @@
+﻿domain,case_status,n,released_n,would_be_error_n,would_be_high_risk_fn_n,released_error_n,released_high_risk_fn_n,dino_missing_n,min_review_risk_rank,max_review_risk_rank
+strict_external,reviewed_not_released,48,0,0,0,0,0,34,9,56
+strict_external,shift_blocked_release_candidate,8,0,0,0,0,0,0,1,8
+strict_external,v195_auto_retained,52,0,0,0,0,0,13,0,0
+third_batch,released_from_review,18,18,0,0,0,0,0,1,18
+third_batch,reviewed_not_released,103,0,8,6,0,0,21,19,121
+third_batch,v195_auto_retained,185,0,1,1,0,0,56,0,0

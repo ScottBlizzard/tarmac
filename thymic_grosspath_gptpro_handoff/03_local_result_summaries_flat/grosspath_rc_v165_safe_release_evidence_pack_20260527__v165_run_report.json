@@ -1,0 +1,10 @@
+{
+  "main_result_bacc": 0.9981481481481482,
+  "main_result_review_rate": 0.575107296137339,
+  "main_result_auto_pass_rate": 0.4248927038626609,
+  "main_result_fn": 1,
+  "main_result_fp": 0,
+  "strict_external_bacc": 1.0,
+  "remaining_auto_errors": 1,
+  "claim_count": 5
+}

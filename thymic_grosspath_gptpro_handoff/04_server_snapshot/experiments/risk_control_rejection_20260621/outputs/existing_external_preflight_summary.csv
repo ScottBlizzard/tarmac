@@ -1,0 +1,3 @@
+﻿domain,input_rows,decision_rows,contract_passed,decision_schema_passed,released_n,review_or_reject_n,strict_external_released_n,audit_only_columns_removed,forbidden_columns_present,audit_labels_available,released_error_n,released_high_risk_fn_n
+third_batch,306,306,True,True,18,103,0,"['label_idx', 'task_l6_label', 'fold_id']",[],True,0,0
+strict_external,108,108,True,True,0,56,0,"['label_idx', 'task_l6_label', 'fold_id']",[],True,0,0

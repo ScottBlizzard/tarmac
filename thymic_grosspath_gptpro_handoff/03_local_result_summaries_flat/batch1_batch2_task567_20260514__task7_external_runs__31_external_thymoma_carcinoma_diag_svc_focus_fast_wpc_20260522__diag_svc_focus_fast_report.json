@@ -1,0 +1,40 @@
+{
+  "boundary": {
+    "uses_external_labels_for_training": false,
+    "selection_note": "Rows are trained and thresholded with old OOF only; sorting by external metrics is exploratory diagnostics."
+  },
+  "best_external": {
+    "align": "diag",
+    "pca_components": 32,
+    "pca_explained": 0.6357396841049194,
+    "c": 0.3,
+    "gamma": "scale",
+    "threshold_objective": "balanced_accuracy",
+    "old_cv_threshold": -0.08601240992546078,
+    "old_cv_threshold_score": 0.6561022458628842,
+    "old_accuracy": 0.656140350877193,
+    "old_balanced_accuracy": 0.6561022458628842,
+    "old_f1": 0.6524822695035462,
+    "old_tn": 95,
+    "old_fp": 49,
+    "old_fn": 49,
+    "old_tp": 92,
+    "old_auc": 0.7034574468085106,
+    "all_accuracy": 0.6388888888888888,
+    "all_balanced_accuracy": 0.6339379141960237,
+    "all_f1": 0.5894736842105263,
+    "all_tn": 41,
+    "all_fp": 20,
+    "all_fn": 19,
+    "all_tp": 28,
+    "all_auc": 0.6459713986745726,
+    "strict_accuracy": 0.6285714285714286,
+    "strict_balanced_accuracy": 0.6254585473220836,
+    "strict_f1": 0.5894736842105263,
+    "strict_tn": 38,
+    "strict_fp": 20,
+    "strict_fn": 19,
+    "strict_tp": 28,
+    "strict_auc": 0.6397652237710932
+  }
+}

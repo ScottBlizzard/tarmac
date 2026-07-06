@@ -1,0 +1,25 @@
+{
+  "scan_rows": 120,
+  "selected": {
+    "review_policy": "v118_review_or_control",
+    "model": "dino_pca64_logreg_c03",
+    "threshold": 0.9,
+    "candidate_release_n": 47,
+    "additional_release_n": 10,
+    "additional_internal_release_n": 10,
+    "additional_internal_released_error_n": 0,
+    "additional_external_release_n": 0,
+    "additional_external_released_error_n": 0,
+    "union_release_n": 167,
+    "union_released_error_n": 0,
+    "final_review_n": 392,
+    "final_review_rate": 0.5608011444921316,
+    "selection_status": "internal_zero_additional_release_error"
+  },
+  "v161_all_domain_review_rate": 0.575107296137339,
+  "v178_all_domain_review_rate": 0.5608011444921316,
+  "v178_all_domain_bacc": 0.9981481481481482,
+  "v178_released_errors": 0,
+  "v178_fn": 1,
+  "v178_fp": 0
+}

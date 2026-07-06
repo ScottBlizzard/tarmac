@@ -1,0 +1,6 @@
+﻿setting,scope,prob_threshold,core_max,extra_review_n,extra_captured_error_n,extra_clean_review_n,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+internal_oof,all,0.25,0.45,31,6,25,591,77.83%,4,1,3,99.55%,99.18%,99.37%
+internal_oof,old_data,0.25,0.45,2,0,2,285,73.33%,1,0,1,100.00%,99.31%,99.65%
+internal_oof,third_batch,0.25,0.45,29,6,23,306,82.03%,3,1,2,98.78%,99.11%,98.94%
+strict_external_crop_proxy,all,0.25,0.45,4,0,4,108,86.11%,1,0,1,100.00%,98.36%,99.18%
+strict_external_crop_proxy,strict_external,0.25,0.45,4,0,4,108,86.11%,1,0,1,100.00%,98.36%,99.18%

@@ -1,0 +1,13 @@
+﻿tiebreak_policy,secondary_col,secondary_ascending,released_n_sum,released_error_n_sum,released_high_risk_fn_n_sum,review_or_reject_n_sum,auto_error_n_sum,auto_high_risk_fn_n_sum
+base_entropy_desc,base_entropy,False,29,0,0,167,1,1
+base_uncertainty_desc,base_uncertainty,False,29,0,0,167,1,1
+corrector_confidence_mean_desc,corrector_confidence_mean,False,29,0,0,167,1,1
+corrector_prob_high_mean_asc,corrector_prob_high_mean,True,29,0,0,167,1,1
+safe_distance_case_score_desc,safe_distance_case_score,False,29,0,0,167,1,1
+router_risk_mean_asc,router_risk_mean,True,29,1,1,167,2,2
+router_risk_mean_desc,router_risk_mean,False,29,1,1,167,2,2
+base_entropy_asc,base_entropy,True,29,2,2,167,3,3
+base_uncertainty_asc,base_uncertainty,True,29,2,2,167,3,3
+corrector_confidence_mean_asc,corrector_confidence_mean,True,29,2,2,167,3,3
+corrector_prob_high_mean_desc,corrector_prob_high_mean,False,29,2,2,167,3,3
+safe_distance_case_score_asc,safe_distance_case_score,True,29,2,2,167,3,3

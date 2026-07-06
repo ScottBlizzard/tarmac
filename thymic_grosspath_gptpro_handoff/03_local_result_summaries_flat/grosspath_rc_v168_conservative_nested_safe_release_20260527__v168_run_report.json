@@ -1,0 +1,14 @@
+{
+  "domain_intersection_internal_release_n": 125,
+  "domain_intersection_internal_released_error_n": 4,
+  "domain_intersection_review_rate": 0.5752961082910322,
+  "domain_intersection_bacc": 0.9896726944823553,
+  "inner_fold_intersection_internal_release_n": 125,
+  "inner_fold_intersection_internal_released_error_n": 2,
+  "inner_fold_intersection_review_rate": 0.5752961082910322,
+  "inner_fold_intersection_bacc": 0.9941569994150907,
+  "domain_external_vote5_release_n": 16,
+  "domain_external_vote5_released_error_n": 0,
+  "inner_external_vote5_release_n": 18,
+  "inner_external_vote5_released_error_n": 0
+}

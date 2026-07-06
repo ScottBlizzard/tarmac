@@ -1,0 +1,6 @@
+{
+  "boundary": "Thresholds selected on internal old+third OOF only; strict external locked for evaluation.",
+  "n_internal": 591,
+  "n_external_strict": 108,
+  "n_candidates": 22
+}

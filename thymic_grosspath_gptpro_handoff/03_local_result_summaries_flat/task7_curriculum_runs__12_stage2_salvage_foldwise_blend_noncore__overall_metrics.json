@@ -1,0 +1,23 @@
+{
+  "group": "overall",
+  "n": 285,
+  "n_low": 144,
+  "n_high": 141,
+  "auc": 0.8116627265563435,
+  "accuracy": 0.7649122807017544,
+  "balanced_accuracy": 0.7649231678486997,
+  "f1": 0.7632508833922261,
+  "sensitivity": 0.7659574468085106,
+  "specificity": 0.7638888888888888,
+  "tn": 110,
+  "fp": 34,
+  "fn": 33,
+  "tp": 108,
+  "objective": "noncore_acc",
+  "run_a": "/workspace/thymic_project/outputs/batch1_batch2_task567_20260514/task7_curriculum_runs/07_case_mlp_schemeB_m060_stage2only_full5fold",
+  "run_b": "/workspace/thymic_project/outputs/batch1_batch2_task567_20260514/task7_curriculum_runs/09_case_mlp_schemeB_m060_salvagehard_full5fold",
+  "run_a_name": "stage2_easy_medium",
+  "run_b_name": "stage3_salvage_hard",
+  "alpha_step": 0.01,
+  "threshold_step": 0.01
+}

@@ -1,0 +1,12 @@
+{
+  "clean_v195_all_bacc": 0.9981343283582088,
+  "clean_v195_all_review_rate": 0.3601147776183644,
+  "clean_v195_all_fn": 1,
+  "clean_v195_all_fp": 0,
+  "v195_auto_decision_n": 447,
+  "v195_wilson95_high": 0.0125617728514099,
+  "strict_external_v195_bacc": 1.0,
+  "strict_external_review_rate": 0.5185185185185185,
+  "v201_rescued_n": 2,
+  "v201_hurt_n": 0
+}

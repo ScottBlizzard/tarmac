@@ -1,0 +1,22 @@
+{
+  "image_count": 108,
+  "quality_counts": {
+    "borderline": 67,
+    "pass": 40,
+    "reject": 1
+  },
+  "reason_counts": {
+    "过曝/反光明显": 54,
+    "质量初筛未见明显问题": 40,
+    "分辨率偏低": 19,
+    "主体贴边明显": 16,
+    "主体偏小": 5,
+    "局部反光或偏亮": 5,
+    "主体占比过小/背景过多": 2,
+    "对比度低": 2,
+    "严重模糊": 1,
+    "清晰度一般": 1,
+    "清晰度不足，建议复核": 1
+  },
+  "prediction_file": "outputs\\external_quality_gate_20260525\\external_locked162_blend_predictions.csv"
+}

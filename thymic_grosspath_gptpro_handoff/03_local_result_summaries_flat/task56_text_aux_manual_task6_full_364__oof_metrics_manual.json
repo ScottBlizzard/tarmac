@@ -1,0 +1,10 @@
+{
+  "case_mean": {
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "macro_precision": 0.48927836212318976,
+    "macro_recall": 0.5,
+    "macro_f1": 0.48528613997433107,
+    "macro_auc": 0.7724166666666666
+  }
+}

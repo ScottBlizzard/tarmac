@@ -1,0 +1,5 @@
+split,level,aggregation,auc,accuracy,balanced_accuracy,sensitivity,specificity,precision,f1,tn,fp,fn,tp
+test,image,none,,0.0,0.0,0.0,0.0,0.0,0.0,0,4,0,0
+test,case,mean,,0.0,0.0,0.0,0.0,0.0,0.0,0,4,0,0
+test,case,max_prob,,0.0,0.0,0.0,0.0,0.0,0.0,0,4,0,0
+test,case,majority_vote,,0.0,0.0,0.0,0.0,0.0,0.0,0,4,0,0

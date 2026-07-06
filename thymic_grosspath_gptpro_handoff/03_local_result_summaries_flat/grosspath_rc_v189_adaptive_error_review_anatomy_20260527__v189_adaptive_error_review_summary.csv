@@ -1,0 +1,5 @@
+﻿scope,n,auto_decision_n,auto_error_n,review_n,review_base_error_n,review_clean_n,fn_auto_error_n,fp_auto_error_n,fn_review_captured_n,fp_review_captured_n
+old_data,285,131,0,154,1,153,0,0,0,1
+third_batch,306,142,1,164,8,156,1,0,6,2
+strict_external,108,14,0,94,0,94,0,0,0,0
+all_domains,699,287,1,412,9,403,1,0,6,3

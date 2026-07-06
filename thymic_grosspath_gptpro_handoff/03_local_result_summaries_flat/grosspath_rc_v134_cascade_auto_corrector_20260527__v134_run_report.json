@@ -1,0 +1,36 @@
+{
+  "boundary": {
+    "development_data": "old_data + third_batch only; nested by existing fold_id",
+    "strict_external": "胸腺瘤+癌 strict_task7_eval=1 only; no threshold tuning on external",
+    "base_model": "pure_auto rows from v91, not manual-review-corrected workflow"
+  },
+  "n_internal": 591,
+  "n_external_strict": 108,
+  "pure_auto_internal": {
+    "n": 591,
+    "accuracy": 0.8460236886632826,
+    "balanced_accuracy": 0.8445542503411971,
+    "f1": 0.8043010752688172,
+    "sensitivity_high": 0.8385650224215246,
+    "specificity_low": 0.8505434782608695,
+    "tn": 313,
+    "fp": 55,
+    "fn": 36,
+    "tp": 187,
+    "auc": 0.860011698186781
+  },
+  "pure_auto_external_strict": {
+    "n": 108,
+    "accuracy": 0.7037037037037037,
+    "balanced_accuracy": 0.7010812696198117,
+    "f1": 0.6666666666666666,
+    "sensitivity_high": 0.6808510638297872,
+    "specificity_low": 0.7213114754098361,
+    "tn": 44,
+    "fp": 17,
+    "fn": 15,
+    "tp": 32,
+    "auc": 0.67317753749564
+  },
+  "n_configs": 72
+}

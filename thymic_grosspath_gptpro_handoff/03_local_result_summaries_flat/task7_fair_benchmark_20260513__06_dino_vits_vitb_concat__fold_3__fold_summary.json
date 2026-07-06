@@ -1,0 +1,30 @@
+{
+  "best_c": 0.01,
+  "best_val_primary_metric": 0.8611111111111112,
+  "val_case_mean": {
+    "auc": 0.8611111111111112,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6666666666666667,
+    "sensitivity": 0.5,
+    "specificity": 0.8333333333333334,
+    "precision": 0.75,
+    "f1": 0.6,
+    "tn": 10,
+    "fp": 2,
+    "fn": 6,
+    "tp": 6
+  },
+  "test_case_mean": {
+    "auc": 0.8611111111111112,
+    "accuracy": 0.7916666666666666,
+    "balanced_accuracy": 0.7916666666666666,
+    "sensitivity": 0.6666666666666666,
+    "specificity": 0.9166666666666666,
+    "precision": 0.8888888888888888,
+    "f1": 0.7619047619047619,
+    "tn": 11,
+    "fp": 1,
+    "fn": 4,
+    "tp": 8
+  }
+}

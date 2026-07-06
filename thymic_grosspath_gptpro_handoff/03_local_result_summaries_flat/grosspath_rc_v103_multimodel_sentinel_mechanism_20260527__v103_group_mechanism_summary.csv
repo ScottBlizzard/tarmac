@@ -1,0 +1,11 @@
+﻿domain,task_l6_label,n,base_error_n,base_fn_n,base_fp_n,extra_review_n,rescued_error_n,extra_clean_review_n,remaining_error_n,remaining_fn_n,remaining_fp_n
+old_data,A,44,1,0,1,1,0,1,1,0,1
+old_data,AB,50,0,0,0,3,0,3,0,0,0
+old_data,B1,50,0,0,0,3,0,3,0,0,0
+old_data,B2,60,0,0,0,0,0,0,0,0,0
+old_data,B3,24,0,0,0,0,0,0,0,0,0
+old_data,TC,57,0,0,0,0,0,0,0,0,0
+third_batch,TC,53,4,4,0,3,3,0,1,1,0
+third_batch,B2,29,3,3,0,1,1,0,2,2,0
+third_batch,AB,212,2,0,2,25,0,25,2,0,2
+third_batch,B1,12,0,0,0,1,0,1,0,0,0

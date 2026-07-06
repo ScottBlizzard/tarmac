@@ -1,0 +1,30 @@
+{
+  "boundary": {
+    "third_batch_is_external_only": true,
+    "no_doctor_gross_text": true,
+    "no_case_id_lookup": true,
+    "note": "Raw-top source models are re-trained as old-fold ensembles from DINO image features; thresholds and stackers are selected on old 285 only."
+  },
+  "old_n": 285,
+  "third_n": 306,
+  "best_external": {
+    "accuracy": 0.6176470588235294,
+    "balanced_accuracy": 0.6460692508710801,
+    "f1": 0.4978540772532189,
+    "sensitivity": 0.7073170731707317,
+    "specificity": 0.5848214285714286,
+    "tn": 131,
+    "fp": 93,
+    "fn": 24,
+    "tp": 58,
+    "auc": 0.7000762195121951,
+    "model": "rf_d3_l8",
+    "threshold_objective": "sens90",
+    "threshold": 0.29,
+    "old_oof_accuracy": 0.6842105263157895,
+    "old_oof_balanced_accuracy": 0.6861702127659575,
+    "old_oof_f1": 0.7321428571428571,
+    "old_oof_sensitivity": 0.8723404255319149,
+    "old_oof_specificity": 0.5
+  }
+}

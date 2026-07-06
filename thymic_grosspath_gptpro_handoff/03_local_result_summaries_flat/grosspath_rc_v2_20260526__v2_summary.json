@@ -1,0 +1,15 @@
+{
+  "dev_n": 591,
+  "external_n": 108,
+  "safe_core_n": 214,
+  "hard_error_n": 74,
+  "domain_focus_n": 384,
+  "outputs": {
+    "dev_diag": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_development_diagnostic_table.csv",
+    "dev_subgroups": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_development_subgroup_error_metrics.csv",
+    "concept_enrichment": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_concept_error_enrichment_dev.csv",
+    "safe_core": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_training_safe_core_cases.csv",
+    "hard_errors": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_training_hard_error_cases.csv",
+    "domain_focus": "D:\\影响分析\\outputs\\grosspath_rc_v2_20260526\\v2_training_domain_focus_cases.csv"
+  }
+}

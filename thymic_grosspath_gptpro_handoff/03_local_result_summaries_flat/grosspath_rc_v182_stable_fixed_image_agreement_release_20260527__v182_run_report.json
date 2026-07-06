@@ -1,0 +1,16 @@
+{
+  "selection_status": "stable_all_folds_train_zero_and_heldout_zero",
+  "selected_candidate_id": "v118_review_or_control||dino_pca64_logreg_c03||0.90",
+  "selected_review_policy": "v118_review_or_control",
+  "selected_model": "dino_pca64_logreg_c03",
+  "selected_threshold": 0.9,
+  "stable_candidate_count": 4,
+  "heldout_additional_release_n": 10,
+  "heldout_additional_error_n": 0,
+  "v161_all_domain_review_rate": 0.575107296137339,
+  "v182_all_domain_review_rate": 0.5608011444921316,
+  "v182_all_domain_bacc": 0.9981481481481482,
+  "v182_released_errors": 0,
+  "v182_fn": 1,
+  "v182_fp": 0
+}

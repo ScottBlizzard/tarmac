@@ -1,0 +1,13 @@
+{
+  "selected_rule_count": 2,
+  "newly_released_all_domains": 157,
+  "released_errors_all_domains": 0,
+  "baseline_review_rate_all_domains": 0.7997138769670958,
+  "v161_review_rate_all_domains": 0.575107296137339,
+  "baseline_auto_pass_rate_all_domains": 0.20028612303290416,
+  "v161_auto_pass_rate_all_domains": 0.4248927038626609,
+  "v161_all_domain_bacc": 0.9981481481481482,
+  "v161_all_domain_fn": 1,
+  "v161_all_domain_fp": 0,
+  "v161_strict_external_bacc": 1.0
+}

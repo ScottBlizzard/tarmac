@@ -1,0 +1,10 @@
+{
+  "row_count": 21,
+  "claim_count": 5,
+  "v118_all_domain_bacc": 0.9981481481481482,
+  "v118_review_rate": 0.7997138769670958,
+  "v178_all_domain_bacc": 0.9981481481481482,
+  "v178_review_rate": 0.5608011444921316,
+  "strict_external_direction_router_bacc": 0.8059427732942039,
+  "strict_external_low_conf_bacc": 0.780997798972854
+}

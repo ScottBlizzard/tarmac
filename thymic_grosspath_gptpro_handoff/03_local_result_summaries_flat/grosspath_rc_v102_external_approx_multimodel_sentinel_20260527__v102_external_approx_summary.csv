@@ -1,0 +1,9 @@
+﻿workflow,rule_label,n,control_rate,auto_n,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy,fold,signal,threshold,extra_review_n,extra_captured_error_n
+Batch-adaptive main,base,108,0.8240740740740741,19,1,0,1,1.0,0.9836065573770492,0.9918032786885246,,,,,
+v102 approx fold-selected sentinel,mm_prob_p75>=0.400,108,0.8796296296296297,13,1,0,1,1.0,0.9836065573770492,0.9918032786885246,1.0,mm_prob_p75,0.4,6.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,0.8518518518518519,16,1,0,1,1.0,0.9836065573770492,0.9918032786885246,2.0,selected_unified_prob,0.25,3.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,0.8518518518518519,16,1,0,1,1.0,0.9836065573770492,0.9918032786885246,3.0,selected_unified_prob,0.25,3.0,0.0
+v102 approx fold-selected sentinel,selected_unified_prob>=0.250,108,0.8518518518518519,16,1,0,1,1.0,0.9836065573770492,0.9918032786885246,4.0,selected_unified_prob,0.25,3.0,0.0
+v102 approx fold-selected sentinel,selected_dinov3_prob>=0.250,108,0.8981481481481481,11,1,0,1,1.0,0.9836065573770492,0.9918032786885246,5.0,selected_dinov3_prob,0.25,8.0,0.0
+v102 approx sentinel union,v102 approx sentinel union,108,0.8981481481481481,11,1,0,1,1.0,0.9836065573770492,0.9918032786885246,,,,8.0,0.0
+v102 approx sentinel vote>=2,v102 approx sentinel vote>=2,108,0.8796296296296297,13,1,0,1,1.0,0.9836065573770492,0.9918032786885246,,,,6.0,0.0

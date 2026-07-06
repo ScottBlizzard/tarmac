@@ -1,0 +1,46 @@
+{
+  "fold_id": 2,
+  "best_epoch": 8,
+  "selection_metric": "auc",
+  "best_val_selection_metric": 0.7777777777777778,
+  "best_val_primary_metric": 0.7777777777777778,
+  "val_case_mean": {
+    "auc": 0.7777777777777778,
+    "accuracy": 0.625,
+    "balanced_accuracy": 0.625,
+    "sensitivity": 0.4166666666666667,
+    "specificity": 0.8333333333333334,
+    "precision": 0.7142857142857143,
+    "f1": 0.5263157894736842,
+    "tn": 10,
+    "fp": 2,
+    "fn": 7,
+    "tp": 5
+  },
+  "test_case_mean": {
+    "auc": 0.8472222222222222,
+    "accuracy": 0.7916666666666666,
+    "balanced_accuracy": 0.7916666666666667,
+    "sensitivity": 0.5833333333333334,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.7368421052631579,
+    "tn": 12,
+    "fp": 0,
+    "fn": 5,
+    "tp": 7
+  },
+  "test_image": {
+    "auc": 0.8256410256410257,
+    "accuracy": 0.7857142857142857,
+    "balanced_accuracy": 0.7692307692307692,
+    "sensitivity": 0.5384615384615384,
+    "specificity": 1.0,
+    "precision": 1.0,
+    "f1": 0.7,
+    "tn": 15,
+    "fp": 0,
+    "fn": 6,
+    "tp": 7
+  }
+}

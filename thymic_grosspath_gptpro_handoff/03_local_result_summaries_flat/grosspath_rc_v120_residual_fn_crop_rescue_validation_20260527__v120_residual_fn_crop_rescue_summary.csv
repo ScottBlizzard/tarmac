@@ -1,0 +1,16 @@
+﻿workflow,scope,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+v118_global_two_signal,all_domains,699,0.7997138769670958,1,1,0,0.9962962962962963,1.0,0.9981481481481482
+v118_global_two_signal,internal_all,591,0.7868020304568528,1,1,0,0.9955156950672646,1.0,0.9977578475336323
+v118_global_two_signal,old_data,285,0.7614035087719299,0,0,0,1.0,1.0,1.0
+v118_global_two_signal,third_batch,306,0.8104575163398693,1,1,0,0.9878048780487805,1.0,0.9939024390243902
+v118_global_two_signal,strict_external,108,0.8703703703703703,0,0,0,1.0,1.0,1.0
+posthoc_crop_rescue_upper_bound,all_domains,699,0.8097281831187411,0,0,0,1.0,1.0,1.0
+posthoc_crop_rescue_upper_bound,internal_all,591,0.7986463620981388,0,0,0,1.0,1.0,1.0
+posthoc_crop_rescue_upper_bound,old_data,285,0.7614035087719299,0,0,0,1.0,1.0,1.0
+posthoc_crop_rescue_upper_bound,third_batch,306,0.8333333333333334,0,0,0,1.0,1.0,1.0
+posthoc_crop_rescue_upper_bound,strict_external,108,0.8703703703703703,0,0,0,1.0,1.0,1.0
+nested_crop_rescue_validation,all_domains,699,0.8082975679542204,1,1,0,0.9962962962962963,1.0,0.9981481481481482
+nested_crop_rescue_validation,internal_all,591,0.7969543147208121,1,1,0,0.9955156950672646,1.0,0.9977578475336323
+nested_crop_rescue_validation,old_data,285,0.7614035087719299,0,0,0,1.0,1.0,1.0
+nested_crop_rescue_validation,third_batch,306,0.8300653594771242,1,1,0,0.9878048780487805,1.0,0.9939024390243902
+nested_crop_rescue_validation,strict_external,108,0.8703703703703703,0,0,0,1.0,1.0,1.0

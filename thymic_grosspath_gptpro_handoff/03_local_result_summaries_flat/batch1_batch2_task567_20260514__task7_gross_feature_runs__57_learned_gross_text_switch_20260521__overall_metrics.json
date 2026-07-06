@@ -1,0 +1,19 @@
+{
+  "accuracy": 0.8140350877192982,
+  "balanced_accuracy": 0.8137559101654847,
+  "auc": 0.8170311268715523,
+  "f1": 0.8072727272727273,
+  "sensitivity": 0.7872340425531915,
+  "specificity": 0.8402777777777778,
+  "tn": 121,
+  "fp": 23,
+  "fn": 30,
+  "tp": 111,
+  "config": "learned_switch__train_allhard_calib_apply_all",
+  "switched_n": 6,
+  "rescue_n": 0,
+  "hurt_n": 6,
+  "base_accuracy": 0.8350877192982457,
+  "base_balanced_accuracy": 0.8348108747044918,
+  "calib_oracle_with_base_accuracy": 0.9578947368421052
+}

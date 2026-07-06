@@ -1,0 +1,31 @@
+{
+  "best_c": NaN,
+  "best_epoch": 1,
+  "best_val_primary_metric": 0.4784632034632035,
+  "val_case_mean": {
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.5,
+    "macro_precision": 0.4781746031746032,
+    "macro_recall": 0.5,
+    "macro_f1": 0.4784632034632035,
+    "macro_auc": 0.8249999999999998
+  },
+  "test_case_mean": {
+    "accuracy": 0.375,
+    "balanced_accuracy": 0.375,
+    "macro_precision": 0.376984126984127,
+    "macro_recall": 0.375,
+    "macro_f1": 0.35202020202020207,
+    "macro_auc": 0.8270833333333334
+  },
+  "aux_train_coverage": {
+    "boundary_axis": 22,
+    "lowrisk": 22,
+    "bgroup": 22,
+    "tc": 22,
+    "manual_round_smooth": 22,
+    "manual_microcystic": 22,
+    "manual_hemonec": 22,
+    "manual_confound_target": 22
+  }
+}

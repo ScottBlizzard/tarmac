@@ -1,0 +1,10 @@
+{
+  "pool_rows": 37,
+  "frontier_rows": 8,
+  "best_30_review": "dev_stable_router_all_domains@review0.3",
+  "best_30_review_all_bacc": 0.8804642670839854,
+  "best_60_review": "baseline_low_conf_dev_selected@review0.6",
+  "best_60_review_all_bacc": 0.9589984350547732,
+  "min_domain_ge95_min_review": "locked_high_safety_two_signal_scorecard",
+  "near_zero_error_point": "locked_high_safety_two_signal_scorecard"
+}

@@ -1,0 +1,9 @@
+﻿policy_variant,scope,n,released_n,released_error_n,released_high_risk_fn_n,auto_decision_n,review_or_reject_n
+current_hard_gate,old_data,285,11,0,0,221,64
+current_hard_gate,third_batch,306,18,0,0,203,103
+current_hard_gate,strict_external,108,0,0,0,52,56
+current_hard_gate,all_domains,699,29,0,0,476,223
+relaxed_gate_what_if,old_data,285,11,0,0,221,64
+relaxed_gate_what_if,third_batch,306,18,0,0,203,103
+relaxed_gate_what_if,strict_external,108,8,0,0,60,48
+relaxed_gate_what_if,all_domains,699,37,0,0,484,215

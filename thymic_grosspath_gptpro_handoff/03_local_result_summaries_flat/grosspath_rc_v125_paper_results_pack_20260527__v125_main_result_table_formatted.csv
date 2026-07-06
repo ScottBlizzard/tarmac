@@ -1,0 +1,4 @@
+﻿workflow,evidence_tier,scope,control_rate,balanced_accuracy,remaining_error_n,fn,fp
+v91 main locked,locked primary,all_domains,74.11%,98.24%,11,7,4
+v118/v119 global bidirectional two-signal scorecard,deployable candidate after nested support,all_domains,79.97%,99.81%,1,1,0
+v120 post-hoc crop rescue upper bound,post-hoc upper bound only,all_domains,80.97%,100.00%,0,0,0

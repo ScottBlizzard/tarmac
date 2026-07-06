@@ -1,0 +1,7 @@
+﻿setting,scorecard,description,scope,extra_review_n,extra_captured_error_n,extra_clean_review_n,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+strict_external_approx,v105_majority_unified025_core045,selected_unified_prob >= 0.25 and prob_mean_core <= 0.45,all,1,0,1,108,83.33%,1,0,1,100.00%,98.36%,99.18%
+strict_external_approx,v105_majority_unified025_core045,selected_unified_prob >= 0.25 and prob_mean_core <= 0.45,strict_external_approx,1,0,1,108,83.33%,1,0,1,100.00%,98.36%,99.18%
+strict_external_approx,v105_strict_unified030_core035,selected_unified_prob >= 0.30 and prob_mean_core <= 0.35,all,0,0,0,108,82.41%,1,0,1,100.00%,98.36%,99.18%
+strict_external_approx,v105_strict_unified030_core035,selected_unified_prob >= 0.30 and prob_mean_core <= 0.35,strict_external_approx,0,0,0,108,82.41%,1,0,1,100.00%,98.36%,99.18%
+strict_external_approx,v105_dual_unified025_dino025_core045,selected_unified_prob >= 0.25 and selected_dinov3_prob >= 0.25 and prob_mean_core <= 0.45,all,1,0,1,108,83.33%,1,0,1,100.00%,98.36%,99.18%
+strict_external_approx,v105_dual_unified025_dino025_core045,selected_unified_prob >= 0.25 and selected_dinov3_prob >= 0.25 and prob_mean_core <= 0.45,strict_external_approx,1,0,1,108,83.33%,1,0,1,100.00%,98.36%,99.18%

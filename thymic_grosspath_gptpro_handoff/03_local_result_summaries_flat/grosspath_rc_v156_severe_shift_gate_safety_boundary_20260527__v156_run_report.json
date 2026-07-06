@@ -1,0 +1,13 @@
+{
+  "selected_rule": "prob_mean_core|quality_ge_0p10_internal|single:v144_concept_directional|all_preds|t=0.844945",
+  "severe_domains_from_v77": [
+    "strict_external"
+  ],
+  "internal_max_shift_index": 0.9694861165212963,
+  "strict_external_shift_index": 2.3241836209922586,
+  "current_shift_margin": 1.3546975044709622,
+  "strict_external_delta_bacc_when_gated": 0.23881144534115917,
+  "old_false_gate_delta_bacc": -0.0610224586288417,
+  "third_false_gate_delta_bacc": -0.10589067944250874,
+  "all_domain_delta_bacc_without_gate": -0.03719353155972882
+}

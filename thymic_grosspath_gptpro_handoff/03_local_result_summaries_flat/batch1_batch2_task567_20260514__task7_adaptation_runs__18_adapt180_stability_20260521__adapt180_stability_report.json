@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "AB": 110,
+    "B1": 8,
+    "B2": 22,
+    "TC": 40
+  },
+  "model": "whole+crop DINO frozen features + logreg C=0.0003 + adapt repeat 4 + train-OOF accuracy threshold",
+  "seeds": [
+    20260521,
+    20260622,
+    20260723,
+    20260824,
+    20260925,
+    20261026,
+    20261127,
+    20261228,
+    20261329,
+    20261430
+  ],
+  "aggregate": [
+    {
+      "index": "mean",
+      "holdout_accuracy": 0.8246031746031746,
+      "holdout_balanced_accuracy": 0.7314622641509434,
+      "holdout_f1": 0.5236488723959247,
+      "holdout_auc": 0.8241981132075471,
+      "old_oof_accuracy": 0.6645614035087719,
+      "adapt_oof_accuracy": 0.7483333333333333
+    },
+    {
+      "index": "std",
+      "holdout_accuracy": 0.05777259313521157,
+      "holdout_balanced_accuracy": 0.06024128485197724,
+      "holdout_f1": 0.09942173676303022,
+      "holdout_auc": 0.04465134746661331,
+      "old_oof_accuracy": 0.015533995523634145,
+      "adapt_oof_accuracy": 0.01777198979853346
+    },
+    {
+      "index": "min",
+      "holdout_accuracy": 0.7142857142857143,
+      "holdout_balanced_accuracy": 0.6514150943396226,
+      "holdout_f1": 0.4,
+      "holdout_auc": 0.7740566037735849,
+      "old_oof_accuracy": 0.6385964912280702,
+      "adapt_oof_accuracy": 0.7166666666666667
+    },
+    {
+      "index": "max",
+      "holdout_accuracy": 0.9206349206349206,
+      "holdout_balanced_accuracy": 0.8514150943396226,
+      "holdout_f1": 0.75,
+      "holdout_auc": 0.8957547169811322,
+      "old_oof_accuracy": 0.6912280701754386,
+      "adapt_oof_accuracy": 0.7722222222222223
+    }
+  ],
+  "repeated_holdout_case_coverage_n": 300,
+  "repeated_holdout_majority_vote": {
+    "accuracy": 0.7933333333333333,
+    "balanced_accuracy": 0.7206918641896221,
+    "f1": 0.5866666666666667,
+    "tn": 194,
+    "fp": 29,
+    "fn": 33,
+    "tp": 44,
+    "auc": 0.7347271562518198
+  },
+  "repeated_holdout_mean_prob_t05": {
+    "accuracy": 0.7433333333333333,
+    "balanced_accuracy": 0.733824471492633,
+    "f1": 0.5882352941176471,
+    "tn": 168,
+    "fp": 55,
+    "fn": 22,
+    "tp": 55,
+    "auc": 0.8178906295498223
+  },
+  "best_seed_by_holdout_accuracy": {
+    "seed": 20260521.0,
+    "threshold": 0.6599999999999999,
+    "adapt_n": 180.0,
+    "holdout_n": 126.0,
+    "train_accuracy": 0.7053763440860215,
+    "train_balanced_accuracy": 0.6803106080547513,
+    "train_f1": 0.5885885885885885,
+    "train_tn": 230.0,
+    "train_fp": 32.0,
+    "train_fn": 105.0,
+    "train_tp": 98.0,
+    "train_auc": 0.7473207234986651,
+    "old_oof_accuracy": 0.6771929824561403,
+    "old_oof_balanced_accuracy": 0.6753102836879432,
+    "old_oof_f1": 0.603448275862069,
+    "old_oof_tn": 123.0,
+    "old_oof_fp": 21.0,
+    "old_oof_fn": 71.0,
+    "old_oof_tp": 70.0,
+    "old_oof_auc": 0.7265070921985816,
+    "adapt_oof_accuracy": 0.75,
+    "adapt_oof_balanced_accuracy": 0.6791962821213778,
+    "adapt_oof_f1": 0.5544554455445545,
+    "adapt_oof_tn": 107.0,
+    "adapt_oof_fp": 11.0,
+    "adapt_oof_fn": 34.0,
+    "adapt_oof_tp": 28.0,
+    "adapt_oof_auc": 0.7802077638053581,
+    "holdout_accuracy": 0.9206349206349206,
+    "holdout_balanced_accuracy": 0.8514150943396226,
+    "holdout_f1": 0.75,
+    "holdout_tn": 101.0,
+    "holdout_fp": 5.0,
+    "holdout_fn": 5.0,
+    "holdout_tp": 15.0,
+    "holdout_auc": 0.8952830188679245
+  },
+  "output_dir": "D:\\影响分析\\outputs\\batch1_batch2_task567_20260514\\task7_adaptation_runs\\18_adapt180_stability_20260521"
+}

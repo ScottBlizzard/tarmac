@@ -1,0 +1,4 @@
+﻿domain,n,v50_control_rate,v75_control_rate,v75_extra_n,v75_extra_rate,v50_remaining_error_n,v75_remaining_error_n,rescued_by_v75_n,rescued_fn_n,rescued_fp_n,v75_extra_wrong_capture_n,v75_extra_wrong_capture_rate,v75_extra_quality_dominant_n,v75_extra_lowconf_dominant_n,v75_extra_mixed_n
+old_data,285,0.7263157894736842,0.7473684210526316,6,0.021052631578947368,1,1,0,0,0,0,0.0,3,2,1
+third_batch,306,0.7254901960784313,0.7679738562091504,13,0.042483660130718956,9,7,2,2,0,2,0.15384615384615385,10,1,2
+strict_external,108,0.7314814814814815,0.7962962962962963,7,0.06481481481481481,3,2,1,1,0,1,0.14285714285714285,3,2,2

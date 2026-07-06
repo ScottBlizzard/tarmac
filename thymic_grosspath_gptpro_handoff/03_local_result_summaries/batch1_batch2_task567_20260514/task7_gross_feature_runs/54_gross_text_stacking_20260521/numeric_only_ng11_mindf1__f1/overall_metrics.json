@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.775438596491228,
+  "balanced_accuracy": 0.7751920803782506,
+  "auc": 0.8296394799054374,
+  "f1": 0.7681159420289855,
+  "sensitivity": 0.75177304964539,
+  "specificity": 0.7986111111111112,
+  "tn": 115,
+  "fp": 29,
+  "fn": 35,
+  "tp": 106,
+  "config": "numeric_only_ng11_mindf1__f1",
+  "use_text": false,
+  "use_numeric": true,
+  "ngram_range": "(1, 1)",
+  "min_df": 1,
+  "objective": "f1"
+}

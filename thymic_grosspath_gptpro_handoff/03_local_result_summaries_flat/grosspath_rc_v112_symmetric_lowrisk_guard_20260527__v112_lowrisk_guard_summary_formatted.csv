@@ -1,0 +1,6 @@
+﻿workflow,scope,wc_max,core_max,main_max,robust_max,extra_fp_guard_review_n,extra_fp_guard_captured_error_n,extra_fp_guard_clean_review_n,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+v111_plus_v112_symmetric_lowrisk_guard,all_domains,0.625,0.775,0.950,0.800,7,3,4,699,79.83%,1,1,0,99.63%,100.00%,99.81%
+v111_plus_v112_symmetric_lowrisk_guard,internal_all,0.625,0.775,0.950,0.800,7,3,4,591,78.51%,1,1,0,99.55%,100.00%,99.78%
+v111_plus_v112_symmetric_lowrisk_guard,old_data,0.625,0.775,0.950,0.800,5,1,4,285,75.79%,0,0,0,100.00%,100.00%,100.00%
+v111_plus_v112_symmetric_lowrisk_guard,third_batch,0.625,0.775,0.950,0.800,2,2,0,306,81.05%,1,1,0,98.78%,100.00%,99.39%
+v111_plus_v112_symmetric_lowrisk_guard,strict_external,0.625,0.775,0.950,0.800,0,0,0,108,87.04%,0,0,0,100.00%,100.00%,100.00%

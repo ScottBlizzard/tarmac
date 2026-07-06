@@ -1,0 +1,218 @@
+{
+  "protocol": {
+    "fold1_source": "outputs/batch1_batch2_task567_20260514/task7_adaptation_runs/41_adapt72_norep_vitb14_whole_headonly_20260522/fold_1",
+    "folds2_5_source": "outputs/batch1_batch2_task567_20260514/task7_adaptation_runs/41_adapt72_norep_vitb14_whole_headonly_20260522",
+    "method": "max_prob",
+    "replicate_handling": "third adapt72 replicated cases collapsed by original_case_id with mean high-risk probability",
+    "threshold_selection": "selected threshold uses old + adapt72 only; third_holdout references are for analysis"
+  },
+  "base_threshold_0.50": {
+    "third_holdout": {
+      "n": 234,
+      "accuracy": 0.7051282051282052,
+      "balanced_accuracy": 0.6330558539205156,
+      "f1": 0.3669724770642202,
+      "tn": 145,
+      "fp": 51,
+      "fn": 18,
+      "tp": 20,
+      "auc": 0.7263694951664876
+    },
+    "old": {
+      "n": 285,
+      "accuracy": 0.6421052631578947,
+      "balanced_accuracy": 0.6418439716312057,
+      "f1": 0.6304347826086957,
+      "tn": 96,
+      "fp": 48,
+      "fn": 54,
+      "tp": 87,
+      "auc": 0.6763691883372734
+    },
+    "adapt72": {
+      "n": 72,
+      "accuracy": 0.6111111111111112,
+      "balanced_accuracy": 0.5974025974025974,
+      "f1": 0.6744186046511628,
+      "tn": 15,
+      "fp": 13,
+      "fn": 15,
+      "tp": 29,
+      "auc": 0.6704545454545454
+    }
+  },
+  "selected_by_old_plus_adapt_threshold": {},
+  "best_third_holdout_reference_under_old_guard": {},
+  "best_third_holdout_tp_preserved_reference_under_old_guard": {},
+  "subtype_rows": [
+    {
+      "eval_group": "third_holdout",
+      "task_l6_label": "AB",
+      "n": 188,
+      "accuracy": 0.7393617021276596,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 139,
+      "fp": 49,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "third_holdout",
+      "task_l6_label": "B1",
+      "n": 8,
+      "accuracy": 0.75,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 6,
+      "fp": 2,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "third_holdout",
+      "task_l6_label": "B2",
+      "n": 7,
+      "accuracy": 0.2857142857142857,
+      "balanced_accuracy": NaN,
+      "f1": 0.4444444444444444,
+      "tn": 0,
+      "fp": 0,
+      "fn": 5,
+      "tp": 2
+    },
+    {
+      "eval_group": "third_holdout",
+      "task_l6_label": "TC",
+      "n": 31,
+      "accuracy": 0.5806451612903226,
+      "balanced_accuracy": NaN,
+      "f1": 0.7346938775510204,
+      "tn": 0,
+      "fp": 0,
+      "fn": 13,
+      "tp": 18
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "A",
+      "n": 44,
+      "accuracy": 0.6818181818181818,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 30,
+      "fp": 14,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "AB",
+      "n": 50,
+      "accuracy": 0.86,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 43,
+      "fp": 7,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "B1",
+      "n": 50,
+      "accuracy": 0.46,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 23,
+      "fp": 27,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "B2",
+      "n": 60,
+      "accuracy": 0.6,
+      "balanced_accuracy": NaN,
+      "f1": 0.75,
+      "tn": 0,
+      "fp": 0,
+      "fn": 24,
+      "tp": 36
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "B3",
+      "n": 24,
+      "accuracy": 0.5833333333333334,
+      "balanced_accuracy": NaN,
+      "f1": 0.7368421052631579,
+      "tn": 0,
+      "fp": 0,
+      "fn": 10,
+      "tp": 14
+    },
+    {
+      "eval_group": "old",
+      "task_l6_label": "TC",
+      "n": 57,
+      "accuracy": 0.6491228070175439,
+      "balanced_accuracy": NaN,
+      "f1": 0.7872340425531915,
+      "tn": 0,
+      "fp": 0,
+      "fn": 20,
+      "tp": 37
+    },
+    {
+      "eval_group": "adapt72",
+      "task_l6_label": "AB",
+      "n": 24,
+      "accuracy": 0.5833333333333334,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 14,
+      "fp": 10,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "adapt72",
+      "task_l6_label": "B1",
+      "n": 4,
+      "accuracy": 0.25,
+      "balanced_accuracy": NaN,
+      "f1": 0.0,
+      "tn": 1,
+      "fp": 3,
+      "fn": 0,
+      "tp": 0
+    },
+    {
+      "eval_group": "adapt72",
+      "task_l6_label": "B2",
+      "n": 22,
+      "accuracy": 0.5,
+      "balanced_accuracy": NaN,
+      "f1": 0.6666666666666666,
+      "tn": 0,
+      "fp": 0,
+      "fn": 11,
+      "tp": 11
+    },
+    {
+      "eval_group": "adapt72",
+      "task_l6_label": "TC",
+      "n": 22,
+      "accuracy": 0.8181818181818182,
+      "balanced_accuracy": NaN,
+      "f1": 0.9,
+      "tn": 0,
+      "fp": 0,
+      "fn": 4,
+      "tp": 18
+    }
+  ],
+  "n_case_rows": 591
+}

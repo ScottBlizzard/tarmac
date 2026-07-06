@@ -1,0 +1,10 @@
+{
+  "pool_rows": 38,
+  "frontier_rows": 7,
+  "min_domain_ge95_point": "v161_safe_release_scorecard",
+  "min_domain_ge95_review_rate": 0.575107296137339,
+  "near_zero_error_point": "v161_safe_release_scorecard",
+  "near_zero_error_review_rate": 0.575107296137339,
+  "max60_best_point": "v161_safe_release_scorecard",
+  "max60_best_all_bacc": 0.9981481481481482
+}

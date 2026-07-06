@@ -1,0 +1,15 @@
+{
+  "selection_rule": "A directional flip is allowed only when the same domain's training complement has a no-harm rescue rule; otherwise the case remains reviewed.",
+  "all_domain_bacc": 0.996982646982647,
+  "all_domain_remaining_review_rate": 0.586552217453505,
+  "all_domain_flip_n": 2,
+  "all_domain_flip_error_n": 1,
+  "all_domain_rescued_n": 1,
+  "all_domain_hurt_n": 1,
+  "internal_bacc": 0.9963991518814583,
+  "internal_remaining_review_rate": 0.5346869712351946,
+  "internal_flip_error_n": 1,
+  "strict_external_bacc": 1.0,
+  "strict_external_remaining_review_rate": 0.8703703703703703,
+  "strict_external_flip_error_n": 0
+}

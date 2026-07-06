@@ -1,0 +1,17 @@
+{
+  "candidate_count": 88,
+  "fold_selection_count": 5,
+  "selected_candidates": [
+    "pm_ge_0.350_whole_le_0.15",
+    "pm_ge_0.400_whole_le_0.15"
+  ],
+  "baseline_auto_error_n": 1,
+  "nested_auto_error_n": 1,
+  "nested_additional_review_n": 2,
+  "nested_sentinel_rescued_fn_n": 0,
+  "nested_review_rate": 0.592274678111588,
+  "nested_bacc": 0.9981481481481482,
+  "case_2516531_nested_reviewed": false,
+  "case_2516531_fullfit_reviewed": true,
+  "fullfit_candidate": "pm_ge_0.400_whole_le_0.15"
+}

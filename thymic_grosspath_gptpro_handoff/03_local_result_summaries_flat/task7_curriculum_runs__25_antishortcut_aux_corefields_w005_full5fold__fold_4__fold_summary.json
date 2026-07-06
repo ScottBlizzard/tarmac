@@ -1,0 +1,103 @@
+{
+  "final_stage": "stage3_all",
+  "best_val_primary_metric": 0.9782608695652174,
+  "stage_summaries": {
+    "stage1_easy": {
+      "best_epoch": 1,
+      "best_val_primary_metric": 1.0,
+      "best_val_metrics": {
+        "auc": 1.0,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "f1": 1.0,
+        "tn": 14.0,
+        "fp": 0.0,
+        "fn": 0.0,
+        "tp": 14.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 11,
+        "manual_irregularity": 11,
+        "manual_confound_target": 11,
+        "manual_view_limit": 11
+      }
+    },
+    "stage2_easy_medium": {
+      "best_epoch": 5,
+      "best_val_primary_metric": 0.9285714285714286,
+      "best_val_metrics": {
+        "auc": 0.988558352402746,
+        "accuracy": 0.9285714285714286,
+        "balanced_accuracy": 0.9302059496567505,
+        "sensitivity": 0.9130434782608695,
+        "specificity": 0.9473684210526315,
+        "precision": 0.9545454545454546,
+        "f1": 0.9333333333333333,
+        "tn": 18.0,
+        "fp": 1.0,
+        "fn": 2.0,
+        "tp": 21.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 11,
+        "manual_irregularity": 11,
+        "manual_confound_target": 11,
+        "manual_view_limit": 11
+      }
+    },
+    "stage3_all": {
+      "best_epoch": 1,
+      "best_val_primary_metric": 0.9782608695652174,
+      "best_val_metrics": {
+        "auc": 0.998095238095238,
+        "accuracy": 0.9782608695652174,
+        "balanced_accuracy": 0.9761904761904762,
+        "sensitivity": 1.0,
+        "specificity": 0.9523809523809523,
+        "precision": 0.9615384615384616,
+        "f1": 0.9803921568627451,
+        "tn": 20.0,
+        "fp": 1.0,
+        "fn": 0.0,
+        "tp": 25.0
+      },
+      "aux_coverage": {
+        "manual_hemonec": 26,
+        "manual_irregularity": 26,
+        "manual_confound_target": 26,
+        "manual_view_limit": 26
+      }
+    }
+  },
+  "val_case_mean": {
+    "auc": 0.9187192118226601,
+    "accuracy": 0.8070175438596491,
+    "balanced_accuracy": 0.8091133004926109,
+    "sensitivity": 0.9285714285714286,
+    "specificity": 0.6896551724137931,
+    "precision": 0.7428571428571429,
+    "f1": 0.8253968253968254,
+    "tn": 20,
+    "fp": 9,
+    "fn": 2,
+    "tp": 26
+  },
+  "test_case_mean": {
+    "auc": 0.7401477832512315,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6656403940886699,
+    "sensitivity": 0.6071428571428571,
+    "specificity": 0.7241379310344828,
+    "precision": 0.68,
+    "f1": 0.6415094339622641,
+    "tn": 21,
+    "fp": 8,
+    "fn": 11,
+    "tp": 17
+  },
+  "aux_loss_weight": 0.05,
+  "best_c": NaN
+}

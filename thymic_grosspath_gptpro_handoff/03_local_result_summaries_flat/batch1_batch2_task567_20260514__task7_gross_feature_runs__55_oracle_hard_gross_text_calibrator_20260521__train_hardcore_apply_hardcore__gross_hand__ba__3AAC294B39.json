@@ -1,0 +1,22 @@
+{
+  "accuracy": 0.8421052631578947,
+  "balanced_accuracy": 0.8416075650118203,
+  "auc": 0.904403073286052,
+  "f1": 0.8327137546468402,
+  "sensitivity": 0.7943262411347518,
+  "specificity": 0.8888888888888888,
+  "tn": 128,
+  "fp": 16,
+  "fn": 29,
+  "tp": 112,
+  "config": "train_hardcore_apply_hardcore__gross_hand__balanced_accuracy",
+  "route": "train_hardcore_apply_hardcore",
+  "feature": "gross_hand",
+  "objective": "balanced_accuracy",
+  "routed_n": 65,
+  "rescue_n": 17,
+  "hurt_n": 15,
+  "net_rescue": 2,
+  "train_groups": "hard_core",
+  "apply_groups": "hard_core"
+}

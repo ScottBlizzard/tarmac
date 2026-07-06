@@ -1,0 +1,17 @@
+{
+  "target_budget": 0.3,
+  "dev_stable_selected": {
+    "base_model": "robust_prob",
+    "router": "single:v143_pca_any"
+  },
+  "low_conf_selected": {
+    "base_model": "prob_mean_core",
+    "router": "single:low_conf"
+  },
+  "shift_categories": {
+    "third_batch": "within_internal_shift",
+    "old_data": "within_internal_shift",
+    "strict_external": "severe_shift"
+  },
+  "boundary": "Only old/third internal stability is used for data-driven router selection; severe-shift branches are marked as method-prior candidates and not final locked policies."
+}

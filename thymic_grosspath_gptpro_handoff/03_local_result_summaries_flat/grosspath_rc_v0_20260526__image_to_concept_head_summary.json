@@ -1,0 +1,152 @@
+{
+  "feature_dir": "D:\\影响分析\\outputs\\batch1_batch2_task567_20260514\\task7_gross_feature_runs\\73_flip_lr_whole_plus_crop_embedding_probe_20260521",
+  "n_cases": 285,
+  "n_concepts_tested": 15,
+  "best_concepts": [
+    {
+      "target": "cystic_change",
+      "n": 285,
+      "positive_rate": 0.10526315789473684,
+      "threshold": 0.15999999999999998,
+      "auc": 0.6802614379084968,
+      "ap": 0.18935790570489963,
+      "accuracy": 0.5263157894736842,
+      "balanced_accuracy": 0.6617647058823529,
+      "f1": 0.2702702702702703
+    },
+    {
+      "target": "texture_medium",
+      "n": 285,
+      "positive_rate": 0.6421052631578947,
+      "threshold": 0.48999999999999994,
+      "auc": 0.6725597342762242,
+      "ap": 0.7866529227123543,
+      "accuracy": 0.6385964912280702,
+      "balanced_accuracy": 0.6382995821279331,
+      "f1": 0.6943620178041543
+    },
+    {
+      "target": "capsule_complete",
+      "n": 285,
+      "positive_rate": 0.4421052631578947,
+      "threshold": 0.72,
+      "auc": 0.6491963661774982,
+      "ap": 0.5692242233577338,
+      "accuracy": 0.656140350877193,
+      "balanced_accuracy": 0.644878706199461,
+      "f1": 0.5847457627118644
+    },
+    {
+      "target": "capsule_any",
+      "n": 285,
+      "positive_rate": 0.6842105263157895,
+      "threshold": 0.5199999999999999,
+      "auc": 0.6324786324786323,
+      "ap": 0.7818493106661486,
+      "accuracy": 0.6175438596491228,
+      "balanced_accuracy": 0.6158119658119658,
+      "f1": 0.6894586894586895
+    },
+    {
+      "target": "nodular_lobulated",
+      "n": 285,
+      "positive_rate": 0.48771929824561405,
+      "threshold": 0.5099999999999999,
+      "auc": 0.6294964028776979,
+      "ap": 0.6265398423437842,
+      "accuracy": 0.6175438596491228,
+      "balanced_accuracy": 0.617744160835715,
+      "f1": 0.6148409893992933
+    },
+    {
+      "target": "capsule_absent",
+      "n": 285,
+      "positive_rate": 0.03859649122807018,
+      "threshold": 0.30999999999999994,
+      "auc": 0.6293961512939614,
+      "ap": 0.07209866169268768,
+      "accuracy": 0.6947368421052632,
+      "balanced_accuracy": 0.6230922362309224,
+      "f1": 0.12121212121212122
+    },
+    {
+      "target": "texture_tough",
+      "n": 285,
+      "positive_rate": 0.1649122807017544,
+      "threshold": 0.36999999999999994,
+      "auc": 0.6159485070623995,
+      "ap": 0.2764868813388684,
+      "accuracy": 0.6035087719298246,
+      "balanced_accuracy": 0.6174682639013052,
+      "f1": 0.3468208092485549
+    },
+    {
+      "target": "gray_red",
+      "n": 285,
+      "positive_rate": 0.3684210526315789,
+      "threshold": 0.20999999999999996,
+      "auc": 0.6156084656084656,
+      "ap": 0.4752048146637067,
+      "accuracy": 0.5719298245614035,
+      "balanced_accuracy": 0.6214285714285714,
+      "f1": 0.5821917808219178
+    },
+    {
+      "target": "texture_soft",
+      "n": 285,
+      "positive_rate": 0.35789473684210527,
+      "threshold": 0.36999999999999994,
+      "auc": 0.600771456123433,
+      "ap": 0.4698284613530196,
+      "accuracy": 0.5684210526315789,
+      "balanced_accuracy": 0.585824493731919,
+      "f1": 0.5176470588235295
+    },
+    {
+      "target": "boundary_unclear",
+      "n": 285,
+      "positive_rate": 0.22807017543859648,
+      "threshold": 0.8799999999999999,
+      "auc": 0.5869930069930069,
+      "ap": 0.38150700746469857,
+      "accuracy": 0.7473684210526316,
+      "balanced_accuracy": 0.5979020979020979,
+      "f1": 0.3684210526315789
+    }
+  ],
+  "risk_metrics": [
+    {
+      "target": "embedding_plus_predicted_concepts",
+      "n": 285,
+      "positive_rate": 0.49473684210526314,
+      "threshold": 0.29,
+      "auc": 0.7606382978723404,
+      "ap": 0.7567193796317313,
+      "accuracy": 0.6912280701754386,
+      "balanced_accuracy": 0.6920803782505911,
+      "f1": 0.7124183006535948
+    },
+    {
+      "target": "embedding_only",
+      "n": 285,
+      "positive_rate": 0.49473684210526314,
+      "threshold": 0.82,
+      "auc": 0.7611308116627267,
+      "ap": 0.7571952796803015,
+      "accuracy": 0.6912280701754386,
+      "balanced_accuracy": 0.689346926713948,
+      "f1": 0.6206896551724138
+    },
+    {
+      "target": "predicted_concepts_only",
+      "n": 285,
+      "positive_rate": 0.49473684210526314,
+      "threshold": 0.5399999999999999,
+      "auc": 0.6512017336485422,
+      "ap": 0.6492291410947978,
+      "accuracy": 0.624561403508772,
+      "balanced_accuracy": 0.6236702127659575,
+      "f1": 0.5868725868725869
+    }
+  ]
+}

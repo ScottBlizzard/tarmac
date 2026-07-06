@@ -1,0 +1,4 @@
+﻿domain,reviewed_pool_n,released_n,unreleased_reviewed_n,cutoff_model_disagreement_rate,cutoff_dino_fn_risk_max,next_model_disagreement_rate,next_dino_fn_risk_max,cutoff_exact_tie_group_n,cutoff_exact_tie_released_n,next_reviewed_n,next_error_n,next_high_risk_fn_n,next_case_ids
+old_data,75,11,64,0.0,0.1945292427790121,0.0,0.1966085245228686,1,1,5,0,0,batch2_2120339;batch1_2404744;batch2_2118344;batch1_2213215;batch2_2111334
+third_batch,121,18,103,0.0,0.3992985428021871,0.0,0.4007008920408363,1,1,5,0,0,third_AB_2409353;third_AB_2606116;third_AB_2421456;third_B1_2501379;third_AB_2308722
+strict_external,56,8,48,0.0,0.2666407862935827,0.0,0.2777514067777994,1,1,5,0,0,doctor_ext_022_2403653;doctor_ext_041_2518212;doctor_ext_011_2244122;doctor_ext_036_2612426;doctor_ext_027_2447503

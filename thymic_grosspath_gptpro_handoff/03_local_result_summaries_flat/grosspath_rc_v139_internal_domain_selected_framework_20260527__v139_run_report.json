@@ -1,0 +1,17 @@
+{
+  "output_dir": "/workspace/thymic_project/outputs/grosspath_rc_v139_internal_domain_selected_framework_20260527",
+  "internal_n": 591,
+  "external_strict_n": 105,
+  "candidate_rules": 583,
+  "selection": "Selected only by old+third development domains; strict external is reported after selection.",
+  "leakage_guard": "No task_l6_label/subtype features are used as model inputs; task_l6_label is retained only for case analysis.",
+  "selected_key_metrics": {
+    "internal_auto_rate": 0.5025380710659898,
+    "internal_auto_balanced_accuracy": 0.9305555555555556,
+    "internal_system_if_review_corrected_balanced_accuracy": 0.9658254533047377,
+    "third_auto_balanced_accuracy": 0.8753333333333333,
+    "strict_external_auto_rate": 0.3238095238095238,
+    "strict_external_auto_balanced_accuracy": 0.6894736842105263,
+    "strict_external_system_if_review_corrected_balanced_accuracy": 0.8991195891415994
+  }
+}

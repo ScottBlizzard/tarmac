@@ -1,0 +1,10 @@
+{
+  "internal_n": 591,
+  "strict_external_n": 105,
+  "n_features": 4619,
+  "base_candidates": [
+    "robust_prob",
+    "prob_mean_core"
+  ],
+  "feature_source": "75_wpc_plus_image_stats / matched third and strict external WPC features"
+}

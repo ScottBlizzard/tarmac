@@ -1,0 +1,37 @@
+{
+  "input_dir": "/workspace/最新外部数据集/胸腺瘤",
+  "out_dir": "/workspace/thymic_project/experiments/risk_control_rejection_20260621/outputs/new_external_160_freeze_eval",
+  "staging_dir": "/workspace/thymic_project/experiments/risk_control_rejection_20260621/outputs/new_external_160_freeze_eval/staging_dedup_images",
+  "raw_file_n": 166,
+  "case_n_after_identifier_dedup": 162,
+  "duplicate_identifier_group_n": 4,
+  "duplicate_extra_file_n": 4,
+  "signature_distribution_raw": {
+    "png": 51,
+    "jpeg": 115
+  },
+  "task_l6_distribution_case": {
+    "AB": 29,
+    "B3": 29,
+    "TC": 28,
+    "B2": 28,
+    "A": 22,
+    "B1": 26
+  },
+  "task_l7_distribution_case": {
+    "low_risk_group": 77,
+    "high_risk_group": 85
+  },
+  "link_modes": {
+    "copy": 162
+  },
+  "raw_manifest": "/workspace/thymic_project/experiments/risk_control_rejection_20260621/outputs/new_external_160_freeze_eval/new_external_160_raw_manifest.csv",
+  "case_manifest": "/workspace/thymic_project/experiments/risk_control_rejection_20260621/outputs/new_external_160_freeze_eval/new_external_160_case_manifest.csv",
+  "duplicates_csv": "/workspace/thymic_project/experiments/risk_control_rejection_20260621/outputs/new_external_160_freeze_eval/new_external_160_duplicate_groups.csv",
+  "freeze_boundary": {
+    "uses_new_external_for_training": false,
+    "uses_new_external_for_threshold_selection": false,
+    "uses_new_external_for_rule_selection": false,
+    "operation": "input_manifest_qc_and_staging_only"
+  }
+}

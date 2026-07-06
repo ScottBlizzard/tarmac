@@ -1,0 +1,97 @@
+{
+  "boundary": {
+    "external_folder": "/workspace/thymic_project/datasets/external_thymoma_carcinoma_20260522",
+    "training_or_tuning_on_this_folder": false,
+    "model_family": "old-data-trained image-only 64-style whole+crop external inference",
+    "label_source": "filename-derived Task7 labels; nonstandard micro-nodular thymoma is marked assumed low and excluded from strict metrics"
+  },
+  "data_n": 108,
+  "strict_task7_n": 105,
+  "distribution": {
+    "A": 8,
+    "AB": 39,
+    "B1": 11,
+    "B1_B2_mixed": 1,
+    "B2": 28,
+    "B2_B3_mixed": 3,
+    "B3": 10,
+    "MNT_assumed_low": 3,
+    "TC": 5
+  },
+  "old_oof_selected_base": {
+    "accuracy": 0.7192982456140351,
+    "balanced_accuracy": 0.7190455082742317,
+    "f1": 0.7101449275362319,
+    "tn": 107,
+    "fp": 37,
+    "fn": 43,
+    "tp": 98,
+    "auc": 0.7776792750197007,
+    "base_name": "logreg_c0003",
+    "threshold": 0.5199999999999999,
+    "kind": "single"
+  },
+  "old_oof_selected_policy": {
+    "accuracy": 0.743859649122807,
+    "balanced_accuracy": 0.7449024822695036,
+    "f1": 0.7652733118971061,
+    "tn": 93,
+    "fp": 51,
+    "fn": 22,
+    "tp": 119,
+    "auc": 0.7698483057525611,
+    "route_name": "base_fn_model_route_extra_d3",
+    "route_threshold": 0.4892712217845713,
+    "budget_pct": 45,
+    "corrector": "dino_model_all_corr_logreg_c01",
+    "corrector_threshold": 0.25,
+    "routed_n": 128,
+    "routed_pct": 0.44912280701754387,
+    "rescue_n": 21,
+    "hurt_n": 14,
+    "net_rescue": 7
+  },
+  "external_base_all_metrics": {
+    "accuracy": 0.5277777777777778,
+    "balanced_accuracy": 0.5062783397279386,
+    "f1": 0.3855421686746988,
+    "tn": 41,
+    "fp": 20,
+    "fn": 31,
+    "tp": 16,
+    "auc": 0.5228461806766656
+  },
+  "external_final_all_metrics": {
+    "accuracy": 0.5277777777777778,
+    "balanced_accuracy": 0.5184862225322637,
+    "f1": 0.45161290322580644,
+    "tn": 36,
+    "fp": 25,
+    "fn": 26,
+    "tp": 21,
+    "auc": 0.5416811998604814
+  },
+  "external_base_strict_metrics": {
+    "accuracy": 0.5238095238095238,
+    "balanced_accuracy": 0.5064196625091709,
+    "f1": 0.3902439024390244,
+    "tn": 39,
+    "fp": 19,
+    "fn": 31,
+    "tp": 16,
+    "auc": 0.5231107850330154
+  },
+  "external_final_strict_metrics": {
+    "accuracy": 0.5238095238095238,
+    "balanced_accuracy": 0.516507703595011,
+    "f1": 0.45652173913043476,
+    "tn": 34,
+    "fp": 24,
+    "fn": 26,
+    "tp": 21,
+    "auc": 0.5410858400586941
+  },
+  "routed_n": 58,
+  "routed_pct": 0.5370370370370371,
+  "duplicate_original_case_id_n": 4
+}

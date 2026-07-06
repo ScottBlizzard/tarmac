@@ -1,0 +1,22 @@
+{
+  "accuracy": 0.9263157894736842,
+  "balanced_accuracy": 0.9262706855791962,
+  "auc": 0.9521769109535066,
+  "f1": 0.9252669039145908,
+  "sensitivity": 0.9219858156028369,
+  "specificity": 0.9305555555555556,
+  "tn": 134,
+  "fp": 10,
+  "fn": 11,
+  "tp": 130,
+  "config": "train_allhard_apply_hardcore__image_core_text__f1",
+  "route": "train_allhard_apply_hardcore",
+  "feature": "image_core_text",
+  "objective": "f1",
+  "routed_n": 65,
+  "rescue_n": 28,
+  "hurt_n": 2,
+  "net_rescue": 26,
+  "train_groups": "hard_core|hard_salvage_teacher",
+  "apply_groups": "hard_core"
+}

@@ -1,0 +1,6 @@
+﻿summary_type,trained_on_domains,audited_domain,candidate_n,candidate_error_n,candidate_high_risk_fn_n,model_disagreement_rate_threshold,dino_fn_risk_max_threshold,safe_zero_error
+selection_domains,"old_data,third_batch",old_data,43,0,0,0.5833333333333334,0.3696929763812454,True
+selection_domains,"old_data,third_batch",third_batch,43,0,0,0.5833333333333334,0.3696929763812454,True
+frozen_audit,"old_data,third_batch",strict_external,22,0,0,0.5833333333333334,0.3696929763812454,True
+leave_one_known_domain,third_batch,old_data,43,0,0,0.5833333333333334,0.3696929763812454,True
+leave_one_known_domain,old_data,third_batch,92,6,6,0.5,0.8776804022788952,False

@@ -1,0 +1,16 @@
+{
+  "accuracy": 0.8315789473684211,
+  "balanced_accuracy": 0.8313386524822695,
+  "auc": 0.8278171788810087,
+  "f1": 0.8260869565217391,
+  "sensitivity": 0.8085106382978723,
+  "specificity": 0.8541666666666666,
+  "tn": 123,
+  "fp": 21,
+  "fn": 27,
+  "tp": 114,
+  "model": "extra_d3_l8",
+  "feature_set": "candidates_only",
+  "source": "42_candidate_stacking_no_tiebreak_20260520",
+  "note": "stacking over candidates 29/36/38 only; no manually defined 39 tie-break candidate"
+}

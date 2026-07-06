@@ -1,0 +1,55 @@
+{
+  "salvage_total": 34,
+  "stage2_correct": 17,
+  "stage3_correct": 21,
+  "blend_correct": 22,
+  "subtype_counts": {
+    "salvage_stable_all_correct": 13,
+    "salvage_failed_persistent_wrong": 9,
+    "salvage_rescued_by_later_stage": 8,
+    "salvage_regressed_after_stage2": 3,
+    "salvage_mixed_other": 1
+  },
+  "pattern_counts": {
+    "000": 9,
+    "011": 8,
+    "100": 3,
+    "101": 1,
+    "111": 13
+  },
+  "disagreement_policy_screen": [
+    {
+      "objective": "acc",
+      "auc": 0.7969365642237982,
+      "accuracy": 0.7333333333333333,
+      "balanced_accuracy": 0.733451536643026,
+      "f1": 0.7342657342657343,
+      "tn": 104,
+      "fp": 40,
+      "fn": 36,
+      "tp": 105
+    },
+    {
+      "objective": "bacc",
+      "auc": 0.7969365642237982,
+      "accuracy": 0.7333333333333333,
+      "balanced_accuracy": 0.733451536643026,
+      "f1": 0.7342657342657343,
+      "tn": 104,
+      "fp": 40,
+      "fn": 36,
+      "tp": 105
+    },
+    {
+      "objective": "f1",
+      "auc": 0.8076241134751773,
+      "accuracy": 0.7473684210526316,
+      "balanced_accuracy": 0.7477098108747045,
+      "f1": 0.7534246575342466,
+      "tn": 103,
+      "fp": 41,
+      "fn": 31,
+      "tp": 110
+    }
+  ]
+}

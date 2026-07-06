@@ -1,0 +1,10 @@
+{
+  "main_tier_rows": 10,
+  "module_rows": 6,
+  "claim_rows": 6,
+  "tier1_high_safety_bacc": 0.9981481481481482,
+  "tier1_high_safety_review_rate": 0.7997138769670958,
+  "safe_release_candidate_bacc": 0.9981481481481482,
+  "safe_release_candidate_review_rate": 0.575107296137339,
+  "safe_release_candidate_status": "Tier 2 efficiency candidate"
+}

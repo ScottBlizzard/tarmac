@@ -1,0 +1,22 @@
+{
+  "accuracy": 0.8912280701754386,
+  "balanced_accuracy": 0.8912529550827423,
+  "auc": 0.916518912529551,
+  "f1": 0.8904593639575972,
+  "sensitivity": 0.8936170212765957,
+  "specificity": 0.8888888888888888,
+  "tn": 128,
+  "fp": 16,
+  "fn": 15,
+  "tp": 126,
+  "config": "train_allhard_apply_allhard__image_review_gross_hand_text__balanced_accuracy",
+  "route": "train_allhard_apply_allhard",
+  "feature": "image_review_gross_hand_text",
+  "objective": "balanced_accuracy",
+  "routed_n": 99,
+  "rescue_n": 31,
+  "hurt_n": 15,
+  "net_rescue": 16,
+  "train_groups": "hard_core|hard_salvage_teacher",
+  "apply_groups": "hard_core|hard_salvage_teacher"
+}

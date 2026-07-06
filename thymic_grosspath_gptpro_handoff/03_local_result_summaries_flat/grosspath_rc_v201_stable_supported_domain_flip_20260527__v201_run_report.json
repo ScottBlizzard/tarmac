@@ -1,0 +1,13 @@
+{
+  "all_domain_bacc": 0.9981481481481482,
+  "all_domain_remaining_review_rate": 0.586552217453505,
+  "all_domain_flip_n": 2,
+  "all_domain_flip_error_n": 0,
+  "all_domain_rescued_n": 2,
+  "all_domain_hurt_n": 0,
+  "third_batch_flip_n": 2,
+  "third_batch_rescued_n": 2,
+  "third_batch_hurt_n": 0,
+  "strict_external_bacc": 1.0,
+  "strict_external_remaining_review_rate": 0.8703703703703703
+}

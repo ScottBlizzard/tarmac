@@ -1,0 +1,9 @@
+﻿domain,low_fraction,high_fraction,n_folds,band_n_sum,band_error_n_sum,band_error_n_max,band_high_risk_fn_n_sum,band_high_risk_fn_n_max
+old_data,0.1,0.15,5,4,0,0,0,0
+old_data,0.15,0.2,5,4,0,0,0,0
+old_data,0.2,0.25,5,3,0,0,0,0
+old_data,0.25,0.3,5,4,0,0,0,0
+third_batch,0.1,0.15,5,6,0,0,0,0
+third_batch,0.15,0.2,5,7,1,1,1,1
+third_batch,0.2,0.25,5,7,0,0,0,0
+third_batch,0.25,0.3,5,5,1,1,1,1

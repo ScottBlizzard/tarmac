@@ -1,0 +1,11 @@
+{
+  "auto_decision_n": 287,
+  "auto_error_n": 1,
+  "review_n": 412,
+  "review_base_error_n": 9,
+  "fn_auto_error_n": 1,
+  "fp_auto_error_n": 0,
+  "residual_auto_error_cases": [
+    "2516531"
+  ]
+}

@@ -1,0 +1,5 @@
+﻿scope,n,baseline_auto_n,candidate_auto_n,delta_auto_n,baseline_review_n,candidate_review_n,delta_review_n,baseline_auto_error_n,candidate_auto_error_n,delta_auto_error_n,baseline_high_risk_fn_n,candidate_high_risk_fn_n,delta_high_risk_fn_n,released_n,released_error_n,released_high_risk_fn_n,candidate_auto_error_wilson95_low,candidate_auto_error_wilson95_high,released_error_wilson95_low,released_error_wilson95_high,noninferior_margin,passes_noninferiority_flag,strict_external_is_frozen
+all_domains,699,447,484,37,252,215,-37,1,1,0,1,1,0,37,0,0,0.00036481330733633115,0.011609279330905695,0.0,0.0940578258372025,0.03,True,False
+old_data,285,210,221,11,75,64,-11,0,0,0,0,0,0,11,0,0,0.0,0.017085189007591345,0.0,0.2588329669680317,0.03,True,False
+strict_external,108,52,60,8,56,48,-8,0,0,0,0,0,0,8,0,0,0.0,0.06017185214208986,0.0,0.32440756488388023,0.03,False,True
+third_batch,306,185,203,18,121,103,-18,1,1,0,1,1,0,18,0,0,0.0008701090024735587,0.02737112877451363,0.0,0.17587922364665765,0.03,True,False

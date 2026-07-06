@@ -1,0 +1,5 @@
+objective,group,n,correct,accuracy
+bacc,easy,151,145,0.9602649006622517
+bacc,hard_core,65,16,0.24615384615384617
+bacc,hard_salvage_teacher,34,18,0.5294117647058824
+bacc,medium,35,30,0.8571428571428571

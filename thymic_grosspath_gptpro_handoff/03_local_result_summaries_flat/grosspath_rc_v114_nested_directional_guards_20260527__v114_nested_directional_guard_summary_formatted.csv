@@ -1,0 +1,16 @@
+﻿workflow,scope,n,control_rate,remaining_error_n,fn,fp,sensitivity,specificity,balanced_accuracy
+v111_base,all_domains,699,78.83%,4,1,3,99.63%,99.30%,99.47%
+v111_base,internal_all,591,77.33%,4,1,3,99.55%,99.18%,99.37%
+v111_base,old_data,285,74.04%,1,0,1,100.00%,99.31%,99.65%
+v111_base,third_batch,306,80.39%,3,1,2,98.78%,99.11%,98.94%
+v111_base,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%
+nested_v112_fp_guard,all_domains,699,79.26%,3,1,2,99.63%,99.53%,99.58%
+nested_v112_fp_guard,internal_all,591,77.83%,3,1,2,99.55%,99.46%,99.50%
+nested_v112_fp_guard,old_data,285,74.74%,1,0,1,100.00%,99.31%,99.65%
+nested_v112_fp_guard,third_batch,306,80.72%,2,1,1,98.78%,99.55%,99.17%
+nested_v112_fp_guard,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%
+nested_v112_plus_nested_v113,all_domains,699,80.11%,3,1,2,99.63%,99.53%,99.58%
+nested_v112_plus_nested_v113,internal_all,591,78.85%,3,1,2,99.55%,99.46%,99.50%
+nested_v112_plus_nested_v113,old_data,285,74.74%,1,0,1,100.00%,99.31%,99.65%
+nested_v112_plus_nested_v113,third_batch,306,82.68%,2,1,1,98.78%,99.55%,99.17%
+nested_v112_plus_nested_v113,strict_external,108,87.04%,0,0,0,100.00%,100.00%,100.00%

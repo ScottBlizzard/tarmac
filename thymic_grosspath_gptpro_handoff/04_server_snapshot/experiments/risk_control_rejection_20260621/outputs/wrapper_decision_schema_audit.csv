@@ -1,0 +1,5 @@
+﻿export_name,passed,row_count,column_count,missing_required_columns,forbidden_columns_present
+integration_deployable_decisions,True,699,11,,
+wrapper_deployable_decisions,True,699,11,,
+runtime_template_wrapper_dry_run,True,1,11,,
+synthetic_deployment_scenario,True,4,11,,
