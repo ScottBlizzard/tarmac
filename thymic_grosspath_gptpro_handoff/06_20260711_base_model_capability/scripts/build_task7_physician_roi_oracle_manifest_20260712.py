@@ -262,6 +262,13 @@ def main() -> None:
         columns=annotation_columns(),
     )
     annotation.to_csv(blinded_dir / "BLINDED_ANNOTATION_TEMPLATE.csv", index=False, encoding="utf-8-sig")
+    reader_form_paths = []
+    for reader_id in ["reader_1", "reader_2"]:
+        reader_path = blinded_dir / f"{reader_id.upper()}_ANNOTATION.csv"
+        annotation[annotation["reader_id"] == reader_id].to_csv(
+            reader_path, index=False, encoding="utf-8-sig"
+        )
+        reader_form_paths.append(reader_path)
 
     summary = (
         secure.groupby(["task_l6_label", "source_dataset"], dropna=False)
@@ -277,7 +284,7 @@ def main() -> None:
 
 Only share this `blinded_packet` directory with readers. Do not share the sibling `secure_do_not_share` directory.
 
-Each of two physicians independently reviews all 120 neutral image files. They must not receive model outputs, Task7 labels, or final histologic subtypes. Coordinates are normalized to [0, 1] relative to the displayed image: x from left to right and y from top to bottom.
+Each of two physicians independently reviews all 120 neutral image files. Give each physician only their matching `READER_1_ANNOTATION.csv` or `READER_2_ANNOTATION.csv`; they must not inspect the other reader's form. They must not receive model outputs, Task7 labels, or final histologic subtypes. Coordinates are normalized to [0, 1] relative to the displayed image: x from left to right and y from top to bottom.
 
 Required annotations:
 
@@ -318,6 +325,7 @@ Readers work independently. Do not reconcile annotations until both files are lo
         [
             blinded_dir / "BLINDED_IMAGE_MANIFEST.csv",
             blinded_dir / "BLINDED_ANNOTATION_TEMPLATE.csv",
+            *reader_form_paths,
             blinded_dir / "BLINDED_PACKET_SIZE_SUMMARY.csv",
             blinded_dir / "README_BLINDED_ANNOTATION.md",
         ],

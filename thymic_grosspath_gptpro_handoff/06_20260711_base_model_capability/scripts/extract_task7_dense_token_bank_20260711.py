@@ -13,6 +13,7 @@ import pandas as pd
 import timm
 import torch
 from PIL import Image, ImageFilter, ImageOps
+from timm.models import load_checkpoint
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 from torchvision.transforms import InterpolationMode
@@ -67,7 +68,9 @@ class DINOv2PatchWrapper(torch.nn.Module):
         return self.backbone.forward_features(inputs)["x_norm_patchtokens"]
 
 
-def create_backbone(model_name: str, feature_mode: str) -> torch.nn.Module:
+def create_backbone(
+    model_name: str, feature_mode: str, checkpoint_path: str = ""
+) -> torch.nn.Module:
     if model_name.startswith("local_dinov2_"):
         if feature_mode != "dense":
             raise ValueError("Local DINOv2 wrapper only supports dense features.")
@@ -103,10 +106,32 @@ def create_backbone(model_name: str, feature_mode: str) -> torch.nn.Module:
                 f"ViTamin checkpoint mismatch: missing={missing[:10]} unexpected={unexpected[:10]}"
             )
         return model
-    model_kwargs = {"pretrained": True, "num_classes": 0}
+    model_kwargs = {"pretrained": not bool(checkpoint_path), "num_classes": 0}
     if feature_mode == "dense":
         model_kwargs["global_pool"] = ""
-    return timm.create_model(model_name, **model_kwargs)
+    model = timm.create_model(model_name, **model_kwargs)
+    if checkpoint_path:
+        checkpoint = Path(checkpoint_path)
+        if not checkpoint.is_file():
+            raise FileNotFoundError(f"Missing local backbone checkpoint: {checkpoint}")
+        incompatible = load_checkpoint(model, str(checkpoint), strict=False)
+        allowed_fragments = ("head", "classifier", "fc.", "attn_mask", "attn_pool")
+        missing = [
+            key
+            for key in incompatible.missing_keys
+            if not any(fragment in key for fragment in allowed_fragments)
+        ]
+        unexpected = [
+            key
+            for key in incompatible.unexpected_keys
+            if not any(fragment in key for fragment in allowed_fragments)
+        ]
+        if missing or unexpected:
+            raise ValueError(
+                "Local checkpoint trunk mismatch: "
+                f"missing={missing[:20]} unexpected={unexpected[:20]}"
+            )
+    return model
 
 
 def parse_args() -> argparse.Namespace:
@@ -114,6 +139,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--registry-csv", default=str(DEFAULT_REGISTRY))
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--model-name", required=True)
+    parser.add_argument(
+        "--checkpoint-path",
+        default="",
+        help="Optional local timm checkpoint; avoids remote weight download.",
+    )
     parser.add_argument("--feature-mode", choices=("dense", "pooled"), default="dense")
     parser.add_argument("--domains", default="old_data,third_batch")
     parser.add_argument("--views", default="whole,crop")
@@ -346,7 +376,7 @@ def main() -> None:
     metadata.insert(0, "feature_row", np.arange(len(metadata), dtype=int))
 
     device = torch.device(args.device)
-    model = create_backbone(args.model_name, args.feature_mode)
+    model = create_backbone(args.model_name, args.feature_mode, args.checkpoint_path)
     model.eval().to(device)
     image_size = model_image_size(model, args.image_size)
     mean, std = model_normalization(model)
@@ -369,6 +399,7 @@ def main() -> None:
         "registry_csv": str(Path(args.registry_csv).resolve()),
         "domains": domains,
         "model_name": args.model_name,
+        "checkpoint_path": str(Path(args.checkpoint_path).resolve()) if args.checkpoint_path else "",
         "feature_mode": args.feature_mode,
         "local_checkpoint": str(LOCAL_VITAMIN_CHECKPOINT) if args.model_name == "local_vitamin_large_384" else "",
         "views": view_names,
@@ -385,7 +416,16 @@ def main() -> None:
         if not feature_path.exists() or not processed_path.exists() or not config_path.exists():
             raise RuntimeError("Incomplete feature-bank files found; use --overwrite to rebuild.")
         existing_config = json.loads(config_path.read_text(encoding="utf-8"))
-        keys = ["domains", "model_name", "feature_mode", "views", "image_size", "feature_shape", "dtype"]
+        keys = [
+            "domains",
+            "model_name",
+            "checkpoint_path",
+            "feature_mode",
+            "views",
+            "image_size",
+            "feature_shape",
+            "dtype",
+        ]
         mismatches = {key: (existing_config.get(key), config.get(key)) for key in keys if existing_config.get(key) != config.get(key)}
         if mismatches:
             raise ValueError(f"Existing feature bank configuration mismatch: {mismatches}")

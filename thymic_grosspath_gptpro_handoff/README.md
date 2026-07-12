@@ -27,12 +27,14 @@ This package excludes raw medical images, image review folders, large ZIP packag
 Start with the completed 2026-07-11 update:
 
 1. `GPTPRO_PROMPT.md`
-2. `06_20260711_base_model_capability/GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
-3. `06_20260711_base_model_capability/reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
-4. `06_20260711_base_model_capability/README_20260711_BASE_MODEL_CAPABILITY.md`
-5. `06_20260711_base_model_capability/reports/Task7_Base_Model_Capability_Experiments_20260711.md`
-6. `06_20260711_base_model_capability/scripts/phase2_fresh_external_candidate_lock_20260711.csv`
-7. `06_20260711_base_model_capability/reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
+2. `06_20260711_base_model_capability/GPTPRO_PROMPT_20260712_POST_F1_F2.md`
+3. `06_20260711_base_model_capability/reports/Task7_WaveC_D1_E1_F1_F2_Results_20260712.md`
+4. `06_20260711_base_model_capability/reports/PHYSICIAN_ROI_ANNOTATION_LOCK_WORKFLOW_20260712.md`
+5. `06_20260711_base_model_capability/README_20260711_BASE_MODEL_CAPABILITY.md`
+6. `06_20260711_base_model_capability/reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+7. `06_20260711_base_model_capability/reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+8. `06_20260711_base_model_capability/scripts/phase2_fresh_external_candidate_lock_20260711.csv`
+9. `06_20260711_base_model_capability/reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
 
 Then read the 2026-07-06 update for earlier context:
 
