@@ -1,6 +1,6 @@
 # Thymic Gross Pathology AI: GPTPro Handoff Package
 
-Updated: 2026-07-11
+Updated: 2026-07-12
 
 This package is a text-first handoff for GPTPro to rethink the project from a broad, exploratory perspective. It intentionally includes many reports, scripts, configs, and result summaries so GPTPro can inspect both successful and failed directions.
 
@@ -18,7 +18,7 @@ This package excludes raw medical images, image review folders, large ZIP packag
 | `03_local_result_summaries_flat/` | Flattened local summary/result/metrics files | Safer complete local result-summary copy. |
 | `04_server_snapshot/` | Server-side text/code snapshot from `/workspace/thymic_project` | Includes latest reports, scripts, v195+ sidecar, configs, and summary metrics. |
 | `05_20260706_base_model_expansion/` | Earlier base-model expansion evidence and scripts | Four-domain audit, first external sweeps, subtype-aux ablation, and the plan that preceded the completed 2026-07-11 wave. |
-| `06_20260711_base_model_capability/` | Completed leakage-safe base-model capability expansion | Read this first for runs 206-369, the six-view SigLIP-L@512 result, final candidate lock, and fresh-external blind-test protocol. |
+| `06_20260711_base_model_capability/` | Completed capability expansion plus the 2026-07-12 interpretation correction | Read this first for the historical 92% audit, genuine coarse-to-fine plan, runs 206-369, candidate lock, and fresh-external protocol. |
 | `GPTPRO_PROMPT.md` | Ready-to-copy prompt for GPTPro | Start here if only one file can be read first. |
 | `MANIFEST.csv` | File manifest generated after packaging | Use to search filenames quickly. |
 
@@ -27,11 +27,12 @@ This package excludes raw medical images, image review folders, large ZIP packag
 Start with the completed 2026-07-11 update:
 
 1. `GPTPRO_PROMPT.md`
-2. `06_20260711_base_model_capability/GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
-3. `06_20260711_base_model_capability/README_20260711_BASE_MODEL_CAPABILITY.md`
-4. `06_20260711_base_model_capability/reports/Task7_Base_Model_Capability_Experiments_20260711.md`
-5. `06_20260711_base_model_capability/scripts/phase2_fresh_external_candidate_lock_20260711.csv`
-6. `06_20260711_base_model_capability/reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
+2. `06_20260711_base_model_capability/GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
+3. `06_20260711_base_model_capability/reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+4. `06_20260711_base_model_capability/README_20260711_BASE_MODEL_CAPABILITY.md`
+5. `06_20260711_base_model_capability/reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+6. `06_20260711_base_model_capability/scripts/phase2_fresh_external_candidate_lock_20260711.csv`
+7. `06_20260711_base_model_capability/reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
 
 Then read the 2026-07-06 update for earlier context:
 
@@ -85,11 +86,16 @@ As of 2026-07-11, both external cohorts have been inspected and are consumed aud
 
 ## Key Baseline Situation
 
-Representative forced-classification status from the reports:
+The old-data numbers must be separated by method layer:
 
-- Old data: about 92.3% accuracy / balanced accuracy in the strongest internal workflow-era model.
-- Third batch: about 83.0% accuracy, balanced accuracy about 76.8%, with high-risk recall still weak.
-- Strict external: about 64.8% accuracy, balanced accuracy about 62.8%; high-risk recall about 46.8%.
+- Early direct visual mainline: approximately 76.5% Acc/BAcc.
+- Candidate 41 image-model fusion: approximately 83.5% Acc/BAcc.
+- No.64 behavior-level two-stage reviewer: approximately 92.6% Acc/BAcc.
+- Later `base162`, which inherits the No.64/adaptation/meta-stack lineage: approximately 92.3% Acc/BAcc on old data.
+
+The 92% result is a full-coverage automatic output, but it is not evidence of a 92% single/base visual model. Its incremental gain mainly came from modeling probabilities, confidence, disagreement, and source-specific error behavior. On the third-batch strict holdout, `base162` BAcc was 0.7300 with high-risk recall 0.5263; on the historical strict external evaluable cohort, BAcc was 0.6220.
+
+The current image-grounded C1/C2 candidates reach approximately 0.74-0.75 BAcc under unified 591-case OOF/source-LODO evaluation. They are not directly numerically comparable to the old 285-case protocol and are not externally confirmed.
 
 Representative selective workflow status:
 
@@ -97,4 +103,6 @@ Representative selective workflow status:
 
 ## What GPTPro Should Optimize For
 
-The user explicitly wants broad, outward-looking method ideation and concrete experiments. Do not prematurely narrow to existing DINO/probe/risk-control variants. Treat previous failures as useful negative evidence, then propose genuinely new base-model generalization directions.
+The user accepts either a stronger direct visual model or a genuine image-grounded multi-model system. In a valid coarse-to-fine system, stage 2 must re-read raw images, high-resolution patches, ROIs, or additional views and learn visual evidence that stage 1 did not adequately use. Confidence/disagreement may be a router or safety signal but cannot be the source of the diagnostic claim.
+
+Do not redirect the project toward release coverage, rejection rules, probability-only correction, ordinary backbone swaps, or another internal threshold/fusion sweep. Treat prior failures as negative evidence and propose experiments with a changed visual information source or causal assumption.

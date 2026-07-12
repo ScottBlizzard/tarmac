@@ -1,5 +1,7 @@
 # 2026-07-11 Task7 Base-Model Capability Update
 
+Interpretation corrected: 2026-07-12
+
 Repository: https://github.com/ScottBlizzard/tarmac
 
 This folder is the latest handoff for the project's primary scientific objective: improving the 100%-coverage, image-only forced classifier for thymic gross pathology Task7.
@@ -13,26 +15,34 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Read First
 
-1. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
-   - Ready-to-use English prompt for a critical post-experiment audit and next decision.
+1. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
+   - Current ready-to-use English prompt.
+   - Audits the historical 92% result and redesigns the mainline around image-grounded capability.
 
-2. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+2. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+   - Corrects the distinction between a visual model, an image-grounded ensemble, a behavior-level meta-corrector, and a selective workflow.
+   - Defines the direct-model and genuine coarse-to-fine experimental plan.
+
+3. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
+   - Superseded post-experiment prompt retained for provenance.
+
+4. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
    - Full internal experiment ledger from runs 206-369.
    - Canonical five-fold OOF and three-source LODO protocols.
    - Positive, negative, fusion, bootstrap, doctor-concept, and resource-cleanup results.
    - Final internal candidate lock and its limitations.
 
-3. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
+5. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
    - Machine-readable lock for the two candidates allowed into a new independent external blind test.
    - Includes fixed metrics, thresholds, member definitions, and prediction hashes.
 
-4. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
+6. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
    - Exact cohort, image-selection, blinding, hashing, reporting, and interpretation rules for the next external test.
 
-5. `reports/AI Pathology Model Improvement.md`
+7. `reports/AI Pathology Model Improvement.md`
    - The broad research-lead plan that motivated this experiment wave.
 
-6. `scripts/`
+8. `scripts/`
    - Complete local 2026-07-11 implementation set: registries, dense-token extraction, LoRA, contrastive learning, structured pooling, SAM optimization, fusion search, bootstrap, nested thresholds, error analysis, and queue/recovery scripts.
 
 ## Data Boundary
@@ -45,6 +55,21 @@ Selective release, rejection, and physician-review workflows remain downstream s
 - Newer external: 162 deduplicated cases.
 
 The 108-case and 162-case external cohorts were both inspected in Phase 1. They are now consumed audit sets. Phase 2 did not use them for training, selection, thresholding, fusion, or evaluation. Any Phase-2 generalization claim requires a genuinely fresh external cohort.
+
+## Historical Capability Correction
+
+The old-data 92% result is not evidence that a single visual backbone reached 92%:
+
+- Early direct visual mainline: approximately 0.765 Acc/BAcc on 285 old-data cases.
+- Candidate 41 image-model fusion: 0.8351 Acc and 0.8348 BAcc.
+- No.64 two-stage automatic reviewer: 0.9263 Acc/BAcc.
+- Later `base162`: 0.9228 Acc and 0.9227 BAcc on old data.
+
+Code audit showed that the winning No.64 corrector used `feature_set=model`, not DINO/image features. Its router explicitly modeled whether Candidate 41 would be wrong. `base162` inherited this No.64/adaptation/meta-stack lineage before its final run104/run108 blend. These systems emit full-coverage outputs, but their incremental gain is behavior-level meta-correction, not demonstrated fine visual morphology.
+
+This distinction matters because the gain did not transfer: `base162` reached only 0.7300 BAcc and 0.5263 high-risk recall on the third-batch strict holdout, and 0.6220 BAcc on the historical strict external evaluable cohort.
+
+The project therefore permits multi-model systems only when visual models learn complementary image evidence. Confidence and disagreement may route a case to a specialist, but they are not credited as image-grounded capability.
 
 ## Main Positive Result
 
@@ -108,8 +133,11 @@ The completed wave includes negative or insufficient results from:
 
 The report gives exact metrics and failure modes. Do not propose a low-level repeat without explaining what structural limitation changes.
 
-## Next Valid Step
+## Next Valid Steps
 
-Run C1, C2, and the historical locked comparator once on a new label-blinded external cohort under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
+Two activities can proceed without contaminating each other:
 
-The current evidence supports a stronger internal representation and a cleaner candidate lock. It does not support the claim that cross-hospital generalization is solved.
+1. If a genuinely fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
+2. Begin the corrected image-grounded mainline: a stronger direct visual model and a genuine coarse-to-fine cascade whose second stage re-reads high-resolution image regions. Use same-routed-case image-versus-probability ablations, nested patient-level OOF, and source-LODO before locking any new candidate.
+
+The current evidence supports a stronger internal representation and a cleaner candidate lock. It does not support a 92% base-visual claim or the claim that cross-hospital generalization is solved.
