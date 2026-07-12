@@ -15,46 +15,53 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Read First
 
-1. `reports/GPTPro_Response_Visual_Cascade_Audit_20260712.md`
+1. `reports/Task7_GPTPro_Plan_Execution_A1_B1_Results_20260712.md`
+   - Completed A1 native-detail direct-model and B1 fixed-route M0-M4 results.
+   - Both fixed-grid families failed their predeclared OOF/source-LODO advancement gates.
+
+2. `reports/PHYSICIAN_BLINDED_ROI_ORACLE_PROTOCOL_20260712.md`
+   - Next changed-information experiment: a 120-case, two-reader, label/model-blinded manual-ROI oracle.
+
+3. `reports/GPTPro_Response_Visual_Cascade_Audit_20260712.md`
    - GPT Pro's returned independent code/provenance audit and exact A1/B1 plan.
 
-2. `reports/GPTPro_Response_Verification_and_Experiment_Decision_20260712.md`
+4. `reports/GPTPro_Response_Verification_and_Experiment_Decision_20260712.md`
    - Local line-by-line verification of the GPT Pro findings.
    - Records the direct `difficulty` leakage, Candidate 41 output stacking, consumed `holdout234`, original-resolution audit, and the resulting experiment decision.
 
-3. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
+5. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
    - Current ready-to-use English prompt.
    - Audits the historical 92% result and redesigns the mainline around image-grounded capability.
 
-4. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+6. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
    - Corrects the distinction between a visual model, an image-grounded ensemble, a behavior-level meta-corrector, and a selective workflow.
    - Includes the post-audit leakage and holdout-consumption erratum.
    - Defines the direct-model and genuine coarse-to-fine experimental plan.
 
-5. `scripts/run_task7_native_detail_a1_20260712.py`
+7. `scripts/run_task7_native_detail_a1_20260712.py`
    - RAM-only native-resolution A1 implementation.
    - Fixed C1-view aggregation control plus 14-view hierarchical MIL and global-to-local cross-attention families.
 
-6. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
+8. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
    - Superseded post-experiment prompt retained for provenance.
 
-7. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+9. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
    - Full internal experiment ledger from runs 206-369.
    - Canonical five-fold OOF and three-source LODO protocols.
    - Positive, negative, fusion, bootstrap, doctor-concept, and resource-cleanup results.
    - Final internal candidate lock and its limitations.
 
-8. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
+10. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
    - Machine-readable lock for the two candidates allowed into a new independent external blind test.
    - Includes fixed metrics, thresholds, member definitions, and prediction hashes.
 
-9. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
+11. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
    - Exact cohort, image-selection, blinding, hashing, reporting, and interpretation rules for the next external test.
 
-10. `reports/AI Pathology Model Improvement.md`
+12. `reports/AI Pathology Model Improvement.md`
    - The broad research-lead plan that motivated this experiment wave.
 
-11. `scripts/`
+13. `scripts/`
    - Complete local 2026-07-11 implementation set: registries, dense-token extraction, LoRA, contrastive learning, structured pooling, SAM optimization, fusion search, bootstrap, nested thresholds, error analysis, and queue/recovery scripts.
 
 ## Data Boundary
@@ -82,6 +89,22 @@ Code audit showed that the winning No.64 corrector used `feature_set=model`, not
 This distinction matters because the gain did not transfer: `base162` reached only 0.7300 BAcc and 0.5263 high-risk recall on the third-batch strict holdout, and 0.6220 BAcc on the historical strict external evaluable cohort.
 
 The project therefore permits multi-model systems only when visual models learn complementary image evidence. Confidence and disagreement may route a case to a specialist, but they are not credited as image-grounded capability.
+
+## 2026-07-12 A1/B1 Execution Result
+
+GPT Pro's first image-grounded plans were implemented and run end to end. A1 used original-resolution 50%/25% specimen tiles with frozen SigLIP-L dense tokens. Tiles below 60% tissue coverage were masked. B1 used locked C1, a fixed outer-training 40th-percentile margin router, image-only M2, behavior-only M1, inner-crossfit M3, and 1,000 matched-random routes.
+
+| Fixed family | Five-fold BAcc | Source-LODO BAcc | Decision |
+| --- | ---: | ---: | --- |
+| Locked C1 | 0.7477 | 0.7397 | Reference |
+| A1 native hierarchical MIL | 0.7435 | 0.6897 | No-go |
+| A1 native cross-attention | 0.6899 | 0.6755 | No-go |
+| B1 image-only M2 cascade | 0.7537 | 0.6993 | No-go |
+| B1 nested M3 cascade | 0.7599 | 0.7187 | No-go |
+
+On the same routed cases, M2 minus C1 was +0.0165 BAcc in five-fold OOF, 95% CI [-0.0658, 0.1002], but -0.0928 under source LODO, 95% CI [-0.1686, -0.0182]. Actual confidence routing underperformed matched random routing. M2 improved B1 while harming B2, including a -0.1236 B2 accuracy change under LODO. These families are closed; do not continue tile-count, loss, route-percentage, threshold, or fusion-weight searches on them.
+
+The next valid localization test is the blinded manual-ROI oracle. The server packet contains 120 neutral-filename images and 240 independent-reader rows, with the secure label/model key physically separated. No patient images, mappings, or annotations are stored in this repository.
 
 ## Main Positive Result
 
@@ -147,9 +170,8 @@ The report gives exact metrics and failure modes. Do not propose a low-level rep
 
 ## Next Valid Steps
 
-Two activities can proceed without contaminating each other:
-
-1. If a genuinely fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
-2. Begin the corrected image-grounded mainline: a stronger direct visual model and a genuine coarse-to-fine cascade whose second stage re-reads high-resolution image regions. Use same-routed-case image-versus-probability ablations, nested patient-level OOF, and source-LODO before locking any new candidate.
+1. Complete the two-reader manual-ROI oracle under `PHYSICIAN_BLINDED_ROI_ORACLE_PROTOCOL_20260712.md`. Train an automatic anatomical ROI detector only if the manual oracle passes all predeclared gates.
+2. If the manual ROI oracle fails, stop optimization of the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
+3. If a fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
 
 The current evidence supports a stronger internal representation and a cleaner candidate lock. It does not support a 92% base-visual claim or the claim that cross-hospital generalization is solved.

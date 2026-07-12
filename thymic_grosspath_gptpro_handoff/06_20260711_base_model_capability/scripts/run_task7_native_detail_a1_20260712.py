@@ -495,8 +495,12 @@ class CrossAttentionBlock(nn.Module):
             nn.Dropout(dropout),
         )
 
-    def forward(self, context: torch.Tensor, local: torch.Tensor) -> torch.Tensor:
-        attended, _ = self.attention(context, local, local, need_weights=False)
+    def forward(
+        self, context: torch.Tensor, local: torch.Tensor, key_padding_mask: torch.Tensor | None = None
+    ) -> torch.Tensor:
+        attended, _ = self.attention(
+            context, local, local, key_padding_mask=key_padding_mask, need_weights=False
+        )
         context = self.norm1(context + attended)
         return self.norm2(context + self.ffn(context))
 
@@ -540,18 +544,24 @@ class NativeDetailHead(nn.Module):
         pooled, _ = self.token_pool(tokens.reshape(batch_size * num_views, token_count, -1))
         views = pooled.reshape(batch_size, num_views, -1)
         views = views + self.view_embeddings[:num_views].unsqueeze(0)
+        valid_views = torch.ones((batch_size, num_views), dtype=torch.bool, device=views.device)
         if self.use_metadata:
             views = views + self.metadata_mlp(view_metadata_tensor)
+            scale = view_metadata_tensor[..., 2]
+            tissue_coverage = view_metadata_tensor[..., 3]
+            valid_views = (scale >= 0.60) | (tissue_coverage >= 0.60)
         if self.architecture == "cross_attention":
             context = views[:, self.specimen_view_index : self.specimen_view_index + 1]
             local_indices = [index for index in range(num_views) if index != self.specimen_view_index]
             local = views[:, local_indices]
+            local_padding_mask = ~valid_views[:, local_indices]
             for block in self.cross_blocks:
-                context = block(context, local)
+                context = block(context, local, key_padding_mask=local_padding_mask)
             embedding = context.squeeze(1)
         else:
             global_context = views[:, : min(2, num_views)].mean(dim=1, keepdim=True).expand_as(views)
             scores = self.view_gate(torch.cat([views, global_context], dim=-1)).squeeze(-1)
+            scores = scores.masked_fill(~valid_views, torch.finfo(scores.dtype).min)
             weights = torch.softmax(scores, dim=1)
             embedding = torch.sum(views * weights.unsqueeze(-1), dim=1)
         return self.classifier(self.embedding_norm(embedding))
@@ -865,6 +875,7 @@ def main() -> None:
                 "difficulty",
             ],
             "selection_policy": "Each fixed family is reported separately; no pooled-OOF winner replacement.",
+            "tissue_tile_policy": "Medium/local slots below 60% tissue coverage are masked from view aggregation.",
         }
     )
     write_json(output_dir / "run_config.json", run_config)
