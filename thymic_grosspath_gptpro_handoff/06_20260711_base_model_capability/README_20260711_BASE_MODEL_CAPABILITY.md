@@ -15,34 +15,46 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Read First
 
-1. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
+1. `reports/GPTPro_Response_Visual_Cascade_Audit_20260712.md`
+   - GPT Pro's returned independent code/provenance audit and exact A1/B1 plan.
+
+2. `reports/GPTPro_Response_Verification_and_Experiment_Decision_20260712.md`
+   - Local line-by-line verification of the GPT Pro findings.
+   - Records the direct `difficulty` leakage, Candidate 41 output stacking, consumed `holdout234`, original-resolution audit, and the resulting experiment decision.
+
+3. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
    - Current ready-to-use English prompt.
    - Audits the historical 92% result and redesigns the mainline around image-grounded capability.
 
-2. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+4. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
    - Corrects the distinction between a visual model, an image-grounded ensemble, a behavior-level meta-corrector, and a selective workflow.
+   - Includes the post-audit leakage and holdout-consumption erratum.
    - Defines the direct-model and genuine coarse-to-fine experimental plan.
 
-3. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
+5. `scripts/run_task7_native_detail_a1_20260712.py`
+   - RAM-only native-resolution A1 implementation.
+   - Fixed C1-view aggregation control plus 14-view hierarchical MIL and global-to-local cross-attention families.
+
+6. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
    - Superseded post-experiment prompt retained for provenance.
 
-4. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+7. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
    - Full internal experiment ledger from runs 206-369.
    - Canonical five-fold OOF and three-source LODO protocols.
    - Positive, negative, fusion, bootstrap, doctor-concept, and resource-cleanup results.
    - Final internal candidate lock and its limitations.
 
-5. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
+8. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
    - Machine-readable lock for the two candidates allowed into a new independent external blind test.
    - Includes fixed metrics, thresholds, member definitions, and prediction hashes.
 
-6. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
+9. `reports/FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`
    - Exact cohort, image-selection, blinding, hashing, reporting, and interpretation rules for the next external test.
 
-7. `reports/AI Pathology Model Improvement.md`
+10. `reports/AI Pathology Model Improvement.md`
    - The broad research-lead plan that motivated this experiment wave.
 
-8. `scripts/`
+11. `scripts/`
    - Complete local 2026-07-11 implementation set: registries, dense-token extraction, LoRA, contrastive learning, structured pooling, SAM optimization, fusion search, bootstrap, nested thresholds, error analysis, and queue/recovery scripts.
 
 ## Data Boundary
@@ -58,14 +70,14 @@ The 108-case and 162-case external cohorts were both inspected in Phase 1. They 
 
 ## Historical Capability Correction
 
-The old-data 92% result is not evidence that a single visual backbone reached 92%:
+The old-data 92% result is not evidence that a visual classifier reached 92%. The stronger post-response audit also found direct label-derived leakage:
 
-- Early direct visual mainline: approximately 0.765 Acc/BAcc on 285 old-data cases.
-- Candidate 41 image-model fusion: 0.8351 Acc and 0.8348 BAcc.
-- No.64 two-stage automatic reviewer: 0.9263 Acc/BAcc.
-- Later `base162`: 0.9228 Acc and 0.9227 BAcc on old data.
+- Early image-grounded visual baseline: approximately 0.765 Acc/BAcc on 285 old-data cases.
+- Candidate 41 selected corrected-system output stack: 0.8351 Acc and 0.8348 BAcc.
+- No.64 exploratory behavior reviewer with a label-derived router feature: 0.9263 Acc/BAcc.
+- Later `base162`, which consumed the nominal third-batch holdout during meta-stacking: 0.9228 Acc and 0.9227 BAcc on old data.
 
-Code audit showed that the winning No.64 corrector used `feature_set=model`, not DINO/image features. Its router explicitly modeled whether Candidate 41 would be wrong. `base162` inherited this No.64/adaptation/meta-stack lineage before its final run104/run108 blend. These systems emit full-coverage outputs, but their incremental gain is behavior-level meta-correction, not demonstrated fine visual morphology.
+Code audit showed that the winning No.64 corrector used `feature_set=model`, not DINO/image features. Its winning `model_visible` router also included `difficulty`, which was constructed from model correctness and true-class probabilities and therefore requires the true label. Candidate 41 itself consumes predictions, probabilities, confidence, and disagreement from four previously selected corrected systems rather than rereading images. `base162` inherited this lineage and reassigned folds after combining adapt72 with the nominal holdout234. These systems emit full-coverage outputs, but their magnitudes are not leakage-clean prospective estimates and their incremental gain is not demonstrated fine visual morphology.
 
 This distinction matters because the gain did not transfer: `base162` reached only 0.7300 BAcc and 0.5263 high-risk recall on the third-batch strict holdout, and 0.6220 BAcc on the historical strict external evaluable cohort.
 
