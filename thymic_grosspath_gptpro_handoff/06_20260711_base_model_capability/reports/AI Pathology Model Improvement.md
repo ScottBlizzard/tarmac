@@ -464,3 +464,29 @@ The most valuable collaborator inputs are not generic “more data.” They are 
    * avoid expanding mainly with easy AB/B1 cases, because that will inflate accuracy without solving external high-risk recall.
 
 The next scientific step is to make the model less dependent on the historical selected image and historical domain style. The practical path is: **case-bag registry → ROI/token MIL → domain simulation → concept/ordinal/high-risk supervision → locked strict/new external evaluation**.
+
+---
+
+## 9. 2026-07-13 Final Current-Image Closure
+
+The prior next-step sentence above is now superseded for the existing 591 selected primary photographs.
+
+The preregistered H2 canonical-coordinate spatial-relational experiment directly tested the last unresolved current-image hypothesis: whether useful transferable morphology was already present in the frozen C1 dense patch tokens but discarded by prior pooling heads. It compared a matched gated head, a full per-case/per-view patch-permuted relational control, and the true-grid relational model under identical locked splits and training.
+
+The result was a complete `NO-GO`:
+
+- true-grid relational OOF BAcc: 0.7278 versus C2 0.7514;
+- true-grid relational LODO BAcc: 0.6970 versus C2 0.7441;
+- paired LODO delta BAcc versus C2: -0.0471, 95% CI [-0.0866, -0.0062];
+- true-grid relational LODO BAcc was 0.0211 below the permuted control;
+- all three acquisition batches declined versus C2;
+- B1/B2 LODO mean accuracy was 0.5267 versus the required 0.6115;
+- all nine preregistered advancement gates failed.
+
+Do not continue architecture, pooling, loss, sampler, threshold, seed, or fusion optimization on this current single-photograph cohort. The direct full-coverage base model remains the primary endpoint, but model development should reopen only after standardized prospective multi-view acquisition and independent multicenter data are available.
+
+Current governing documents:
+
+- `2026-07-13_空间关系模型最终实验结果与主线结论.md`;
+- `2026-07-13_胸腺大体图像标准化多视图多中心采集方案.md`;
+- repository report `H2_CANONICAL_SPATIAL_RELATIONAL_RESULTS_20260713.md` at commit `bb28e8f` plus the subsequent aggregate-results commit.

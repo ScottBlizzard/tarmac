@@ -13,7 +13,30 @@ Task7 definition:
 
 Selective release, rejection, and physician-review workflows remain downstream safety layers. They are not substitutes for a stronger base classifier and are not the optimization target in this update.
 
-## Read First
+## Current Governing Outcome
+
+The preregistered H2 canonical-coordinate spatial-relational experiment is complete. It was the final bounded architecture experiment on the existing 591 selected single photographs. All nine gates failed:
+
+- relational OOF BAcc 0.7278 versus C2 0.7514;
+- relational source-LODO BAcc 0.6970 versus C2 0.7441;
+- paired LODO delta BAcc versus C2 -0.0471, 95% CI [-0.0866, -0.0062];
+- relational source-LODO BAcc 0.0211 below the per-case/per-view permuted control;
+- zero of three acquisition batches improved;
+- B1/B2 LODO mean risk accuracy 0.5267.
+
+The locked decision is `NO-GO`. Do not continue architecture, pooling, loss, sampler, seed, threshold, or fusion optimization on this current single-photograph cohort. The active development mainline is standardized prospective multi-view acquisition followed by genuinely independent multicenter evaluation.
+
+Current governing files:
+
+- `reports/H2_CANONICAL_SPATIAL_RELATIONAL_RESULTS_20260713.md`;
+- `reports/H2_CANONICAL_SPATIAL_RELATIONAL_PREREGISTRATION_20260713.md`;
+- `scripts/prepare_task7_spatial_relational_assets_20260713.py`;
+- `scripts/run_task7_spatial_relational_20260713.py`;
+- `scripts/analyze_task7_spatial_relational_20260713.py`;
+- `scripts/run_task7_spatial_relational_queue_20260713.sh`;
+- `reports/AI Pathology Model Improvement.md`, section 9.
+
+## Pre-H2 Historical Packet
 
 1. `GPTPRO_PROMPT_20260713_AFTER_SEQUENTIAL_NO_GO.md`
    - Current self-contained English briefing for an independent expert with zero prior project context.
