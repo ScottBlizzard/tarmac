@@ -15,19 +15,59 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Current Governing Outcome
 
-The preregistered H2 canonical-coordinate spatial-relational experiment is complete. It was the final bounded architecture experiment on the existing 591 selected single photographs. All nine gates failed:
+The preregistered H5 low-rank second-order texture experiment is complete and
+is a `NO-GO`. It directly classified frozen PE-Spatial tokens using first-order
+gated evidence plus per-view 64 x 64 covariance texture tokens.
 
-- relational OOF BAcc 0.7278 versus C2 0.7514;
-- relational source-LODO BAcc 0.6970 versus C2 0.7441;
-- paired LODO delta BAcc versus C2 -0.0471, 95% CI [-0.0866, -0.0062];
-- relational source-LODO BAcc 0.0211 below the per-case/per-view permuted control;
-- zero of three acquisition batches improved;
-- B1/B2 LODO mean risk accuracy 0.5267.
+- H5 five-fold OOF BAcc/AUC: 0.7969/0.8395;
+- H5 source-LODO BAcc/AUC: 0.7422/0.8133;
+- H5 source-LODO sensitivity/specificity: 0.6502/0.8342;
+- H5 source-LODO B1/B2 accuracy: 0.5968/0.4719;
+- H5 minus C2 LODO BAcc: -0.0018, 95% CI [-0.0392, +0.0356];
+- H5 minus C2 LODO sensitivity: -0.0852, 95% CI [-0.1435, -0.0269];
+- held-source BAcc deltas versus C2: batch1 -0.0535, batch2 +0.0060,
+  third_batch -0.0223.
 
-The locked decision is `NO-GO`. Do not continue architecture, pooling, loss, sampler, seed, threshold, or fusion optimization on this current single-photograph cohort. The active development mainline is standardized prospective multi-view acquisition followed by genuinely independent multicenter evaluation.
+H5 improved mixed-source B1/B2 to 0.6613/0.7079, but B2 collapsed to 0.4719
+under source-LODO. H4 quality consistency similarly retained a high OOF result
+while reducing LODO BAcc to 0.7254. These experiments confirm that stronger
+mixed-source ranking, texture modeling, or specificity does not establish a
+stronger transferable classifier.
+
+Do not search covariance dimensions, texture normalizations, perturbation
+severity, consistency weight, seed, threshold, quality routing, or source
+calibration. H3 PE remains the strongest mixed-source direct model at 0.8003
+BAcc, but H3, H4, and H5 all failed the cross-domain advancement gates.
+
+The next valid model experiment requires additional accessible image
+information or a genuinely new cohort. A server-side audit found all 591 cached
+selected images, but none of the registered original case-folder paths is
+currently accessible; a complete all-image bag cannot start until those folders
+are recovered or remounted.
 
 Current governing files:
 
+- `GPTPRO_PROMPT_20260713_AFTER_H3_H5_NO_GO.md`;
+- `GPTPRO_RESPONSE_20260713_AFTER_H3_H5_NO_GO_BLANK.md`;
+- `reports/H5_SECOND_ORDER_TEXTURE_RESULTS_20260713.md`;
+- `reports/H5_SECOND_ORDER_TEXTURE_PREREGISTRATION_20260713.md`;
+- `reports/MULTI_IMAGE_AVAILABILITY_AUDIT_20260713.md`;
+- `scripts/run_task7_h5_second_order_texture_20260713.py`;
+- `scripts/summarize_task7_h5_gate_20260713.py`;
+- `scripts/audit_task7_case_image_availability_20260713.py`;
+- `reports/H4_QUALITY_DOMAIN_RANDOMIZATION_RESULTS_20260713.md`;
+- `reports/H4_QUALITY_DOMAIN_RANDOMIZATION_PREREGISTRATION_20260713.md`;
+- `scripts/extract_task7_h4_quality_augmented_dense_bank_20260713.py`;
+- `scripts/run_task7_h4_quality_consistency_20260713.py`;
+- `scripts/summarize_task7_h4_gate_20260713.py`;
+- `reports/H3_REPRESENTATION_RENEWAL_RESULTS_20260713.md`;
+- `reports/H3_REPRESENTATION_RENEWAL_PREREGISTRATION_20260713.md`;
+- `scripts/extract_task7_h3_representation_bank_20260713.py`;
+- `scripts/extract_task7_h3_dense_bank_20260713.py`;
+- `scripts/run_task7_h3_summary_gated_20260713.py`;
+- `scripts/run_task7_h3b_masked_gated_20260713.py`;
+- `scripts/summarize_task7_h3_representation_screen_20260713.py`;
+- `scripts/summarize_task7_h3b_gate_20260713.py`;
 - `reports/H2_CANONICAL_SPATIAL_RELATIONAL_RESULTS_20260713.md`;
 - `reports/H2_CANONICAL_SPATIAL_RELATIONAL_PREREGISTRATION_20260713.md`;
 - `scripts/prepare_task7_spatial_relational_assets_20260713.py`;
@@ -252,9 +292,13 @@ The report gives exact metrics and failure modes. Do not propose a low-level rep
 
 ## Next Valid Steps
 
-1. Ask GPT Pro to audit the new no-go evidence and nominate at most two structurally new image-grounded experiments, each tied to a changed assumption and locked against C1/C2 under five-fold and source-LODO evaluation.
-2. Use the existing 589-case physician feature table only for retrospective error explanation and subgroup auditing, never as image-model input or a substitute label.
-3. If no new method changes the information available to the model, stop optimizing the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
-4. If a fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
+1. Audit PE-Spatial versus C2 errors by source, subtype, image-quality strata, and the existing physician feature table; use these fields only for retrospective explanation and subgroup auditing.
+2. Preregister at most one H4 domain-robustness hypothesis tied to the observed batch1 regression and B2/high-risk under-calling. It must compare against C2 and PE-Spatial under five-fold and source-LODO evaluation, with threshold 0.5 and 100% coverage.
+3. Do not repeat automatic contrast/white-balance/unsharp preprocessing, generic GroupDRO/REx/DANN, or confidence routing unless the new design changes a documented failed assumption.
+4. If H4 does not improve cross-domain sensitivity and B2 without harming a source, stop optimizing the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
+5. If a fresh label-blinded cohort becomes available, run the already locked C1/C2/PE comparison once under a revised fresh-external protocol before any label-informed adaptation.
 
-The current evidence supports a stronger internal representation and a cleaner candidate lock. It does not support a 92% base-visual claim or the claim that cross-hospital generalization is solved.
+The current evidence supports a stronger mixed-source base representation and a
+cleaner candidate lock. It does not support a 92% base-visual claim, robust
+cross-batch generalization, or the claim that cross-hospital generalization is
+solved.
