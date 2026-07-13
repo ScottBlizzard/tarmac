@@ -16,7 +16,8 @@ Selective release, rejection, and physician-review workflows remain downstream s
 ## Read First
 
 1. `GPTPRO_PROMPT_20260713_AFTER_SEQUENTIAL_NO_GO.md`
-   - Current English research-lead prompt with the repository URL, the sequential AB/TC result, the exhausted experiment families, and the exact next decision request.
+   - Current self-contained English briefing for an independent expert with zero prior project context.
+   - Defines the clinical task, data, evaluation, historical 92% correction, leakage-clean baselines, negative evidence, sequential AB/TC result, and exact next decision request.
 
 2. `reports/H1_SEQUENTIAL_AB_TC_FALLBACK_RESULTS_20260713.md`
    - Formal five-fold, source-LODO, bootstrap, subtype, source, routing, and fallback results for the sequential AB/TC expert system.

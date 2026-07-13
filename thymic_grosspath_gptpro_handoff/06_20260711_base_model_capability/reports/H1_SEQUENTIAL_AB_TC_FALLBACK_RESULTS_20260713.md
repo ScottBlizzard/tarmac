@@ -3,9 +3,53 @@
 Date: 2026-07-13
 Decision: **NO-GO**
 
+## Purpose and Scope
+
+This report is self-contained and assumes no prior knowledge of the project. It records one preregistered experiment on gross surgical photographs of thymic epithelial tumors. The decision is a NO-GO for this exact sequential AB-expert, TC-expert, and binary-fallback implementation. It does not prove that every possible image-grounded hierarchy is impossible.
+
+The primary scientific objective is a stronger image-only low-risk versus high-risk classifier that predicts every case. The current input is one selected primary gross photograph per case. Rejection, physician review, source-specific calibration, confidence correction, and output stacking are outside this base-capability objective.
+
+The six pathological subtypes are grouped as follows:
+
+- low risk: A, AB, and B1;
+- high risk: B2, B3, and thymic carcinoma (TC).
+
+## Data and Evaluation
+
+The internal development cohort contains 591 cases from three acquisition batches:
+
+| Source | Cases |
+| --- | ---: |
+| batch1 | 117 |
+| batch2 | 168 |
+| third_batch | 306 |
+
+Subtype distribution:
+
+| A | AB | B1 | B2 | B3 | TC | Low | High |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 44 | 262 | 62 | 89 | 24 | 110 | 368 | 223 |
+
+Two case-level outer evaluation protocols were mandatory:
+
+1. Five-fold out-of-fold evaluation (five-fold OOF), with sources mixed across folds.
+2. Source leave-one-domain-out evaluation (source-LODO), holding out batch1, batch2, and third_batch in turn. This is the principal internal domain-shift test.
+
+All model fitting, early stopping, cross-fitted miss mining, and route-threshold selection occurred on the outer training side. Held-out cases were used only for evaluation. Balanced accuracy (BAcc) is the mean of high-risk sensitivity and low-risk specificity.
+
+The previously inspected 108-case historical external cohort and 162-case newer external cohort were not read in this experiment. Both are consumed audit sets and cannot support a new external-generalization claim.
+
+## Comparison Baselines
+
+**C1** is the strongest locked single visual model: SigLIP-L at 512 px, six deterministic views derived from the same photograph (whole image, foreground crop, and four crop quadrants), all dense patch tokens, and a low-capacity gated pooling classifier.
+
+**C2** is a fixed equal-probability ensemble of C1 and a separately trained AIMv2 MixStyle image model. Both members read images; C2 is not a confidence-only or behavior-level corrector.
+
+The historical approximately 92% workflow is not a valid visual baseline. It descended from output-stacking/meta-correction experiments, included label-derived leakage in one winning route, consumed a nominal holdout in a later descendant, and failed to transfer. This experiment is compared only with the leakage-clean C1/C2 visual baselines.
+
 ## Locked Design
 
-The experiment used 591 internal cases only. Low risk was A/AB/B1 and high risk was B2/B3/TC. All three heads consumed the locked C1 SigLIP-L@512 six-view dense-token representation.
+All three heads consumed the frozen C1 six-view dense-token representation defined above, with separately trained gated pooling heads.
 
 1. An AB-versus-rest visual expert was trained first.
 2. A TC expert was trained against A/B1/B2/B3 plus AB cases missed by training-side cross-fitted AB experts.
@@ -48,6 +92,16 @@ Source-LODO risk accuracy, Sequential versus C2:
 
 The gain on A/AB/B1 was paid for by worse B2/B3/TC performance.
 
+Source-LODO BAcc by held-out acquisition batch:
+
+| Held-out source | C1 | C2 | Sequential |
+| --- | ---: | ---: | ---: |
+| batch1 | 0.7145 | 0.7890 | 0.7189 |
+| batch2 | 0.7024 | 0.7083 | 0.7024 |
+| third_batch | 0.7329 | 0.7337 | 0.7560 |
+
+Only third_batch improved. The sequential model did not produce a consistent cross-source gain.
+
 ## Mechanism Audit
 
 Standalone subtype-expert performance at threshold 0.5:
@@ -78,9 +132,39 @@ The fallback was the bottleneck:
 
 Balanced residual training did not create transferable visual knowledge. It reproduced the prior B1/B2 tradeoff by improving B1 and harming B2.
 
+## Interpretation Boundary
+
+Verified by this experiment:
+
+- the AB expert learned a mixed-source OOF signal that collapsed under source shift;
+- the TC expert retained some cross-source ranking signal but could not support the preregistered high-purity route;
+- the few actual specialist routes were net positive and were not the dominant cause of failure;
+- the fallback did not improve the core A/B1-versus-B2/B3 boundary;
+- the final system moved predictions toward low risk and significantly reduced high-risk sensitivity.
+
+Not established by this experiment:
+
+- that no subtype-specific visual signal exists;
+- that all soft, joint, or end-to-end hierarchies must fail;
+- that the B1/B2 boundary is intrinsically impossible from gross images;
+- that more data or standardized additional views would not help.
+
+The correct inference is narrower: this hard sequential routing design, trained on the current single-photograph information and frozen representation, did not create transferable complementary visual knowledge.
+
 ## Locked Decision
 
-Only the B1 gate passed. OOF BAcc, LODO BAcc, LODO sensitivity, minimum-source BAcc, and B2 accuracy all failed. The two confirmation seeds, anchor-count variants, and threshold searches are therefore prohibited by the preregistered stopping rule.
+| Preregistered gate | Required | Observed | Result |
+| --- | ---: | ---: | --- |
+| Five-fold BAcc | Greater than C2 0.7514 | 0.7195 | FAIL |
+| Source-LODO BAcc | At least 0.7640 | 0.7278 | FAIL |
+| Source-LODO sensitivity | At least 0.7354 | 0.6457 | FAIL |
+| Minimum held-source BAcc | At least 0.7083 | 0.7024 | FAIL |
+| Source-LODO B1 accuracy | At least 0.5000 | 0.6452 | PASS |
+| Source-LODO B2 accuracy | At least 0.6630 | 0.5281 | FAIL |
+
+Only the B1 gate passed. The two confirmation seeds, anchor-count variants, and threshold searches are therefore prohibited by the preregistered stopping rule.
+
+The next decision is whether any remaining experiment changes the visual information or learning assumption enough to justify another internal run. If not, the scientifically rational step is standardized additional gross views and a genuinely untouched multicenter cohort rather than further tuning on the same 591 primary photographs.
 
 Server-only results are under:
 

@@ -6,6 +6,8 @@ Use the complete current prompt at:
 
 `thymic_grosspath_gptpro_handoff/06_20260711_base_model_capability/GPTPRO_PROMPT_20260713_AFTER_SEQUENTIAL_NO_GO.md`
 
+Give that document to GPT Pro as a complete first-contact briefing. It assumes zero prior knowledge of the project and should be provided without relying on earlier conversations.
+
 Read the latest result ledger first:
 
 `thymic_grosspath_gptpro_handoff/06_20260711_base_model_capability/reports/H1_SEQUENTIAL_AB_TC_FALLBACK_RESULTS_20260713.md`
