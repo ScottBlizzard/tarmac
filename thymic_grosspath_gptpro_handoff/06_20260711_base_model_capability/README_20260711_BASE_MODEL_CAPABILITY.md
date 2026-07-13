@@ -46,6 +46,23 @@ and all 608 internal paths in the existing case-bag registry accessible. Only
 the current data therefore provide only a narrow paired-view sensitivity test,
 not broad multi-view training evidence.
 
+GPT Pro independently reviewed the completed H3-H5 evidence and recommended
+freezing model nomination on the repeatedly inspected 591-case cohort. The two
+permitted diagnostic audits have now been completed:
+
+- Fixed Haar frequency features predicted acquisition source after controlling
+  risk (BAcc 0.4388 versus chance 0.3333; permutation p=0.0099), while risk after
+  controlling source was weak (BAcc 0.5381; p=0.0792). All 156 frequency
+  features had larger source than risk partial effects.
+- PE-Spatial label-free parts were stable, nondegenerate, and not merely
+  foreground/background clusters, but their stability was source-sensitive.
+  Blur/JPEG token-cosine source partial eta-squared was 0.0846 versus risk
+  partial eta-squared 0.0010.
+
+These audits do not authorize another classifier. Current-cohort model
+nomination is frozen; the mainline is now the standardized four-view,
+multicenter acquisition and sealed fresh-external protocol.
+
 Current governing files:
 
 - `GPTPRO_PROMPT_20260713_AFTER_H3_H5_NO_GO.md`;
@@ -53,6 +70,15 @@ Current governing files:
 - `reports/H5_SECOND_ORDER_TEXTURE_RESULTS_20260713.md`;
 - `reports/H5_SECOND_ORDER_TEXTURE_PREREGISTRATION_20260713.md`;
 - `reports/MULTI_IMAGE_AVAILABILITY_AUDIT_20260713.md`;
+- `reports/CURRENT_COHORT_MODEL_FREEZE_DECISION_20260713.md`;
+- `reports/FREQUENCY_SOURCE_VS_RISK_AUDIT_PREREGISTRATION_20260713.md`;
+- `reports/FREQUENCY_SOURCE_VS_RISK_AUDIT_RESULTS_20260713.md`;
+- `reports/PE_PART_STABILITY_AUDIT_PREREGISTRATION_20260713.md`;
+- `reports/PE_PART_STABILITY_AUDIT_RESULTS_20260713.md`;
+- `reports/LOCAL_ASSET_AUDIT_AFTER_GPTPRO_20260713.md`;
+- `reports/FOUR_VIEW_MULTICENTER_ACQUISITION_PROTOCOL_20260713.md`;
+- `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
+- `scripts/audit_task7_pe_part_stability_20260713.py`;
 - `scripts/run_task7_h5_second_order_texture_20260713.py`;
 - `scripts/summarize_task7_h5_gate_20260713.py`;
 - `scripts/audit_task7_case_image_availability_20260713.py`;
@@ -293,11 +319,17 @@ The report gives exact metrics and failure modes. Do not propose a low-level rep
 
 ## Next Valid Steps
 
-1. Audit PE-Spatial versus C2 errors by source, subtype, image-quality strata, and the existing physician feature table; use these fields only for retrospective explanation and subgroup auditing.
-2. Preregister at most one H4 domain-robustness hypothesis tied to the observed batch1 regression and B2/high-risk under-calling. It must compare against C2 and PE-Spatial under five-fold and source-LODO evaluation, with threshold 0.5 and 100% coverage.
-3. Do not repeat automatic contrast/white-balance/unsharp preprocessing, generic GroupDRO/REx/DANN, or confidence routing unless the new design changes a documented failed assumption.
-4. If H4 does not improve cross-domain sensitivity and B2 without harming a source, stop optimizing the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
-5. If a fresh label-blinded cohort becomes available, run the already locked C1/C2/PE comparison once under a revised fresh-external protocol before any label-informed adaptation.
+1. Freeze new classifier nomination on the current 591 cases and preserve the
+   completed experiment ledger.
+2. Start the four-slot prospective capture protocol at the development
+   hospitals: whole specimen, complete cut surface, geometric-rule solid-region
+   close-up, and capsule/interface close-up.
+3. Keep at least two external-test hospitals fully sealed from supervised
+   training, SSL, normalization fitting, model selection, and thresholding.
+4. Monitor capture completeness and acquisition metadata without opening model
+   selection before the protocol gates are met.
+5. Reopen model development only on the new multicenter package, with a paired
+   primary-single-view versus all-four-view comparison.
 
 The current evidence supports a stronger mixed-source base representation and a
 cleaner candidate lock. It does not support a 92% base-visual claim, robust
