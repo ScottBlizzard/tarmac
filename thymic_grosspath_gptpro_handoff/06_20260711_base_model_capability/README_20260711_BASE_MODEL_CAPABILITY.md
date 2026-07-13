@@ -1,6 +1,6 @@
 # 2026-07-11 Task7 Base-Model Capability Update
 
-Interpretation corrected: 2026-07-12
+Interpretation updated: 2026-07-13
 
 Repository: https://github.com/ScottBlizzard/tarmac
 
@@ -15,24 +15,24 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Read First
 
-1. `GPTPRO_PROMPT_20260712_POST_F1_F2.md`
-   - Current English follow-up prompt with the repository URL, all Wave C/D1/E1/F1/F2 results, and the physician-ROI decision branch.
+1. `GPTPRO_PROMPT_20260713_AFTER_SEQUENTIAL_NO_GO.md`
+   - Current English research-lead prompt with the repository URL, the sequential AB/TC result, the exhausted experiment families, and the exact next decision request.
 
-2. `reports/Task7_WaveC_D1_E1_F1_F2_Results_20260712.md`
-   - Exact metrics and predeclared decisions for the latest direct-image and fixed visual-ensemble experiments.
+2. `reports/H1_SEQUENTIAL_AB_TC_FALLBACK_RESULTS_20260713.md`
+   - Formal five-fold, source-LODO, bootstrap, subtype, source, routing, and fallback results for the sequential AB/TC expert system.
 
-3. `reports/PHYSICIAN_ROI_ANNOTATION_LOCK_WORKFLOW_20260712.md`
-   - Independent reader forms, no-label validation, cryptographic annotation lock, and G1 execution boundary.
+3. `reports/Task7_WaveC_D1_E1_F1_F2_Results_20260712.md`
+   - Exact metrics and predeclared decisions for the preceding direct-image and fixed visual-ensemble experiments.
 
-4. `reports/G1_PHYSICIAN_ROI_ORACLE_PREREGISTRATION_20260712.md`
-   - Fixed two-reader manual-ROI model, matched-random control, agreement rule, and advancement gate.
+4. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
+   - Full internal experiment ledger from runs 206-369, including positive, negative, fusion, bootstrap, source-LODO, and error-analysis evidence.
 
 5. `reports/Task7_GPTPro_Plan_Execution_A1_B1_Results_20260712.md`
    - Completed A1 native-detail direct-model and B1 fixed-route M0-M4 results.
    - Both fixed-grid families failed their predeclared OOF/source-LODO advancement gates.
 
-6. `reports/PHYSICIAN_BLINDED_ROI_ORACLE_PROTOCOL_20260712.md`
-   - Next changed-information experiment: a 120-case, two-reader, label/model-blinded manual-ROI oracle.
+6. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
+   - Distinguishes visual capability, genuine image-grounded ensembles, behavior-level meta-correction, and selective workflows.
 
 7. `reports/GPTPro_Response_Visual_Cascade_Audit_20260712.md`
    - GPT Pro's returned independent code/provenance audit and exact A1/B1 plan.
@@ -41,27 +41,20 @@ Selective release, rejection, and physician-review workflows remain downstream s
    - Local line-by-line verification of the GPT Pro findings.
    - Records the direct `difficulty` leakage, Candidate 41 output stacking, consumed `holdout234`, original-resolution audit, and the resulting experiment decision.
 
-9. `GPTPRO_PROMPT_20260712_VISUAL_CASCADE_AUDIT.md`
-   - Superseded visual-cascade audit prompt retained for provenance.
-   - Audits the historical 92% result and redesigns the mainline around image-grounded capability.
+9. `scripts/run_task7_sequential_ab_tc_fallback_20260713.py`
+   - Reproducible implementation of nested training-side AB misses, sequential AB/TC visual experts, dynamic six-subtype fallback sampling, and fixed image-only routing.
 
-10. `reports/Task7_Visual_Capability_and_Genuine_Coarse_to_Fine_Reframing_20260712.md`
-   - Corrects the distinction between a visual model, an image-grounded ensemble, a behavior-level meta-corrector, and a selective workflow.
-   - Includes the post-audit leakage and holdout-consumption erratum.
-   - Defines the direct-model and genuine coarse-to-fine experimental plan.
+10. `scripts/analyze_task7_sequential_ab_tc_fallback_20260713.py`
+    - Locked aggregate comparison, paired bootstrap, route accounting, fallback diagnosis, and advancement-gate decision.
 
-11. `scripts/run_task7_native_detail_a1_20260712.py`
-   - RAM-only native-resolution A1 implementation.
-   - Fixed C1-view aggregation control plus 14-view hierarchical MIL and global-to-local cross-attention families.
+11. `GPTPRO_PROMPT_20260712_POST_F1_F2.md`
+    - Superseded post-F1/F2 prompt retained for provenance.
 
-12. `GPTPRO_PROMPT_20260711_POST_EXPERIMENT.md`
-   - Superseded post-experiment prompt retained for provenance.
+12. `reports/PHYSICIAN_ROI_ANNOTATION_LOCK_WORKFLOW_20260712.md`
+    - Optional future localization-oracle workflow. It is not a current prerequisite and should not create a new annotation burden without a specific changed-information hypothesis.
 
-13. `reports/Task7_Base_Model_Capability_Experiments_20260711.md`
-   - Full internal experiment ledger from runs 206-369.
-   - Canonical five-fold OOF and three-source LODO protocols.
-   - Positive, negative, fusion, bootstrap, doctor-concept, and resource-cleanup results.
-   - Final internal candidate lock and its limitations.
+13. `reports/G1_PHYSICIAN_ROI_ORACLE_PREREGISTRATION_20260712.md`
+    - Optional fixed two-reader manual-ROI oracle retained for provenance.
 
 14. `scripts/phase2_fresh_external_candidate_lock_20260711.csv`
    - Machine-readable lock for the two candidates allowed into a new independent external blind test.
@@ -74,7 +67,7 @@ Selective release, rejection, and physician-review workflows remain downstream s
    - The broad research-lead plan that motivated this experiment wave.
 
 17. `scripts/`
-   - Complete local 2026-07-11 implementation set: registries, dense-token extraction, LoRA, contrastive learning, structured pooling, SAM optimization, fusion search, bootstrap, nested thresholds, error analysis, and queue/recovery scripts.
+   - Complete implementation set: registries, dense-token extraction, LoRA, contrastive learning, structured pooling, SAM optimization, fusion search, sequential specialists, bootstrap, nested thresholds, error analysis, and queue/recovery scripts.
 
 ## Data Boundary
 
@@ -116,7 +109,7 @@ GPT Pro's first image-grounded plans were implemented and run end to end. A1 use
 
 On the same routed cases, M2 minus C1 was +0.0165 BAcc in five-fold OOF, 95% CI [-0.0658, 0.1002], but -0.0928 under source LODO, 95% CI [-0.1686, -0.0182]. Actual confidence routing underperformed matched random routing. M2 improved B1 while harming B2, including a -0.1236 B2 accuracy change under LODO. These families are closed; do not continue tile-count, loss, route-percentage, threshold, or fusion-weight searches on them.
 
-The next valid localization test is the blinded manual-ROI oracle. The server packet contains 120 neutral-filename images and 240 independent-reader rows, with the secure label/model key physically separated. No patient images, mappings, or annotations are stored in this repository.
+An optional blinded manual-ROI oracle was engineered for a future localization-specific question. It is not the current mainline and should not be interpreted as a request for physicians to relabel cases that they have already characterized. No patient images, mappings, or annotations are stored in this repository.
 
 ## 2026-07-12 Wave C, D1, E1, F1, and F2
 
@@ -136,9 +129,28 @@ D1's apparent internal gain reversed under source LODO. E1 anatomy localization 
 
 These findings close further searches over backbone size, automatic ROI scores, random-bag count, consistency weight, fusion weight, and threshold on the same 591 single photographs. The recurring gain is ranking/AUC, while fixed-threshold decisions move errors among sources and B1/B2/B3.
 
-## Physician ROI Execution Readiness
+## 2026-07-13 Sequential AB/TC Expert Result
 
-The 120-case G1 manual-ROI oracle now has an end-to-end executable firewall:
+The preregistered coarse-to-fine system used independent image-reading heads on the locked C1 six-view dense-token representation:
+
+1. an AB-versus-rest expert;
+2. a TC-versus-non-TC expert trained after removing AB, with training-side cross-fitted AB misses reintroduced;
+3. a low-versus-high fallback trained on all A/B1/B2/B3 plus dynamically sampled AB/TC coverage cases;
+4. fixed exclusive routing, with conflicts and neither-positive cases sent to the fallback.
+
+| Model | Five-fold BAcc/AUC | Source-LODO BAcc/AUC | Sensitivity/Specificity (LODO) |
+| --- | ---: | ---: | ---: |
+| C1 | 0.7477/0.8240 | 0.7397/0.8072 | 0.7130/0.7663 |
+| C2 | 0.7514/0.8377 | 0.7441/0.8108 | 0.7354/0.7527 |
+| Sequential AB/TC/fallback | 0.7195/0.8118 | 0.7278/0.7895 | 0.6457/0.8098 |
+
+The system is a formal no-go. Versus C2, LODO sensitivity fell by 0.0897 while specificity rose by 0.0571. The paired bootstrap confirmed significant sensitivity harm: delta -0.0882, 95% CI [-0.1435, -0.0359]. The routing component itself was conservative and slightly helpful, but too small: only 29 AB-exclusive and zero TC-exclusive LODO cases were routed. The fallback caused the main loss and again shifted errors from B1 toward B2/B3/TC.
+
+Standalone AB discrimination collapsed from five-fold BAcc/AUC 0.7811/0.8505 to source-LODO 0.6178/0.6280. TC ranking remained useful at 0.8450 LODO AUC, but no held-source fold met the locked TC route-purity requirement. This closes seed repeats, 30/40/50 coverage-count sweeps, threshold searches, and confidence-gate tuning for this design.
+
+## Optional Physician ROI Infrastructure
+
+The prepared 120-case G1 manual-ROI oracle has an end-to-end executable firewall, but it is archived as optional infrastructure rather than an active physician request:
 
 - two separate 120-row reader forms;
 - readers remain blinded to labels, subtype, C1 probability, and C1 correctness;
@@ -150,7 +162,7 @@ The 120-case G1 manual-ROI oracle now has an end-to-end executable firewall:
 - five-fold and source-LODO direct-image heads;
 - same-case C1, base-only, random-ROI, B1/B2, source, and paired-bootstrap comparisons.
 
-The full synthetic engineering smoke passed. Synthetic annotations were deleted and are not scientific evidence. Real G1 cannot start until both physicians finish and lock their independent forms.
+The full synthetic engineering smoke passed. Synthetic annotations were deleted and are not scientific evidence. Real G1 should start only if a later research question specifically requires a blinded localization oracle and the expected information gain justifies new physician work.
 
 ## Main Positive Result
 
@@ -198,7 +210,7 @@ Doctor-concept analysis is explanatory only. After Fisher tests and within-compa
 - C1 OOF low-risk false positives enriched `texture_soft` (q=0.0012).
 - C1 LODO high-risk false negatives enriched `nodular_lobulated` (q=0.0498).
 
-These associations require physician image review and new data. They are not established biological mechanisms and were not used as model inputs.
+These associations are explanatory hypotheses, not established biological mechanisms, and were not used as model inputs. The existing physician feature table covers 589 of 591 internal cases and is sufficient for the current retrospective error audit; no new 120-case physician exercise is required for that audit.
 
 ## Broad Negative Evidence
 
@@ -216,8 +228,9 @@ The report gives exact metrics and failure modes. Do not propose a low-level rep
 
 ## Next Valid Steps
 
-1. Complete the two-reader manual-ROI oracle under `PHYSICIAN_BLINDED_ROI_ORACLE_PROTOCOL_20260712.md`. Train an automatic anatomical ROI detector only if the manual oracle passes all predeclared gates.
-2. If the manual ROI oracle fails, stop optimization of the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
-3. If a fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
+1. Ask GPT Pro to audit the new no-go evidence and nominate at most two structurally new image-grounded experiments, each tied to a changed assumption and locked against C1/C2 under five-fold and source-LODO evaluation.
+2. Use the existing 589-case physician feature table only for retrospective error explanation and subgroup auditing, never as image-model input or a substitute label.
+3. If no new method changes the information available to the model, stop optimizing the current single photograph and collect standardized cut-surface close-ups, capsule/interface views, and genuinely new multicenter cases.
+4. If a fresh label-blinded cohort becomes available, run the already locked C1/C2 comparison once under `FRESH_EXTERNAL_BLIND_TEST_PROTOCOL_20260711.md`.
 
 The current evidence supports a stronger internal representation and a cleaner candidate lock. It does not support a 92% base-visual claim or the claim that cross-hospital generalization is solved.
