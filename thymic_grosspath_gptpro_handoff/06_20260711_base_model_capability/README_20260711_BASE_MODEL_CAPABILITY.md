@@ -39,11 +39,12 @@ severity, consistency weight, seed, threshold, quality routing, or source
 calibration. H3 PE remains the strongest mixed-source direct model at 0.8003
 BAcc, but H3, H4, and H5 all failed the cross-domain advancement gates.
 
-The next valid model experiment requires additional accessible image
-information or a genuinely new cohort. A server-side audit found all 591 cached
-selected images, but none of the registered original case-folder paths is
-currently accessible; a complete all-image bag cannot start until those folders
-are recovered or remounted.
+The next valid model experiment requires genuinely new image information or a
+new cohort. A corrected root-aware audit found all 591 cached selected images
+and all 608 internal paths in the existing case-bag registry accessible. Only
+17 old-data cases have a second image, while the remaining 574 cases have one;
+the current data therefore provide only a narrow paired-view sensitivity test,
+not broad multi-view training evidence.
 
 Current governing files:
 

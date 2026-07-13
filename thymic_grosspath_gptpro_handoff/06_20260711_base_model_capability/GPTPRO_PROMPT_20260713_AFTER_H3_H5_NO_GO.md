@@ -148,17 +148,20 @@ normalization, fusion, loss, sampler, threshold, or seed.
 
 ## Multi-image availability audit
 
-All 591 selected cached images exist. However:
+Correction after root-aware re-audit:
 
-- none of the 591 registered original `source_case_folder` paths is currently
-  accessible on the server;
-- among 285 cases with a recorded original image count, 268 have one image and
-  17 have two;
-- all 306 third-batch original image counts are missing.
+- all three original dataset roots are mounted;
+- all 591 selected cached images and all 608 internal paths in the existing
+  all-image case-bag registry are currently accessible;
+- old data contain 285 cases and 302 images, including 17 two-image cases;
+- the third batch contains 306 cases and 306 images;
+- the earlier inaccessible-folder result was caused by treating relative
+  `source_case_folder`/`source_folder` values as absolute paths.
 
-A complete all-image case-bag experiment cannot start until original folders
-are recovered or remounted. No patient image, case mapping, feature bank,
-prediction row, or weight is stored in GitHub.
+No remount is needed. Multi-image modeling is technically feasible, but only
+17/591 cases contain an additional view, all from old data, so the available
+evidence cannot support a broad multi-view learning claim. No patient image,
+case mapping, feature bank, prediction row, or weight is stored in GitHub.
 
 ## Broad negative evidence already completed
 

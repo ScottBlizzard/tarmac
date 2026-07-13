@@ -7,13 +7,19 @@ case with a case-level bag of all available gross photographs?
 
 ## Method
 
-The server-side registry was audited without emitting case IDs or paths. The
-script checked:
+The server-side registries were audited without emitting case IDs or paths. The
+corrected script checked:
 
 - all 591 selected cached image paths;
-- every registered `source_case_folder`;
-- direct and recursive image-file counts for common raster extensions;
+- every source-directory reference after joining its dataset-specific root;
+- every image path in the existing all-image case-bag registry;
+- direct and recursive resolution of each selected original filename;
 - the registry's existing `original_image_count` field.
+
+An earlier version of this audit incorrectly treated `source_case_folder` as
+an absolute path. It is a relative source-directory field. Third-batch rows use
+`source_folder` instead. The earlier conclusion that all source folders were
+unavailable was therefore a path-resolution error, not a data-loss event.
 
 No image, path mapping, or case-level row was copied from the server. The
 aggregate output remains at:
@@ -22,22 +28,28 @@ aggregate output remains at:
 
 ## Result
 
-- All 591 selected cached images exist.
-- None of the 591 registered `source_case_folder` paths is currently accessible
-  on the server.
-- `original_image_count` is present for 285 cases:
-  - 268 cases have one original image;
-  - 17 cases have two original images.
-- `original_image_count` is missing for all 306 third-batch cases.
+- All three dataset roots are mounted and readable.
+- All 591 source-directory references resolve: 117/117 batch-1, 168/168
+  batch-2, and 306/306 third-batch rows.
+- All 591 cached selected images and all 591 corresponding selected originals
+  resolve. Eleven batch-1 originals require recursive lookup within the
+  recorded source directory; the other 580 resolve directly.
+- The existing case-bag registry contains 608 currently accessible images for
+  the 591 internal cases:
+  - old data: 285 cases, 302 images, 17 two-image cases;
+  - third batch: 306 cases, 306 images, no multi-image cases.
+- The raw dataset roots contain 168, 174, and 306 image files, respectively.
+  These root totals include files excluded from the 591-case Task7 cohort.
+- The source-directory fields have only 22 unique values and are shared
+  class/source directories, not one unique physical folder per case.
 
 ## Decision
 
-A complete case-level all-image bag experiment cannot be launched from the
-currently mounted server data. Treating the shared selected-image cache as a
-multi-image source would be incorrect, and training a bag model only on the 17
-known two-image cases would not test the intended hypothesis.
+No recovery or remount is needed. The de-identified all-image case-bag manifest
+already exists and its 608 internal image paths are currently valid.
 
-Before reopening this direction, recover or remount the original case folders,
-rebuild a de-identified case-to-image manifest, and verify image-count
-distributions separately by acquisition source. The existing single selected
-photograph remains the only uniformly accessible input for all 591 cases.
+This correction changes feasibility, but not the information-content caveat:
+only 17/591 cases have a second view, all in the old-data domain. A conventional
+MIL model would therefore receive exactly one image for 574 cases and cannot be
+claimed as a broadly trained multi-view solution. The 17 paired cases can still
+support a tightly scoped paired-view sensitivity or consistency analysis.

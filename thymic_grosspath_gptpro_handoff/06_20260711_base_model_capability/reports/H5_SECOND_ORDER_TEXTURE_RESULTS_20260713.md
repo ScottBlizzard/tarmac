@@ -131,12 +131,13 @@ operating point: rescues were concentrated in A/AB/B1, whereas H5 introduced
 
 ## Multi-image feasibility
 
-A server-side aggregate audit found that all 591 selected cached images exist,
-but none of the 591 registered original case-folder paths is currently
-accessible. Among the 285 cases with recorded original image counts, 268 had
-one image and 17 had two; all 306 third-batch counts are missing. A complete
-all-image case-bag experiment therefore cannot start until the original case
-folders are recovered or remounted. See
+A corrected server-side aggregate audit found that all three raw dataset roots,
+all 591 selected cached images, and all 608 internal image paths in the existing
+case-bag registry are currently accessible. The earlier inaccessible-folder
+result treated relative source-directory fields as absolute paths. The internal
+case bag has 17 two-image old-data cases and 574 one-image cases; the third batch
+has one image per case. Multi-image analysis is therefore feasible without a
+remount, but its additional-view evidence is limited to 17 old-data cases. See
 `reports/MULTI_IMAGE_AVAILABILITY_AUDIT_20260713.md`.
 
 ## Reproducibility and storage
