@@ -9,6 +9,7 @@ import hashlib
 import json
 import random
 import resource
+import sys
 import time
 from pathlib import Path
 from types import SimpleNamespace
@@ -18,6 +19,11 @@ import numpy as np
 import pandas as pd
 import torch
 from PIL import Image
+
+PROJECT_SCRIPTS = Path("/workspace/thymic_project/scripts")
+if not PROJECT_SCRIPTS.is_dir():
+    raise FileNotFoundError(f"Missing locked project script directory: {PROJECT_SCRIPTS}")
+sys.path.insert(0, str(PROJECT_SCRIPTS))
 
 from extract_task7_h3_dense_bank_20260713 import PeAdapter
 from extract_task7_h3_representation_bank_20260713 import DEFAULT_VIEWS, make_view

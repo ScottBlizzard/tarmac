@@ -50,6 +50,14 @@ mkdir -p "${OUT}"/{locks,source_lodo,fivefold,confirmation} "${LOGS}"
 trap mark_failed EXIT
 write_status running
 sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${LOGS}/code.sha256.tmp"
+sha256sum \
+  "${ROOT}/scripts/extract_task7_h3_dense_bank_20260713.py" \
+  "${ROOT}/scripts/extract_task7_h3_representation_bank_20260713.py" \
+  "${ROOT}/scripts/extract_task7_dense_token_bank_20260711.py" \
+  "${ROOT}/scripts/run_task7_dense_feature_cv_20260711.py" \
+  "${ROOT}/scripts/run_task7_h3b_masked_gated_20260713.py" \
+  "${ROOT}/scripts/run_task7_h3_summary_gated_20260713.py" \
+  "${ROOT}/scripts/run_task7_spatial_relational_20260713.py" >> "${LOGS}/code.sha256.tmp"
 mv -f "${LOGS}/code.sha256.tmp" "${LOGS}/code.sha256"
 
 "${PY}" "${LOCKER}" \
