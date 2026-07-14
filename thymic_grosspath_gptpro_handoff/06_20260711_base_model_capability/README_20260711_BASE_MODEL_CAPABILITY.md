@@ -63,6 +63,18 @@ These audits do not authorize another classifier. Current-cohort model
 nomination is frozen; the mainline is now the standardized four-view,
 multicenter acquisition and sealed fresh-external protocol.
 
+### 2026-07-14 fixed-data clarification
+
+No additional patient, hospital, image view, label, or unlabeled image pool can
+be acquired for this project. The freeze is therefore narrowed to confirmatory
+generalization claims and unconstrained model/seed/threshold/fusion searches.
+One literature-justified exploratory visual-capability experiment may reopen
+under a fixed source-LODO-first protocol. This can improve engineering
+performance on the available data, but it cannot create fresh multicenter
+confirmation. See
+`reports/FIXED_DATA_EXPLORATORY_REOPEN_DECISION_20260714.md` and
+`GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`.
+
 Current governing files:
 
 - `GPTPRO_PROMPT_20260713_AFTER_H3_H5_NO_GO.md`;
@@ -77,6 +89,9 @@ Current governing files:
 - `reports/PE_PART_STABILITY_AUDIT_RESULTS_20260713.md`;
 - `reports/LOCAL_ASSET_AUDIT_AFTER_GPTPRO_20260713.md`;
 - `reports/FOUR_VIEW_MULTICENTER_ACQUISITION_PROTOCOL_20260713.md`;
+- `reports/FIXED_DATA_EXPLORATORY_REOPEN_DECISION_20260714.md`;
+- `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`;
+- `GPTPRO_RESPONSE_20260714_FIXED_DATA_LITERATURE_SEARCH_BLANK.md`;
 - `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
 - `scripts/audit_task7_pe_part_stability_20260713.py`;
 - `scripts/run_task7_h5_second_order_texture_20260713.py`;
