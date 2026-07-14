@@ -57,3 +57,23 @@ gates; the conditional Fishr trigger was absent. The exploratory reopening is
 therefore closed without a confirmation seed, external stress-test rerun, or
 follow-up hyperparameter/method search. See
 [H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md](H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md).
+
+## Post-closeout user-directed terminal audit
+
+After the H6 closeout, the user explicitly requested continued work until no
+executable fixed-data direction remained. The only still-unexecuted candidate
+listed in GPT Pro's ranking was PE-embedding LISA. It was separately
+preregistered as H7, explicitly outside the original H6 authorized queue, and
+run source-LODO first with no parameter search.
+
+H7 was also a NO-GO: BAcc 0.7382, sensitivity 0.6368, specificity 0.8397,
+B1 43/62, and B2 43/89. It improved batch1 and batch2 but reduced third-batch
+BAcc by 0.0571 versus H3. Five-fold and confirmation training were therefore
+not run. See
+[H7_PE_EMBEDDING_LISA_RESULTS_20260714.md](H7_PE_EMBEDDING_LISA_RESULTS_20260714.md).
+
+This terminal audit closes source/label-selective interpolation in addition to
+the mechanisms closed before H6. It does not prove that better image models
+cannot exist, but no further project-specific fixed-photo experiment is now
+supported without repeating a failed mechanism, introducing adaptive search,
+or changing the evidence/data available to the model.

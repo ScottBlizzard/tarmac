@@ -15,9 +15,29 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Current Governing Outcome
 
-The preregistered H5 low-rank second-order texture experiment is complete and
-is a `NO-GO`. It directly classified frozen PE-Spatial tokens using first-order
-gated evidence plus per-view 64 x 64 covariance texture tokens.
+The final fixed-data experiments are complete. H6 nuisance-anchored
+common/specific decomposition and the separately preregistered post-stop H7
+PE-embedding LISA experiment were both `NO-GO`.
+
+- H6 source-LODO BAcc/sensitivity/specificity: 0.7454/0.6592/0.8315;
+- H6 source-LODO B1/B2: 42/62 and 44/89;
+- H7 source-LODO BAcc/sensitivity/specificity: 0.7382/0.6368/0.8397;
+- H7 source-LODO B1/B2: 43/62 and 43/89;
+- H7 improved batch1 and batch2 BAcc by 0.0250/0.0119 versus H3, but harmed
+  third-batch BAcc by 0.0571;
+- H7 minus H3 B2 accuracy: -0.1008, paired 95% CI [-0.1910, -0.0119].
+
+H7 failed at source-LODO, so five-fold and confirmation training were not run.
+No threshold, alpha, pairing-ratio, interpolation-layer, or seed search
+followed. H3 PE remains the strongest mixed-source direct model at 0.8003
+five-fold BAcc, but no tested method improved the source-held boundary
+reproducibly. See `reports/H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md` and
+`reports/H7_PE_EMBEDDING_LISA_RESULTS_20260714.md`.
+
+Earlier in the sequence, the preregistered H5 low-rank second-order texture
+experiment was also a `NO-GO`. It directly classified frozen PE-Spatial tokens
+using first-order gated evidence plus per-view 64 x 64 covariance texture
+tokens.
 
 - H5 five-fold OOF BAcc/AUC: 0.7969/0.8395;
 - H5 source-LODO BAcc/AUC: 0.7422/0.8133;
@@ -75,6 +95,13 @@ confirmation. See
 `reports/FIXED_DATA_EXPLORATORY_REOPEN_DECISION_20260714.md` and
 `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`.
 
+That reopening is now closed. H6 failed its locked gates. At the user's
+explicit request, H7 then executed the only remaining ranked method as a
+separate post-stop terminal audit and also failed source-LODO. There is no
+remaining evidence-supported fixed-photo experiment in the current ledger;
+further coefficient, threshold, seed, fusion, routing, or near-duplicate
+method search would be adaptive reuse of the same 591 cases.
+
 Current governing files:
 
 - `GPTPRO_PROMPT_20260713_AFTER_H3_H5_NO_GO.md`;
@@ -90,6 +117,10 @@ Current governing files:
 - `reports/LOCAL_ASSET_AUDIT_AFTER_GPTPRO_20260713.md`;
 - `reports/FOUR_VIEW_MULTICENTER_ACQUISITION_PROTOCOL_20260713.md`;
 - `reports/FIXED_DATA_EXPLORATORY_REOPEN_DECISION_20260714.md`;
+- `reports/H6_NUISANCE_ANCHORED_CSD_PREREGISTRATION_20260714.md`;
+- `reports/H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md`;
+- `reports/H7_PE_EMBEDDING_LISA_PREREGISTRATION_20260714.md`;
+- `reports/H7_PE_EMBEDDING_LISA_RESULTS_20260714.md`;
 - `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`;
 - `GPTPRO_RESPONSE_20260714_FIXED_DATA_LITERATURE_SEARCH_BLANK.md`;
 - `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
@@ -108,6 +139,10 @@ Current governing files:
 - `scripts/extract_task7_h3_dense_bank_20260713.py`;
 - `scripts/run_task7_h3_summary_gated_20260713.py`;
 - `scripts/run_task7_h3b_masked_gated_20260713.py`;
+- `scripts/run_task7_h6_nuisance_csd_20260714.py`;
+- `scripts/analyze_task7_h6_nuisance_csd_20260714.py`;
+- `scripts/run_task7_h7_pe_embedding_lisa_20260714.py`;
+- `scripts/analyze_task7_h7_pe_embedding_lisa_20260714.py`;
 - `scripts/summarize_task7_h3_representation_screen_20260713.py`;
 - `scripts/summarize_task7_h3b_gate_20260713.py`;
 - `reports/H2_CANONICAL_SPATIAL_RELATIONAL_RESULTS_20260713.md`;
