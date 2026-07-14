@@ -63,6 +63,17 @@ Strict deterministic algorithms are enabled after extraction for the new FP32
 H8 heads. This separates upstream byte-level reproduction from new-head
 training determinism.
 
+A subsequent full-cohort Gate-0 extraction, still before any H8 head fitting,
+showed that running the frozen H3 pooler one case at a time changed 124 locked
+probabilities by more than `1e-5` (maximum about `3.79e-4`). Replaying the
+worst case in its original eight-case test batch reproduced all eight locked
+probabilities to at most `1.11e-16`. The PE encoder therefore remains strictly
+case-at-a-time, while the frozen H3 pooler now consumes buffered batches of
+eight separately within every fold and train/validation/test partition, with
+the final partial batch retained. This restores the upstream H3 inference
+batching and does not mix cases across a split boundary, change an embedding
+parameter, or expose a held label.
+
 ## Immutable data and assets
 
 - Registry:
@@ -234,7 +245,8 @@ Only code, hashes, aggregate metrics, gate decisions, and the aggregate report
 may enter GitHub.
 
 New persistent output must remain below 1 GiB. Extraction batch size is fixed at
-one. C1 and PE encoders cannot be resident simultaneously. Resolution, views,
+one for each image encoder; frozen H3 pooling retains its locked batch size of
+eight within split role. C1 and PE encoders cannot be resident simultaneously. Resolution, views,
 token count, head width, loss, threshold, and sampler cannot be changed to
 avoid a failure.
 

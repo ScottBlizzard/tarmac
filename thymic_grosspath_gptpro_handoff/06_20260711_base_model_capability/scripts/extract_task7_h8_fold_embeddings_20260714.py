@@ -33,8 +33,10 @@ from run_task7_h3b_masked_gated_20260713 import MaskedDenseGatedHead
 
 EXPERIMENT = "H8_C1_H3_DIRECT_CASE_EMBEDDING_FUSION_20260714"
 EXPECTED_VIEWS = tuple(DEFAULT_VIEWS)
+SOURCE_ORDER = ("batch1", "batch2", "third_batch")
 LOW_RISK = {"A", "AB", "B1"}
 MAX_REPRODUCTION_ERROR = 1e-5
+H3_SHARD_VERSION = 2
 
 
 def parse_args() -> argparse.Namespace:
@@ -178,6 +180,20 @@ def valid_shard(path: Path, fold_count: int, embedding_dim: int) -> bool:
         return False
 
 
+def valid_h3_shard(path: Path, fold_count: int) -> bool:
+    if not valid_shard(path, fold_count, 128):
+        return False
+    try:
+        with np.load(path, allow_pickle=False) as values:
+            return bool(
+                "extraction_version" in values
+                and values["extraction_version"].shape == (1,)
+                and int(values["extraction_version"][0]) == H3_SHARD_VERSION
+            )
+    except Exception:
+        return False
+
+
 def make_c1_model(config: dict[str, Any], checkpoint: Path, device: torch.device) -> DenseTask7Model:
     model = DenseTask7Model(
         feature_dim=1024,
@@ -228,7 +244,7 @@ def h3_embedding_and_probability(
     features: torch.Tensor,
     mask: torch.Tensor,
     device: torch.device,
-) -> tuple[np.ndarray, float]:
+) -> tuple[np.ndarray, np.ndarray]:
     with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=device.type == "cuda"):
         batch_size, num_views, token_count, _ = features.shape
         tokens = model.project(model.input_norm(features))
@@ -240,7 +256,23 @@ def h3_embedding_and_probability(
         embedding = model.output_norm(pooled)
         logits = model.classifier(embedding)
     probability = torch.softmax(logits.float(), dim=-1)[:, 1]
-    return embedding[0].float().cpu().numpy(), float(probability[0].cpu())
+    return embedding.float().cpu().numpy(), probability.cpu().numpy().astype(float)
+
+
+def h3_split_role(metadata: pd.DataFrame, index: int, split_mode: str, fold_id: int) -> str:
+    row = metadata.iloc[index]
+    val_fold = (fold_id % 5) + 1
+    if split_mode == "source_lodo":
+        if str(row["source_dataset"]) == SOURCE_ORDER[fold_id - 1]:
+            return "test"
+        if int(row["master_fold_id"]) == val_fold:
+            return "validation"
+        return "train"
+    if int(row["master_fold_id"]) == fold_id:
+        return "test"
+    if int(row["master_fold_id"]) == val_fold:
+        return "validation"
+    return "train"
 
 
 def extract_c1(
@@ -298,6 +330,8 @@ def extract_h3(
 ) -> tuple[float, int]:
     fold_count = int(manifest["fold_count"])
     config = json.loads(Path(manifest["assets"]["h3_run_config"]["path"]).read_text(encoding="utf-8"))
+    if int(config.get("batch_size", -1)) != 8:
+        raise ValueError("Locked H3 branch batch size changed")
     models = [
         make_h3_model(config, Path(item["path"]), device)
         for item in manifest["assets"]["h3_checkpoints"]
@@ -315,12 +349,44 @@ def extract_h3(
     adapter = PeAdapter(adapter_args, device)
     shard_dir = output_dir / "case_shards" / "h3"
     started = time.monotonic()
+    if all(
+        valid_h3_shard(shard_dir / shard_name(str(row["case_id"])), fold_count)
+        for _, row in metadata.iterrows()
+    ):
+        del models, adapter
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        return time.monotonic() - started, len(metadata)
+
+    embeddings = np.full((fold_count, len(metadata), 128), np.nan, dtype=np.float32)
+    probabilities = np.full((fold_count, len(metadata)), np.nan, dtype=np.float32)
+    buffers: dict[tuple[int, str], dict[str, list[Any]]] = {
+        (fold_id, split_role): {"rows": [], "dense": [], "mask": []}
+        for fold_id in range(1, fold_count + 1)
+        for split_role in ("train", "validation", "test")
+    }
+
+    def flush_buffer(fold_id: int, split_role: str) -> None:
+        buffer = buffers[(fold_id, split_role)]
+        if not buffer["rows"]:
+            return
+        rows = np.asarray(buffer["rows"], dtype=int)
+        dense_batch = np.concatenate(buffer["dense"], axis=0)
+        mask_batch = np.concatenate(buffer["mask"], axis=0)
+        dense_tensor = torch.from_numpy(dense_batch).to(device)
+        mask_tensor = torch.from_numpy(mask_batch).bool().to(device)
+        batch_embedding, batch_probability = h3_embedding_and_probability(
+            models[fold_id - 1], dense_tensor, mask_tensor, device
+        )
+        embeddings[fold_id - 1, rows] = batch_embedding
+        probabilities[fold_id - 1, rows] = batch_probability
+        buffer["rows"].clear()
+        buffer["dense"].clear()
+        buffer["mask"].clear()
+        del dense_batch, mask_batch, dense_tensor, mask_tensor
+
     completed = 0
     for index, row in metadata.iterrows():
-        path = shard_dir / shard_name(str(row["case_id"]))
-        if valid_shard(path, fold_count, 128):
-            completed += 1
-            continue
         dense = np.zeros((1, 6, 1024, 1024), dtype=np.float16)
         mask = np.zeros((1, 6, 1024), dtype=np.uint8)
         with Image.open(str(row["image_path"])) as source:
@@ -334,24 +400,31 @@ def extract_h3(
                 raise ValueError(f"PE mask/grid mismatch for row {index}, view {view_name}")
             dense[0, view_index, :token_count] = extracted.tokens.numpy().astype(np.float16)
             mask[0, view_index, :token_count] = extracted.valid_mask.numpy().astype(np.uint8)
-        dense_tensor = torch.from_numpy(dense).to(device)
-        mask_tensor = torch.from_numpy(mask).bool().to(device)
-        embeddings = []
-        probabilities = []
-        for model in models:
-            embedding, probability = h3_embedding_and_probability(model, dense_tensor, mask_tensor, device)
-            embeddings.append(embedding)
-            probabilities.append(probability)
-        atomic_savez(
-            path,
-            feature_row=np.asarray([index], dtype=np.int32),
-            embedding=np.stack(embeddings).astype(np.float32),
-            probability=np.asarray(probabilities, dtype=np.float32),
-        )
+        for fold_id in range(1, fold_count + 1):
+            split_role = h3_split_role(metadata, index, manifest["split_mode"], fold_id)
+            buffer = buffers[(fold_id, split_role)]
+            buffer["rows"].append(index)
+            buffer["dense"].append(dense)
+            buffer["mask"].append(mask)
+            if len(buffer["rows"]) == 8:
+                flush_buffer(fold_id, split_role)
         completed += 1
         if completed % 10 == 0 or completed == len(metadata):
-            print(f"[H3] {completed}/{len(metadata)}", flush=True)
-        del dense, mask, dense_tensor, mask_tensor
+            print(f"[H3 encoder] {completed}/{len(metadata)}", flush=True)
+        del dense, mask
+    for fold_id in range(1, fold_count + 1):
+        for split_role in ("train", "validation", "test"):
+            flush_buffer(fold_id, split_role)
+    if not np.isfinite(embeddings).all() or not np.isfinite(probabilities).all():
+        raise ValueError("H3 partition-batched extraction left nonfinite or missing values")
+    for index, row in metadata.iterrows():
+        atomic_savez(
+            shard_dir / shard_name(str(row["case_id"])),
+            feature_row=np.asarray([index], dtype=np.int32),
+            embedding=embeddings[:, index],
+            probability=probabilities[:, index],
+            extraction_version=np.asarray([H3_SHARD_VERSION], dtype=np.int16),
+        )
     elapsed = time.monotonic() - started
     del models, adapter
     if torch.cuda.is_available():
@@ -374,7 +447,7 @@ def consolidate(
         name = shard_name(str(row["case_id"]))
         c1_path = output_dir / "case_shards" / "c1" / name
         h3_path = output_dir / "case_shards" / "h3" / name
-        if not valid_shard(c1_path, fold_count, 256) or not valid_shard(h3_path, fold_count, 128):
+        if not valid_shard(c1_path, fold_count, 256) or not valid_h3_shard(h3_path, fold_count):
             raise ValueError(f"Invalid embedding shard at feature row {index}")
         with np.load(c1_path, allow_pickle=False) as values:
             if int(values["feature_row"][0]) != index:
