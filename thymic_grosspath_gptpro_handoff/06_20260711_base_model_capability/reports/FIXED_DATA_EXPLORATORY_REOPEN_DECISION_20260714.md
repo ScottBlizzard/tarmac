@@ -48,3 +48,12 @@ primary experiment plus one conditional backup.
 This reopening does not restore statistical independence to the 591 cases. It
 restores a practical engineering path under the user's fixed-data constraint,
 with the evidence ceiling stated rather than ignored.
+
+## Closeout (2026-07-14)
+
+The single bounded experiment was completed as H6 nuisance-anchored CSD. It
+failed both the source-LODO advancement gates and the five-fold retention
+gates; the conditional Fishr trigger was absent. The exploratory reopening is
+therefore closed without a confirmation seed, external stress-test rerun, or
+follow-up hyperparameter/method search. See
+[H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md](H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md).
