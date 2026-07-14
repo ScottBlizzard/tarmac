@@ -47,6 +47,13 @@ realized by confidence gating. See
 `reports/BASE_MODEL_CAPABILITY_PLATEAU_ROOT_CAUSE_ANALYSIS_20260714.md` and
 `scripts/analyze_task7_capability_plateau_20260714.py`.
 
+The remaining decision has been framed as a terminal independent audit rather
+than another broad method search. GPT Pro must first determine whether direct
+feature-level fusion across the locked SigLIP/AIM and PE representation
+families was already tested under nested source-LODO. It may then specify one
+image-grounded experiment or order a stop with a fixed-data manuscript plan.
+See `GPTPRO_PROMPT_20260714_FINAL_ORACLE_GAP_AUDIT.md`.
+
 Earlier in the sequence, the preregistered H5 low-rank second-order texture
 experiment was also a `NO-GO`. It directly classified frozen PE-Spatial tokens
 using first-order gated evidence plus per-view 64 x 64 covariance texture
@@ -136,6 +143,8 @@ Current governing files:
 - `reports/H7_PE_EMBEDDING_LISA_RESULTS_20260714.md`;
 - `reports/BASE_MODEL_CAPABILITY_PLATEAU_ROOT_CAUSE_ANALYSIS_20260714.md`;
 - `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`;
+- `GPTPRO_PROMPT_20260714_FINAL_ORACLE_GAP_AUDIT.md`;
+- `GPTPRO_RESPONSE_20260714_FINAL_ORACLE_GAP_AUDIT_BLANK.md`;
 - `GPTPRO_RESPONSE_20260714_FIXED_DATA_LITERATURE_SEARCH_BLANK.md`;
 - `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
 - `scripts/audit_task7_pe_part_stability_20260713.py`;
