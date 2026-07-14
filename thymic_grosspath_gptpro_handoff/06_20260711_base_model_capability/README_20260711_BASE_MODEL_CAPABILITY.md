@@ -34,6 +34,19 @@ five-fold BAcc, but no tested method improved the source-held boundary
 reproducibly. See `reports/H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md` and
 `reports/H7_PE_EMBEDDING_LISA_RESULTS_20260714.md`.
 
+A final cross-model plateau audit now aligns locked C1, C2, H3, H5, H6, and
+H7 source-LODO predictions case by case. It confirms that the main bottleneck
+is source-dependent B1/B2 morphology rather than a single threshold or missing
+fusion recipe. Source and six-class subtype are strongly associated (Cramer's
+V 0.455); 11/62 B1 and 19/89 B2 cases are wrong in all six models. A fixed
+six-model probability average reaches only 0.7602 BAcc versus H3 0.7539
+(paired bootstrap delta 0.0063, 95% CI [-0.0176, 0.0307]), while a
+non-deployable any-correct oracle reaches 0.9006. Highest-confidence model
+selection reaches only 0.7462, directly showing that the oracle gap cannot be
+realized by confidence gating. See
+`reports/BASE_MODEL_CAPABILITY_PLATEAU_ROOT_CAUSE_ANALYSIS_20260714.md` and
+`scripts/analyze_task7_capability_plateau_20260714.py`.
+
 Earlier in the sequence, the preregistered H5 low-rank second-order texture
 experiment was also a `NO-GO`. It directly classified frozen PE-Spatial tokens
 using first-order gated evidence plus per-view 64 x 64 covariance texture
@@ -121,6 +134,7 @@ Current governing files:
 - `reports/H6_NUISANCE_ANCHORED_CSD_RESULTS_20260714.md`;
 - `reports/H7_PE_EMBEDDING_LISA_PREREGISTRATION_20260714.md`;
 - `reports/H7_PE_EMBEDDING_LISA_RESULTS_20260714.md`;
+- `reports/BASE_MODEL_CAPABILITY_PLATEAU_ROOT_CAUSE_ANALYSIS_20260714.md`;
 - `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`;
 - `GPTPRO_RESPONSE_20260714_FIXED_DATA_LITERATURE_SEARCH_BLANK.md`;
 - `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
@@ -143,6 +157,7 @@ Current governing files:
 - `scripts/analyze_task7_h6_nuisance_csd_20260714.py`;
 - `scripts/run_task7_h7_pe_embedding_lisa_20260714.py`;
 - `scripts/analyze_task7_h7_pe_embedding_lisa_20260714.py`;
+- `scripts/analyze_task7_capability_plateau_20260714.py`;
 - `scripts/summarize_task7_h3_representation_screen_20260713.py`;
 - `scripts/summarize_task7_h3b_gate_20260713.py`;
 - `reports/H2_CANONICAL_SPATIAL_RELATIONAL_RESULTS_20260713.md`;
