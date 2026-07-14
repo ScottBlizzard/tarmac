@@ -11,6 +11,12 @@ PY=/root/miniconda3/envs/thymic_baseline/bin/python3.11
 CODE=/root/task7_h8_20260714
 OUT=${ROOT}/experiments/h8_c1_h3_direct_case_fusion_20260714
 LOGS=${CODE}/logs
+ARTIFACTS=${CODE}/artifacts
+SOURCE_EMBEDDINGS=${ARTIFACTS}/source_lodo/embeddings
+SOURCE_PRIMARY=${ARTIFACTS}/source_lodo/primary_seed20260714
+FIVEFOLD_EMBEDDINGS=${ARTIFACTS}/fivefold/embeddings
+FIVEFOLD_PRIMARY=${ARTIFACTS}/fivefold/primary_seed20260714
+CONFIRMATION_RUN=${ARTIFACTS}/confirmation/source_lodo_seed20260715
 
 write_status() {
   value=$1
@@ -46,7 +52,7 @@ TRAINER=${CODE}/run_task7_h8_direct_case_fusion_20260714.py
 ANALYZER=${CODE}/analyze_task7_h8_direct_case_fusion_20260714.py
 QUEUE=${CODE}/run_task7_h8_direct_case_fusion_queue_20260714.sh
 
-mkdir -p "${OUT}"/{locks,source_lodo,fivefold,confirmation} "${LOGS}"
+mkdir -p "${OUT}"/{locks,source_lodo,fivefold,confirmation} "${LOGS}" "${ARTIFACTS}"
 trap mark_failed EXIT
 write_status running
 sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${LOGS}/code.sha256.tmp"
@@ -88,11 +94,11 @@ mv -f "${LOGS}/code.sha256.tmp" "${LOGS}/code.sha256"
   --num-workers 0 \
   --device cuda \
   --seed 20260714 \
-  --output-dir "${OUT}/source_lodo/embeddings" \
+  --output-dir "${SOURCE_EMBEDDINGS}" \
   2>&1 | tee "${LOGS}/source_lodo_embedding_extraction.log"
 
 "${PY}" "${TRAINER}" \
-  --embedding-manifest "${OUT}/source_lodo/embeddings/embedding_manifest.json" \
+  --embedding-manifest "${SOURCE_EMBEDDINGS}/embedding_manifest.json" \
   --split-csv "${SPLIT}" \
   --split-mode source_lodo \
   --configuration H8_C1_H3_CONCAT_MLP16 \
@@ -106,12 +112,12 @@ mv -f "${LOGS}/code.sha256.tmp" "${LOGS}/code.sha256"
   --grad-clip 5.0 \
   --seed 20260714 \
   --device cuda \
-  --output-dir "${OUT}/source_lodo/primary_seed20260714" \
+  --output-dir "${SOURCE_PRIMARY}" \
   2>&1 | tee "${LOGS}/source_lodo_primary_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage source_lodo \
-  --run-dir "${OUT}/source_lodo/primary_seed20260714" \
+  --run-dir "${SOURCE_PRIMARY}" \
   --c1-predictions "${C1_LODO}/oof_predictions.csv" \
   --c2-predictions "${C2_LODO}" \
   --h3-predictions "${H3_LODO}/oof_predictions.csv" \
@@ -152,23 +158,23 @@ fi
   --num-workers 0 \
   --device cuda \
   --seed 20260714 \
-  --output-dir "${OUT}/fivefold/embeddings" \
+  --output-dir "${FIVEFOLD_EMBEDDINGS}" \
   2>&1 | tee "${LOGS}/fivefold_embedding_extraction.log"
 
 "${PY}" "${TRAINER}" \
-  --embedding-manifest "${OUT}/fivefold/embeddings/embedding_manifest.json" \
+  --embedding-manifest "${FIVEFOLD_EMBEDDINGS}/embedding_manifest.json" \
   --split-csv "${SPLIT}" \
   --split-mode fivefold \
   --configuration H8_C1_H3_CONCAT_MLP16 \
   --hidden-dim 16 --dropout 0.10 --epochs 80 --patience 12 --batch-size 32 \
   --lr 0.0003 --weight-decay 0.0001 --grad-clip 5.0 \
   --seed 20260714 --device cuda \
-  --output-dir "${OUT}/fivefold/primary_seed20260714" \
+  --output-dir "${FIVEFOLD_PRIMARY}" \
   2>&1 | tee "${LOGS}/fivefold_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage fivefold \
-  --run-dir "${OUT}/fivefold/primary_seed20260714" \
+  --run-dir "${FIVEFOLD_PRIMARY}" \
   --c1-predictions "${C1_5F}/oof_predictions.csv" \
   --c2-predictions "${C2_5F}" \
   --h3-predictions "${H3_5F}/oof_predictions.csv" \
@@ -180,19 +186,19 @@ if ! "${PY}" "${ANALYZER}" \
 fi
 
 "${PY}" "${TRAINER}" \
-  --embedding-manifest "${OUT}/source_lodo/embeddings/embedding_manifest.json" \
+  --embedding-manifest "${SOURCE_EMBEDDINGS}/embedding_manifest.json" \
   --split-csv "${SPLIT}" --split-mode source_lodo \
   --configuration H8_C1_H3_CONCAT_MLP16 \
   --hidden-dim 16 --dropout 0.10 --epochs 80 --patience 12 --batch-size 32 \
   --lr 0.0003 --weight-decay 0.0001 --grad-clip 5.0 \
   --seed 20260715 --device cuda \
-  --output-dir "${OUT}/confirmation/source_lodo_seed20260715" \
+  --output-dir "${CONFIRMATION_RUN}" \
   2>&1 | tee "${LOGS}/confirmation_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage confirmation \
-  --run-dir "${OUT}/confirmation/source_lodo_seed20260715" \
-  --primary-run-dir "${OUT}/source_lodo/primary_seed20260714" \
+  --run-dir "${CONFIRMATION_RUN}" \
+  --primary-run-dir "${SOURCE_PRIMARY}" \
   --c1-predictions "${C1_LODO}/oof_predictions.csv" \
   --c2-predictions "${C2_LODO}" \
   --h3-predictions "${H3_LODO}/oof_predictions.csv" \
