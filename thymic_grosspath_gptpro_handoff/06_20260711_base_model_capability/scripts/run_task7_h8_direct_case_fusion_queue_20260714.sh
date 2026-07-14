@@ -10,14 +10,21 @@ ROOT=/workspace/thymic_project
 PY=/root/miniconda3/envs/thymic_baseline/bin/python3.11
 CODE=/root/task7_h8_20260714
 OUT=${ROOT}/experiments/h8_c1_h3_direct_case_fusion_20260714
+LOGS=${CODE}/logs
+
+write_status() {
+  value=$1
+  temporary=${OUT}/.RUN.status.$$
+  printf '%s\n' "${value}" > "${temporary}"
+  mv -f "${temporary}" "${OUT}/RUN.status"
+}
 
 mark_failed() {
   rc=$?
   if [[ ${rc} -ne 0 ]]; then
-    printf 'failed rc=%s\n' "${rc}" > "${OUT}/RUN.status"
+    write_status "failed rc=${rc}"
   fi
 }
-trap mark_failed EXIT
 
 REGISTRY=/root/thymic_task7_internal_master_registry_cached_max2048_20260711.csv
 SPLIT=${ROOT}/outputs/batch1_batch2_task567_20260514/task7_adaptation_runs/45_old_third_all_balanced_finetune_inputs_20260523/split.csv
@@ -39,9 +46,11 @@ TRAINER=${CODE}/run_task7_h8_direct_case_fusion_20260714.py
 ANALYZER=${CODE}/analyze_task7_h8_direct_case_fusion_20260714.py
 QUEUE=${CODE}/run_task7_h8_direct_case_fusion_queue_20260714.sh
 
-mkdir -p "${OUT}"/{locks,logs,source_lodo,fivefold,confirmation}
-printf 'running\n' > "${OUT}/RUN.status"
-sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${OUT}/locks/code.sha256"
+mkdir -p "${OUT}"/{locks,source_lodo,fivefold,confirmation} "${LOGS}"
+trap mark_failed EXIT
+write_status running
+sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${LOGS}/code.sha256.tmp"
+mv -f "${LOGS}/code.sha256.tmp" "${LOGS}/code.sha256"
 
 "${PY}" "${LOCKER}" \
   --evidence-commit ff81fe4c98fd5f1b9d2bcfd53f4379e5741e38e8 \
@@ -59,7 +68,7 @@ sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${
   --pe-source-root "${PE_SOURCE}" \
   --expected-pe-source-revision 3e352cca660658d4b5c90f42a7808b11469e4c66 \
   --output-manifest "${OUT}/locks/source_lodo_assets.json" \
-  2>&1 | tee "${OUT}/logs/source_lodo_asset_lock.log"
+  2>&1 | tee "${LOGS}/source_lodo_asset_lock.log"
 
 "${PY}" "${EXTRACTOR}" \
   --asset-manifest "${OUT}/locks/source_lodo_assets.json" \
@@ -72,7 +81,7 @@ sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${
   --device cuda \
   --seed 20260714 \
   --output-dir "${OUT}/source_lodo/embeddings" \
-  2>&1 | tee "${OUT}/logs/source_lodo_embedding_extraction.log"
+  2>&1 | tee "${LOGS}/source_lodo_embedding_extraction.log"
 
 "${PY}" "${TRAINER}" \
   --embedding-manifest "${OUT}/source_lodo/embeddings/embedding_manifest.json" \
@@ -90,7 +99,7 @@ sha256sum "${LOCKER}" "${EXTRACTOR}" "${TRAINER}" "${ANALYZER}" "${QUEUE}" > "${
   --seed 20260714 \
   --device cuda \
   --output-dir "${OUT}/source_lodo/primary_seed20260714" \
-  2>&1 | tee "${OUT}/logs/source_lodo_primary_training.log"
+  2>&1 | tee "${LOGS}/source_lodo_primary_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage source_lodo \
@@ -102,8 +111,8 @@ if ! "${PY}" "${ANALYZER}" \
   --bootstrap-seed 20260714 \
   --enforce-gates \
   --output-dir "${OUT}/source_lodo/aggregate" \
-  2>&1 | tee "${OUT}/logs/source_lodo_analysis.log"; then
-  printf 'stopped_after_source_lodo\n' > "${OUT}/RUN.status"
+  2>&1 | tee "${LOGS}/source_lodo_analysis.log"; then
+  write_status stopped_after_source_lodo
   exit 0
 fi
 
@@ -123,7 +132,7 @@ fi
   --pe-source-root "${PE_SOURCE}" \
   --expected-pe-source-revision 3e352cca660658d4b5c90f42a7808b11469e4c66 \
   --output-manifest "${OUT}/locks/fivefold_assets.json" \
-  2>&1 | tee "${OUT}/logs/fivefold_asset_lock.log"
+  2>&1 | tee "${LOGS}/fivefold_asset_lock.log"
 
 "${PY}" "${EXTRACTOR}" \
   --asset-manifest "${OUT}/locks/fivefold_assets.json" \
@@ -136,7 +145,7 @@ fi
   --device cuda \
   --seed 20260714 \
   --output-dir "${OUT}/fivefold/embeddings" \
-  2>&1 | tee "${OUT}/logs/fivefold_embedding_extraction.log"
+  2>&1 | tee "${LOGS}/fivefold_embedding_extraction.log"
 
 "${PY}" "${TRAINER}" \
   --embedding-manifest "${OUT}/fivefold/embeddings/embedding_manifest.json" \
@@ -147,7 +156,7 @@ fi
   --lr 0.0003 --weight-decay 0.0001 --grad-clip 5.0 \
   --seed 20260714 --device cuda \
   --output-dir "${OUT}/fivefold/primary_seed20260714" \
-  2>&1 | tee "${OUT}/logs/fivefold_training.log"
+  2>&1 | tee "${LOGS}/fivefold_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage fivefold \
@@ -157,8 +166,8 @@ if ! "${PY}" "${ANALYZER}" \
   --h3-predictions "${H3_5F}/oof_predictions.csv" \
   --bootstrap-replicates 20000 --bootstrap-seed 20260714 --enforce-gates \
   --output-dir "${OUT}/fivefold/aggregate" \
-  2>&1 | tee "${OUT}/logs/fivefold_analysis.log"; then
-  printf 'stopped_after_fivefold\n' > "${OUT}/RUN.status"
+  2>&1 | tee "${LOGS}/fivefold_analysis.log"; then
+  write_status stopped_after_fivefold
   exit 0
 fi
 
@@ -170,7 +179,7 @@ fi
   --lr 0.0003 --weight-decay 0.0001 --grad-clip 5.0 \
   --seed 20260715 --device cuda \
   --output-dir "${OUT}/confirmation/source_lodo_seed20260715" \
-  2>&1 | tee "${OUT}/logs/confirmation_training.log"
+  2>&1 | tee "${LOGS}/confirmation_training.log"
 
 if ! "${PY}" "${ANALYZER}" \
   --stage confirmation \
@@ -181,9 +190,9 @@ if ! "${PY}" "${ANALYZER}" \
   --h3-predictions "${H3_LODO}/oof_predictions.csv" \
   --bootstrap-replicates 20000 --bootstrap-seed 20260715 --enforce-gates \
   --output-dir "${OUT}/confirmation/aggregate" \
-  2>&1 | tee "${OUT}/logs/confirmation_analysis.log"; then
-  printf 'stopped_after_confirmation\n' > "${OUT}/RUN.status"
+  2>&1 | tee "${LOGS}/confirmation_analysis.log"; then
+  write_status stopped_after_confirmation
   exit 0
 fi
 
-printf 'complete_all_gates_pass\n' > "${OUT}/RUN.status"
+write_status complete_all_gates_pass
