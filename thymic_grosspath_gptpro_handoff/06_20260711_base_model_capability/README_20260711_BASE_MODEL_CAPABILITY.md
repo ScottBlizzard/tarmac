@@ -1,6 +1,6 @@
 # 2026-07-11 Task7 Base-Model Capability Update
 
-Interpretation updated: 2026-07-13
+Interpretation updated: 2026-07-15
 
 Repository: https://github.com/ScottBlizzard/tarmac
 
@@ -15,9 +15,12 @@ Selective release, rejection, and physician-review workflows remain downstream s
 
 ## Current Governing Outcome
 
-The final fixed-data experiments are complete. H6 nuisance-anchored
-common/specific decomposition and the separately preregistered post-stop H7
-PE-embedding LISA experiment were both `NO-GO`.
+The final fixed-data experiments through H12 are complete. The latest finite
+PE representation-adaptation test was `NO-GO`: H12 reproduced all 591 H3
+classifications before training, then reached source-LODO BAcc 0.7534 versus
+H3 0.7539, with no held source improving and TP falling from 152 to 150.
+Earlier H6 nuisance-anchored common/specific decomposition and the separately
+preregistered H7 PE-embedding LISA experiment were also `NO-GO`.
 
 - H6 source-LODO BAcc/sensitivity/specificity: 0.7454/0.6592/0.8315;
 - H6 source-LODO B1/B2: 42/62 and 44/89;
@@ -47,12 +50,13 @@ realized by confidence gating. See
 `reports/BASE_MODEL_CAPABILITY_PLATEAU_ROOT_CAUSE_ANALYSIS_20260714.md` and
 `scripts/analyze_task7_capability_plateau_20260714.py`.
 
-The remaining decision has been framed as a terminal independent audit rather
-than another broad method search. GPT Pro must first determine whether direct
-feature-level fusion across the locked SigLIP/AIM and PE representation
-families was already tested under nested source-LODO. It may then specify one
-image-grounded experiment or order a stop with a fixed-data manuscript plan.
-See `GPTPRO_PROMPT_20260714_FINAL_ORACLE_GAP_AUDIT.md`.
+GPT Pro's terminal independent audit authorized one direct feature-level
+SigLIP/AIM plus PE fusion experiment. H8 learned real paired-image information
+but failed its B1/B2 and improvement gates. User-directed H9-H12 audits then
+tested redesigned difficulty curricula, physician-phenotype roles, fixed
+visual counterfactuals, and PE final-block adaptation. None established a
+source-held capability gain. The fixed-cohort classifier track is now closed,
+not waiting for another fusion or confidence-gating experiment.
 
 Earlier in the sequence, the preregistered H5 low-rank second-order texture
 experiment was also a `NO-GO`. It directly classified frozen PE-Spatial tokens
@@ -115,12 +119,11 @@ confirmation. See
 `reports/FIXED_DATA_EXPLORATORY_REOPEN_DECISION_20260714.md` and
 `GPTPRO_PROMPT_20260714_FIXED_DATA_LITERATURE_SEARCH.md`.
 
-That reopening is now closed. H6 failed its locked gates. At the user's
-explicit request, H7 then executed the only remaining ranked method as a
-separate post-stop terminal audit and also failed source-LODO. There is no
+That reopening is now closed. H6 and H7 failed their locked gates; H8-H12 also
+failed their independent source-LODO or internal-capability gates. There is no
 remaining evidence-supported fixed-photo experiment in the current ledger;
-further coefficient, threshold, seed, fusion, routing, or near-duplicate
-method search would be adaptive reuse of the same 591 cases.
+further coefficient, threshold, seed, fusion, routing, curriculum, ROI, LoRA,
+or near-duplicate method search would be adaptive reuse of the same 591 cases.
 
 Current governing files:
 
@@ -146,6 +149,14 @@ Current governing files:
 - `GPTPRO_PROMPT_20260714_FINAL_ORACLE_GAP_AUDIT.md`;
 - `GPTPRO_RESPONSE_20260714_FINAL_ORACLE_GAP_AUDIT_BLANK.md`;
 - `GPTPRO_RESPONSE_20260714_FIXED_DATA_LITERATURE_SEARCH_BLANK.md`;
+- `reports/H8_C1_H3_DIRECT_CASE_FUSION_RESULTS_20260714.md`;
+- `reports/H9_H3_DIFFICULTY_BALANCED_CURRICULUM_RESULTS_20260715.md`;
+- `reports/H10_INTERNAL_PHENOTYPE_DIFFICULTY_REDESIGN_RESULTS_20260715.md`;
+- `reports/H10_STAGE2_PHENOTYPE_CURRICULUM_RESULTS_20260715.md`;
+- `reports/H10_GPT_BLINDED_VISUAL_DIFFICULTY_AUDIT_20260715.md`;
+- `reports/H11_LOCKED_VISUAL_EVIDENCE_DISENTANGLEMENT_RESULTS_20260715.md`;
+- `reports/H12_PE_FINAL_BLOCK_LORA_ADAPTATION_PREREGISTRATION_20260715.md`;
+- `reports/H12_PE_FINAL_BLOCK_LORA_ADAPTATION_RESULTS_20260715.md`;
 - `scripts/audit_task7_frequency_source_vs_risk_20260713.py`;
 - `scripts/audit_task7_pe_part_stability_20260713.py`;
 - `scripts/run_task7_h5_second_order_texture_20260713.py`;
@@ -390,6 +401,40 @@ The completed wave includes negative or insufficient results from:
 - Automatic contrast/white-balance/unsharp preprocessing and multiple ROI policies.
 
 The report gives exact metrics and failure modes. Do not propose a low-level repeat without explaining what structural limitation changes.
+
+## 2026-07-13 to 2026-07-15 Final Fixed-Cohort Audits
+
+PE-Spatial-L14-448 replaced C1 as the strongest direct-image representation. Its
+six-view dense-token H3 model reached five-fold BAcc 0.8003 and source-LODO
+BAcc 0.7539, with LODO sensitivity/specificity 0.6816/0.8261. This is a real
+representation gain, but not a 90% full-coverage classifier and not stable
+cross-hospital generalization.
+
+The remaining fixed-cohort hypotheses were then tested under locked protocols:
+
+| Experiment | Main result | Decision |
+| --- | --- | --- |
+| H6 nuisance common/specific decomposition | Did not stabilize held-source PE risk directions | No-go |
+| H7 PE-embedding LISA | Did not improve source-LODO | No-go |
+| H8 direct C1-H3 embedding fusion | LODO BAcc 0.7628, but B1 36/62 and B2 51/89; gain vs H3 CI crossed zero | No-go |
+| H9 dynamic difficulty curriculum | Small persistent-hard rescue but no overall or B1/B2 improvement | No-go |
+| H10 source-free phenotype redesign | Best BAcc 0.7888; hard replay reduced BAcc to 0.7498 | Close curriculum branch |
+| H11 fixed visual counterfactuals | Crop, background, scale, and evidence windows all had non-positive net gain | Close ROI/preprocessing branch |
+| H12 PE final-block LoRA | LODO BAcc 0.7534 vs H3 0.7539; TP 150 vs 152; no source improved | Close limited PE adaptation |
+
+H12 reproduced all 591 locked H3 classifications before training, so its
+negative result was not caused by token-cache or fold mismatch. Two held-source
+folds selected the original epoch-0 H3 state; the only adapted fold improved its
+internal validation subset but reduced third-batch BAcc by 0.0055. The subtype
+change was AB +3 correct, B2 -1, and TC -1. This is another majority-class
+tradeoff rather than newly learned high-risk morphology.
+
+The fixed 591-case ledger now covers stronger local backbones, dense and
+high-resolution tokens, spatial/texture heads, domain objectives, specialists,
+true cross-representation fusion, revised difficulty curricula, direct visual
+counterfactuals, and limited encoder adaptation. Further selection among nearby
+variants on these same cases would be adaptive reuse, not credible evidence of
+generalization.
 
 ## Next Valid Steps
 
