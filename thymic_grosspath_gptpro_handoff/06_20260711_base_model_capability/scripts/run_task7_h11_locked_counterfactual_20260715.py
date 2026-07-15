@@ -157,7 +157,11 @@ def load_records(args: argparse.Namespace) -> tuple[pd.DataFrame, dict[str, pd.D
     records["image_path"] = records["case_id"].map(registry["image_path"])
     records["registry_label"] = records["case_id"].map(registry["label_idx"]).astype(int)
     records["registry_subtype"] = records["case_id"].map(registry["task_l6_label"])
-    records["registry_fold"] = records["case_id"].map(registry["master_fold_id"]).astype(int)
+    # The cached registry retains the historical master folds. H10 deliberately
+    # rebuilt subtype-only folds, so only the locked H10 split is authoritative.
+    records["legacy_registry_fold"] = records["case_id"].map(
+        registry["master_fold_id"]
+    ).astype(int)
     records["split_fold"] = records["case_id"].map(split["master_fold_id"]).astype(int)
     records["label_idx"] = records["label_idx"].astype(int)
     records["fold_id"] = records["fold_id"].astype(int)
@@ -168,7 +172,6 @@ def load_records(args: argparse.Namespace) -> tuple[pd.DataFrame, dict[str, pd.D
     mismatch = records[
         (records["label_idx"] != records["registry_label"])
         | (records["task_l6_label"] != records["registry_subtype"])
-        | (records["fold_id"] != records["registry_fold"])
         | (records["fold_id"] != records["split_fold"])
     ]
     if not mismatch.empty:
@@ -646,4 +649,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
